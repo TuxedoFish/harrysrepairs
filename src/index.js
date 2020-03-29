@@ -27,7 +27,7 @@ ReactDOM.render(
 
     <div class="section landing parallax">
       <div class="container">
-        <h2 class="landing-heading">Need an iPhone fixed in the Camden area?</h2>
+        <h2 class="landing-heading">Need an iPhone fixed in the Cranleigh area?</h2>
         <p class="landing-description">📦 Get iPhones repaired 📦 Sell old iPhones 📦 Buy refurbished iPhones 📦</p>
         <a class="button button-primary" href="http://getskeleton.com">Contact Me</a>
         
