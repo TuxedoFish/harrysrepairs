@@ -34,7 +34,11 @@ ReactDOM.render(
         <a class="button button-primary" href="http://getskeleton.com">Contact Me At harry@harrysrepairs.com</a>
         
         <marquee scrollamount="10">
-          <p class="marquee-heading">Contact me at harry@harrysrepairs.com</p>
+          <p class="marquee-heading">
+            <a href="mailto:harry@harrysrepairs.co.uk">
+              Email me
+            </a>
+          </p>
         </marquee>
       </div>
     </div>
