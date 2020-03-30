@@ -6,6 +6,7 @@ import { Carousel } from "react-responsive-carousel"
 
 // Default Image
 import defaultImage from "../images/marketplace/default.png"
+import refurb from "../images/marketplace/refurb.svg"
 
 export default class PhoneBox extends React.Component {
 
@@ -109,9 +110,11 @@ export default class PhoneBox extends React.Component {
     render () {
 
         const { selected, selectedSpecification, specifications } = this.state
+        const { refurbs } = this.props
 
         const screenshotwidth = `259px`
         const screenshotheight = `460px`
+        const image_size = "150px"
 
         const screenshots = [
             {
@@ -152,25 +155,22 @@ export default class PhoneBox extends React.Component {
                     </div>
                 </div>
                 <div className="one-half column notes-holder">
-                    <ul className="options-list">
-                        <li className={selected==0 ? "selected-option" : "option"} onClick={() => { this.changeSelected(0) }}>Specifications</li>
-                        <li className={selected==1 ? "selected-option" : "option"} onClick={() => { this.changeSelected(1) }}>Refurbishments</li>
-                        <li className={selected==2 ? "selected-option" : "option"} onClick={() => { this.changeSelected(2) }}>Purchase</li>
-                    </ul>
+                    <div className="options-holder">
+                        <ul className="options-list">
+                            <li className={selected==0 ? "selected-option" : "option"} onClick={() => { this.changeSelected(0) }}>Specs</li>
+                            <li className={selected==1 ? "selected-option" : "option"} onClick={() => { this.changeSelected(1) }}>Notes</li>
+                            <li className={selected==2 ? "selected-option" : "option"} onClick={() => { this.changeSelected(2) }}>Buy</li>
+                        </ul>
+                    </div>
 
                     {/* Specifications */}
                     {selected==0 ? (
                         <div className="info-box specifications">
-                            <ul className="options-list">
-                                <li className={selectedSpecification==0 ? "selected-option" : "option"} onClick={() => { this.changeSelectedSpecification(0) }}>Summary</li>
-                                <li className={selectedSpecification==1 ? "selected-option" : "option"} onClick={() => { this.changeSelectedSpecification(1) }}>Internals</li>
-                                <li className={selectedSpecification==2 ? "selected-option" : "option"} onClick={() => { this.changeSelectedSpecification(2) }}>Software</li>
+                            <ul className="options-list-minor">
+                                <li className={selectedSpecification==0 ? "selected-option-minor" : "option-minor"} onClick={() => { this.changeSelectedSpecification(0) }}>Summary</li>
+                                <li className={selectedSpecification==1 ? "selected-option-minor" : "option-minor"} onClick={() => { this.changeSelectedSpecification(1) }}>Internals</li>
+                                <li className={selectedSpecification==2 ? "selected-option-minor" : "option-minor"} onClick={() => { this.changeSelectedSpecification(2) }}>Software</li>
                             </ul>
-                            { selectedSpecification==0 ? (
-                                <h4 className="specification-title">
-                                    Summary
-                                </h4>
-                            ) : null}
                             { selectedSpecification==0 ? specifications.summary.map( (specification) => 
                                 <>
                                     <p className="specification-key">
@@ -181,11 +181,6 @@ export default class PhoneBox extends React.Component {
                                     </p>
                                 </>
                             ) : null }
-                            { selectedSpecification==1? (
-                                <h4 className="specification-title">
-                                    Internals
-                                </h4>
-                            ) : null}
                             { selectedSpecification==1 ? specifications.internals.map( (specification) => 
                                 <>
                                     <p className="specification-key">
@@ -195,11 +190,6 @@ export default class PhoneBox extends React.Component {
                                         {specification.value}
                                     </p>
                                 </>
-                            ) : null}
-                            { selectedSpecification==2 ? (
-                                <h4 className="specification-title">
-                                    Software
-                                </h4>
                             ) : null}
                             { selectedSpecification==2 ? specifications.software.map( (specification) => 
                                 <>
@@ -217,14 +207,26 @@ export default class PhoneBox extends React.Component {
                     {/* Refurbishments */}
                     {selected==1 ? (
                         <div className="info-box refurbishments">
-                            Refurbishments
+                            <h4 className="refurbishments-title">
+                                Refurbishments
+                            </h4>
+                            <img src={refurb} width={image_size} height={image_size}/>
+                            { refurbs.map( (refurb) => 
+                                <>
+                                    <p className="specification-key">
+                                        {"* " + refurb}
+                                    </p>
+                                </>
+                            )}
                         </div>
                     ) : null }
 
                     {/* Purchase */}
                     {selected==2 ? (
                         <div className="info-box purchase">
-                            Purchase
+                            <h4 className="refurbishments-title">
+                                Purchase
+                            </h4>
                         </div>
                     ) : null }
 

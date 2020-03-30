@@ -45,7 +45,7 @@ ReactDOM.render(
           <div class="one-third column value">
             <img src={buy} width={image_size} height={image_size}/>
             <h5 class="value-heading">Sell Old Phones</h5>
-            <p class="value-description">Have an old iPhone that you is broken but you don't use? Sell it to me for cash.</p>
+            <p class="value-description">Have an old iPhone that is broken but you don't use? Sell it to me for cash.</p>
           </div>
           <div class="one-third column value">
             <img src={fix} width={image_size} height={image_size}/>
@@ -55,7 +55,7 @@ ReactDOM.render(
           <div class="one-third column value">
             <img src={sell} width={image_size} height={image_size}/>
             <h5 class="value-heading">Buy Refurbished Phones</h5>
-            <p class="value-description">Buy iPhones that have been refurbished with working parts for much cheaper</p>
+            <p class="value-description">Buy iPhones that have been refurbished with working parts for much cheaper than other websites.</p>
           </div>
         </div>
       </div>
@@ -81,6 +81,7 @@ ReactDOM.render(
             weight="3.10oz"
             battery="Battery provides 40 hours (music), 8 hours (video)"
             color="Product red"
+            refurbs={["New home button"]}
           />
         </div>
       </div>
