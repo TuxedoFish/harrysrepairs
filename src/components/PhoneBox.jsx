@@ -27,11 +27,20 @@ export default class PhoneBox extends React.Component {
             weight,
             battery,
             color,
+            id,
+            images
         } = this.props
+
+        var img_src = []
+        for(var i=0; i<images; i++) {
+            let img = require('../images/marketplace/' + id + "/" + i + '.png')
+            img_src.push(img)
+        }
 
         this.state = {
             selected: 0,
             selectedSpecification: 0,
+            img_src: img_src,
             specifications: {
                 internals: [
                     {
@@ -109,11 +118,12 @@ export default class PhoneBox extends React.Component {
 
     render () {
 
-        const { selected, selectedSpecification, specifications } = this.state
-        const { refurbs } = this.props
+        const { selected, selectedSpecification, 
+            specifications, img_src } = this.state
+        const { refurbs, name } = this.props
 
-        const screenshotwidth = `259px`
-        const screenshotheight = `460px`
+        const screenshotwidth = `512px`
+        const screenshotheight = `512px`
         const image_size = "150px"
 
         const screenshots = [
@@ -133,21 +143,20 @@ export default class PhoneBox extends React.Component {
                     <div className="carousel-holder">
                         <Carousel
                             showThumbs={false}
-                            centerMode
+                            centerMode={false}
                             showArrows
                             showStatus
                             showIndicators
-                            infiniteLoop
                         >
                             {
-                                screenshots.map((screenshot) =>
-                                    <div key={screenshot.name}>
+                                img_src.map((img, i) =>
+                                    <div key={i}>
                                         <img 
-                                            src={screenshot.img}
+                                            src={img}
                                             width={screenshotwidth}
                                             height={screenshotheight}
                                         />
-                                        <p className="legend">{screenshot.name}</p>
+                                        <p className="legend">{i}</p>
                                     </div>
                                 )
                             }
@@ -155,6 +164,7 @@ export default class PhoneBox extends React.Component {
                     </div>
                 </div>
                 <div className="one-half column notes-holder">
+                    <h4 class="phone-name">{name}</h4>
                     <div className="options-holder">
                         <ul className="options-list">
                             <li className={selected==0 ? "selected-option" : "option"} onClick={() => { this.changeSelected(0) }}>Specs</li>

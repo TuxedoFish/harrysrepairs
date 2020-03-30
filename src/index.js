@@ -65,9 +65,12 @@ ReactDOM.render(
       
       <h2 class="marketplace-heading">Refurbished Phones</h2>
 
-      <div class="container">
+      <div class="container container-marketplace">
         <div class="row">
           <PhoneBox
+            id="hml300320-1"
+            images={1}
+            name="iPod Touch 5th Gen. Refurbished"
             processorspeed="1.0 GHz"
             processortype="Apple A5"
             onboardram="512 MB"

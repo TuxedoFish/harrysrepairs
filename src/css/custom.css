@@ -114,10 +114,12 @@
 .marketplace-heading {
     color: #fff;
     padding-bottom: 20px;
+    text-decoration: underline;
 }
 
 .screenshot-holder {
-    background: #ffffff88;
+    /* background: #ffffff88; */
+    background: none;
 }
 
 .carousel .slide {
@@ -129,7 +131,7 @@
 }
 
 .carousel-holder {
-    width: 259px;
+    width: 512px;
     margin: auto;
 }
 
@@ -211,6 +213,15 @@
 .refurbishments-title {
     color: white;
     width: 100%;
+}
+
+.container-marketplace {
+    max-width: unset;
+}
+
+.phone-name {
+    color: #ccc;
+    text-align: left;
 }
 
 /* Mobile views */
