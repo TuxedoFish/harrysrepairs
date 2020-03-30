@@ -104,6 +104,95 @@
     padding-top: 10px;
 }
 
+/* Marketplace
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.marketplace {
+    padding: 8rem 0 7rem;
+    text-align: center;
+}
+
+.marketplace-heading {
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.screenshot-holder {
+    background: #ffffff88;
+}
+
+.carousel .slide {
+    background: none;
+}
+
+.carousel.carousel-slider {
+    /* border-radius: 10px; */
+}
+
+.carousel-holder {
+    width: 259px;
+    margin: auto;
+}
+
+.options-list {
+    list-style: none;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.option,
+.selected-option {
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 2px;
+
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    margin-right: 35px;
+    text-decoration: none;
+    line-height: 4.5rem;
+    color: #fff;
+
+    position: relative;
+    float: left;
+
+    transition: .2s linear background-color;
+    cursor: pointer;
+
+    padding: 0 15px;
+    margin: 0;
+}
+
+.selected-option {
+    background-color: #222;
+}
+
+.option:hover {
+    background-color: #888;
+}
+
+.info-box {
+    text-align: left;
+}
+
+.specification-title {
+    color: white;
+    text-decoration: underline;
+    margin: 0;
+}
+
+.specification-key {
+    color: white;
+    margin: 0;
+}
+
+.specification-value {
+    color: #ccc;
+    margin: .2em;
+}
+
 /* Mobile views */
 @media (max-width: 750px) {
     .landing {
