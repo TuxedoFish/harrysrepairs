@@ -120,7 +120,7 @@ export default class PhoneBox extends React.Component {
 
         const { selected, selectedSpecification, 
             specifications, img_src } = this.state
-        const { refurbs, name } = this.props
+        const { refurbs, name, image_descriptions} = this.props
 
         const screenshotwidth = `512px`
         const screenshotheight = `512px`
@@ -156,7 +156,7 @@ export default class PhoneBox extends React.Component {
                                             width={screenshotwidth}
                                             height={screenshotheight}
                                         />
-                                        <p className="legend">{i}</p>
+                                        <p className="legend">{image_descriptions[i]}</p>
                                     </div>
                                 )
                             }

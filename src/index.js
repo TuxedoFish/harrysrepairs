@@ -69,7 +69,8 @@ ReactDOM.render(
         <div class="row">
           <PhoneBox
             id="hml300320-1"
-            images={1}
+            images={4}
+            image_descriptions={["front and back", "packaged", "bottom of phone", "top of phone"]}
             name="iPod Touch 5th Gen. Refurbished"
             processorspeed="1.0 GHz"
             processortype="Apple A5"

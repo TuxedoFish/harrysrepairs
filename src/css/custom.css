@@ -130,8 +130,12 @@
     /* border-radius: 10px; */
 }
 
+.carousel .slide img {
+    height: auto;
+}
+
 .carousel-holder {
-    width: 512px;
+    max-width: 512px;
     margin: auto;
 }
 
