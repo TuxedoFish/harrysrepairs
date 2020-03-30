@@ -31,14 +31,11 @@ ReactDOM.render(
       <div class="container">
         <h2 class="landing-heading">Need an iPhone fixed in the Cranleigh area?</h2>
         <p class="landing-description">📦 Get iPhones repaired 📦 Sell old iPhones 📦 Buy refurbished iPhones 📦</p>
-        <a class="button button-primary" href="http://getskeleton.com">Contact Me At harry@harrysrepairs.com</a>
-        
+        <a class="button button-primary" href="mailto:harry@harrysrepairs.co.uk">
+          Contact Me At harry@harrysrepairs.com
+        </a>
         <marquee scrollamount="10">
-          <p class="marquee-heading">
-            <a href="mailto:harry@harrysrepairs.co.uk">
-              Email me
-            </a>
-          </p>
+          <p class="marquee-heading">Contact me at harry@harrysrepairs.com</p>
         </marquee>
       </div>
     </div>
