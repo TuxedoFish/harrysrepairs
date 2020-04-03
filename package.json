@@ -18,9 +18,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build": "webpack --progress --colors",
     "dev": "webpack --watch --mode=development",
     "prod": "webpack --mode=production"
   },

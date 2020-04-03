@@ -4,18 +4,51 @@ const path = require( 'path' );
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const dotenv = require('dotenv');
+const webpack = require('webpack');
+
+const env = dotenv.config().parsed;
+  
+// reduce it to a nice object, the same as before
+const envKeys = Object.keys(env).reduce((prev, next) => {
+    prev[`process.env.${next}`] = JSON.stringify(env[next]);
+    return prev;
+}, {});
+
+const environment = new webpack.DefinePlugin(envKeys)
+
 module.exports = {
     context: __dirname,
-    entry: './src/index.js',
+    
+    entry: {
+        index: './src/index.js',
+        tandc: './src/tandc.js',
+    },
     output: {
-        path: path.resolve( __dirname, 'dist' ),
-        filename: 'index.js',
+        path: path.resolve(__dirname, `dist`),
+        filename: `[name].js`,
     },
     plugins : [
         new HtmlWebpackPlugin({
             favicon: "./src/images/favicon.ico",
-            template: './public/index.html'
-        })
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            title: "Harry's Repairs",
+            myPageHeader: 'Home Page',
+            template: './templates/index.html',
+            chunks: ['index'],
+            filename: './index.html' // relative to root of the application
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            title: "Harry's Repairs",
+            myPageHeader: 'Terms and Conditions',
+            template: './templates/tandc.html',
+            chunks: ['tandc'],
+            filename: './tandc.html' // relative to root of the application
+        }),
+        environment
     ],
     module: {
         rules: [

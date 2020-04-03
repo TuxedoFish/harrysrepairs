@@ -20,10 +20,6 @@ const image_size = "150px"
 
 export default class HomePage extends React.Component {
 
-  constructor(props) {
-      super(props)
-  }
-
   render() {
   return ( 
     <>
@@ -37,10 +33,10 @@ export default class HomePage extends React.Component {
         <div class="container">
           <h2 class="landing-heading">Need an iPhone fixed in the Cranleigh area?</h2>
           <p class="landing-description">📦 Get iPhones repaired 📦 Sell old iPhones 📦 Buy refurbished iPhones 📦</p>
-          <a class="button button-primary" href="http://getskeleton.com">Contact Me At harry@harrysrepairs.com</a>
+          <a class="button button-primary" href="mailto:harry@harrysrepairs.co.uk">Contact Me</a>
           
           <marquee scrollamount="10">
-            <p class="marquee-heading">Contact me at harry@harrysrepairs.com</p>
+            <p class="marquee-heading">Contact me at harry@harrysrepairs.co.uk</p>
           </marquee>
         </div>
       </div>

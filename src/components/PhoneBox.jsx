@@ -169,17 +169,84 @@ export default class PhoneBox extends React.Component {
                     </div>
                 </div>
                 <div className="one-half column notes-holder">
-                    <h4 class="phone-name">{name}</h4>
+                    <h4 className="phone-name">{name}</h4>
                     <div className="options-holder">
                         <ul className="options-list">
-                            <li className={selected==0 ? "selected-option" : "option"} onClick={() => { this.changeSelected(0) }}>Specs</li>
+                            <li className={selected==0 ? "selected-option" : "option"} onClick={() => { this.changeSelected(0) }}>Buy</li>
                             <li className={selected==1 ? "selected-option" : "option"} onClick={() => { this.changeSelected(1) }}>Notes</li>
-                            <li className={selected==2 ? "selected-option" : "option"} onClick={() => { this.changeSelected(2) }}>Buy</li>
+                            <li className={selected==2 ? "selected-option" : "option"} onClick={() => { this.changeSelected(2) }}>Specs</li>
                         </ul>
                     </div>
 
-                    {/* Specifications */}
+                    {/* Buy */}
                     {selected==0 ? (
+                        <div className="info-box purchase">
+                            <h4 className="refurbishments-title">
+                                Purchase
+                            </h4>
+                            <div className="purchase-holder">
+                                <p className="purchase-info">
+                                    Cost: £{cost}
+                                </p>
+                                <p className="purchase-info">
+                                    Packaging: £{packaging}
+                                </p>
+                                <p className="purchase-info">
+                                    Total: £{cost + packaging}
+                                </p>
+                            </div>
+                            <PayPalButton
+                                amount={cost + packaging}
+                                currency="GBP"
+                                // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                                onSuccess={(details, data) => {
+                                    alert("Transaction completed by " + details.payer.name.given_name 
+                                    + ". Please check your emails for a confirmation email and get in touch with me " +
+                                    "at harry@harrysrepairs.co.uk if you have any questions.");
+                            
+                                    // OPTIONAL: Call your server to save the transaction
+                                    return fetch("/paypal-transaction-complete", {
+                                            method: "post",
+                                            body: JSON.stringify({
+                                            orderId: data.orderID
+                                        })
+                                    });
+                                }}
+                                options={{
+                                    clientId: process.env.PAYPAL_CLIENT_ID,
+                                    currency: "GBP"
+                                }}
+                            />
+                            <p className="purchase-info">
+                                By clicking purchase you agree to our terms and conditions:
+                            </p>
+                            <p className="purchase-info">
+                                <a href="/termsandconditions"> 
+                                    Terms and Conditions
+                                </a>
+                            </p>
+                        </div>
+                    ) : null }
+
+                    {/* Refurbishments */}
+                    {selected==1 ? (
+                        <div className="info-box refurbishments">
+                            <h4 className="refurbishments-title">
+                                Refurbishments
+                            </h4>
+                            <img src={refurb} width={image_size} height={image_size}/>
+                            { refurbs.map( (refurb) => 
+                                <>
+                                    <p className="specification-key">
+                                        {"* " + refurb}
+                                    </p>
+                                </>
+                            )}
+                        </div>
+                    ) : null }
+
+                    {/* Specifications */}
+                    {selected==2 ? (
                         <div className="info-box specifications">
                             <ul className="options-list-minor">
                                 <li className={selectedSpecification==0 ? "selected-option-minor" : "option-minor"} onClick={() => { this.changeSelectedSpecification(0) }}>Summary</li>
@@ -216,60 +283,6 @@ export default class PhoneBox extends React.Component {
                                     </p>
                                 </>
                             ) : null}
-                        </div>
-                    ) : null }
-
-                    {/* Refurbishments */}
-                    {selected==1 ? (
-                        <div className="info-box refurbishments">
-                            <h4 className="refurbishments-title">
-                                Refurbishments
-                            </h4>
-                            <img src={refurb} width={image_size} height={image_size}/>
-                            { refurbs.map( (refurb) => 
-                                <>
-                                    <p className="specification-key">
-                                        {"* " + refurb}
-                                    </p>
-                                </>
-                            )}
-                        </div>
-                    ) : null }
-
-                    {/* Purchase */}
-                    {selected==2 ? (
-                        <div className="info-box purchase">
-                            <h4 className="refurbishments-title">
-                                Purchase
-                            </h4>
-                            <p className="purchase-info">
-                                Cost: {cost}
-                            </p>
-                            <p className="purchase-info">
-                                Packaging: {packaging}
-                            </p>
-                            <p className="purchase-info">
-                                Total: {cost + packaging}
-                            </p>
-                            <PayPalButton
-                                amount={cost + packaging}
-                                // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                                onSuccess={(details, data) => {
-                                alert("Transaction completed by " + details.payer.name.given_name);
-                        
-                                // OPTIONAL: Call your server to save the transaction
-                                return fetch("/paypal-transaction-complete", {
-                                        method: "post",
-                                        body: JSON.stringify({
-                                        orderId: data.orderID
-                                    })
-                                });
-                                }}
-                                options={{
-                                    clientId: "sb-cinwf1367688_api1.business.example.com",
-                                    currency: "GBP"
-                                }}
-                            />
                         </div>
                     ) : null }
 

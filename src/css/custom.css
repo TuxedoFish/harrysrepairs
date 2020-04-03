@@ -26,6 +26,13 @@
     background-size: cover;
 }
 
+/* Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.tandc {
+    text-align: left;
+    color: white;
+}
+
 /* Landing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .landing {
@@ -208,6 +215,15 @@
     color: white;
     margin-bottom: 0;
 }
+
+.purchase-holder {
+    padding-bottom: 30px;
+}
+
+.paypal-powered-by > .paypal-button-text {
+    color: white;
+}
+
 .specification-key {
     color: white;
     margin: 0;
