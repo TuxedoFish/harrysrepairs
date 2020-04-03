@@ -120,8 +120,7 @@ export default class HomePage extends React.Component {
   
 }
 
-
 ReactDOM.render(
   <HomePage />,
-  document.querySelector(`.app`)
+  document.getElementById(`app`)
 )
