@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/cli": "^7.8.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "heroku-ssl-redirect": "0.0.4",
-    "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-paypal-button-v2": "^2.6.1",
     "react-responsive-carousel": "^3.1.51",
     "react-scripts": "3.4.1"
   },
@@ -20,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch": "npm-watch"
+    "dev": "webpack --watch --mode=development",
+    "prod": "webpack --mode=production"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,6 +43,16 @@
     "build": "src/"
   },
   "devDependencies": {
-    "npm-watch": "^0.6.0"
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/cli": "^7.0.0-beta.40",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-plugin-lodash": "^3.3.2",
+    "babel-plugin-react-transform": "^3.0.0",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "dotenv": "^8.2.0",
+    "npm-watch": "^0.6.0",
+    "path": "^0.12.7",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }

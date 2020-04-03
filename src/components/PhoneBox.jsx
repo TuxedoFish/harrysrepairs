@@ -4,6 +4,10 @@ import React from 'react';
 // Carousel
 import { Carousel } from "react-responsive-carousel"
 
+// Paypal
+
+import { PayPalButton } from "react-paypal-button-v2";
+
 // Default Image
 import defaultImage from "../images/marketplace/default.png"
 import refurb from "../images/marketplace/refurb.svg"
@@ -120,7 +124,8 @@ export default class PhoneBox extends React.Component {
 
         const { selected, selectedSpecification, 
             specifications, img_src } = this.state
-        const { refurbs, name, image_descriptions} = this.props
+        const { refurbs, name, image_descriptions,
+            cost, packaging} = this.props
 
         const screenshotwidth = `512px`
         const screenshotheight = `512px`
@@ -237,6 +242,34 @@ export default class PhoneBox extends React.Component {
                             <h4 className="refurbishments-title">
                                 Purchase
                             </h4>
+                            <p className="purchase-info">
+                                Cost: {cost}
+                            </p>
+                            <p className="purchase-info">
+                                Packaging: {packaging}
+                            </p>
+                            <p className="purchase-info">
+                                Total: {cost + packaging}
+                            </p>
+                            <PayPalButton
+                                amount={cost + packaging}
+                                // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                                onSuccess={(details, data) => {
+                                alert("Transaction completed by " + details.payer.name.given_name);
+                        
+                                // OPTIONAL: Call your server to save the transaction
+                                return fetch("/paypal-transaction-complete", {
+                                        method: "post",
+                                        body: JSON.stringify({
+                                        orderId: data.orderID
+                                    })
+                                });
+                                }}
+                                options={{
+                                    clientId: "sb-cinwf1367688_api1.business.example.com",
+                                    currency: "GBP"
+                                }}
+                            />
                         </div>
                     ) : null }
 

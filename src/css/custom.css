@@ -204,6 +204,10 @@
     text-align: left;
 }
 
+.purchase-info {
+    color: white;
+    margin-bottom: 0;
+}
 .specification-key {
     color: white;
     margin: 0;
