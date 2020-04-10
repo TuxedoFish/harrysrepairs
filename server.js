@@ -16,8 +16,6 @@ app.use(sslRedirect())
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/templates/index.html')))
-app.get('/termsandconditions', (req, res) => res.sendFile(path.join(__dirname, '/templates/tandc.html')))
-app.get('/phone/:id', (req, res) => res.sendFile(path.join(__dirname, '/templates/phone.html')))
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, '/templates/index.html')))
 
 app.listen(port);

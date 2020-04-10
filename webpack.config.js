@@ -22,8 +22,6 @@ module.exports = {
     
     entry: {
         index: './src/index.js',
-        tandc: './src/tandc.js',
-        phone: './src/phone.js',
     },
     output: {
         path: path.resolve(__dirname, `dist`),
@@ -32,6 +30,14 @@ module.exports = {
     plugins : [
         new HtmlWebpackPlugin({
             favicon: "./src/images/favicon.ico",
+        }),
+        new HtmlWebpackPlugin({
+            hash: true,
+            title: "Harry's Repairs",
+            myPageHeader: 'Home Page',
+            template: './templates/index.html',
+            chunks: ['index'],
+            filename: './index.html' // relative to root of the application
         }),
         environment
     ],
