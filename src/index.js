@@ -16,6 +16,10 @@ import buy from './images/buy.svg'
 import fix from './images/fix.svg'
 import sell from './images/sell.svg'
 
+// Phone data
+
+import { phones } from './sales/for_sale.jsx'
+
 const image_size = "150px"
 
 export default class HomePage extends React.Component {
@@ -69,28 +73,32 @@ export default class HomePage extends React.Component {
 
         <div class="container container-marketplace">
           <div class="row">
-            <PhoneBox
-              cost={49.99}
-              packaging={3.75}
-              id="hml300320-1"
-              images={4}
-              image_descriptions={["front and back", "packaged", "bottom of phone", "top of phone"]}
-              name="iPod Touch 5th Gen. Refurbished"
-              processorspeed="1.0 GHz"
-              processortype="Apple A5"
-              onboardram="512 MB"
-              storage="32 GB"
-              display="4″ retina display (1136 x 640, 326 ppi)"
-              connectivity="USB, wi-fi, Bluetooth"
-              wireless=" 802.11n 2.4 GHz and 5 GHz"
-              bluetooth="4.0"
-              osinstalled="iOS 6.0. Max. OS upgrade: iOS 9.x)."
-              dimensions="4.86 x 2.31 x 0.24"
-              weight="3.10oz"
-              battery="Battery provides 40 hours (music), 8 hours (video)"
-              color="Product red"
-              refurbs={["New home button"]}
-            />
+            {phones.map( (phone) =>
+              <PhoneBox
+                cost={phone.config.cost}
+                packaging={phone.config.packaging}
+                id={phone.config.id}
+                images={phone.config.images}
+                image_descriptions={phone.config.image_descriptions}
+                name={phone.config.name}
+                processorspeed={phone.config.processorspeed}
+                processortype={phone.config.processortype}
+                onboardram={phone.config.onboardram}
+                storage={phone.config.storage}
+                display={phone.config.display}
+                connectivity={phone.config.connectivity}
+                wireless={phone.config.wireless}
+                bluetooth={phone.config.bluetooth}
+                osinstalled={phone.config.osinstalled}
+                dimensions={phone.config.dimensions}
+                weight={phone.config.weight}
+                battery={phone.config.battery}
+                color={phone.config.color}
+                refurbs={phone.config.refurbs}
+                index={phone.index}
+                isFrontPage={true}
+              />
+            )}
           </div>
         </div>
       </div>

@@ -125,7 +125,8 @@ export default class PhoneBox extends React.Component {
         const { selected, selectedSpecification, 
             specifications, img_src } = this.state
         const { refurbs, name, image_descriptions,
-            cost, packaging} = this.props
+            cost, packaging, isFrontPage, 
+            index} = this.props
 
         const screenshotwidth = `512px`
         const screenshotheight = `512px`
@@ -195,36 +196,49 @@ export default class PhoneBox extends React.Component {
                                     Total: £{cost + packaging}
                                 </p>
                             </div>
-                            <PayPalButton
-                                amount={cost + packaging}
-                                currency="GBP"
-                                // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                                onSuccess={(details, data) => {
-                                    alert("Transaction completed by " + details.payer.name.given_name 
-                                    + ". Please check your emails for a confirmation email and get in touch with me " +
-                                    "at harry@harrysrepairs.co.uk if you have any questions.");
                             
-                                    // OPTIONAL: Call your server to save the transaction
-                                    return fetch("/paypal-transaction-complete", {
-                                            method: "post",
-                                            body: JSON.stringify({
-                                            orderId: data.orderID
-                                        })
-                                    });
-                                }}
-                                options={{
-                                    clientId: process.env.PAYPAL_CLIENT_ID,
-                                    currency: "GBP"
-                                }}
-                            />
-                            <p className="purchase-info">
-                                By clicking purchase you agree to our terms and conditions:
-                            </p>
-                            <p className="purchase-info">
-                                <a href="/termsandconditions"> 
-                                    Terms and Conditions
-                                </a>
-                            </p>
+                            {!isFrontPage ? (
+                                <>
+                                    <div className="paypal-button-holder">
+                                        <PayPalButton
+                                            amount={cost + packaging}
+                                            currency="GBP"
+                                            // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                                            onSuccess={(details, data) => {
+                                                alert("Transaction completed by " + details.payer.name.given_name 
+                                                + ". Please check your emails for a confirmation email and get in touch with me " +
+                                                "at harry@harrysrepairs.co.uk if you have any questions.");
+                                        
+                                                // OPTIONAL: Call your server to save the transaction
+                                                return fetch("/paypal-transaction-complete", {
+                                                        method: "post",
+                                                        body: JSON.stringify({
+                                                        orderId: data.orderID
+                                                    })
+                                                });
+                                            }}
+                                            options={{
+                                                clientId: process.env.PAYPAL_CLIENT_ID,
+                                                currency: "GBP"
+                                            }}
+                                        />
+                                    </div>
+                                    <p className="purchase-info">
+                                        By clicking purchase you agree to our terms and conditions:
+                                    </p>
+                                    <p className="purchase-info">
+                                        <a href="/termsandconditions"> 
+                                            Terms and Conditions
+                                        </a>
+                                    </p>
+                                </>
+                                ) : (
+                                    <div className="paypal-button-holder">
+                                        <a class="button button-primary" href={"/phone/"+index}>
+                                            View Item
+                                        </a>
+                                    </div>
+                                )}
                         </div>
                     ) : null }
 

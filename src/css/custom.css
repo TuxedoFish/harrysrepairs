@@ -31,6 +31,7 @@
 .tandc {
     text-align: left;
     color: white;
+    padding: 20px 0;
 }
 
 /* Landing
@@ -146,12 +147,16 @@
     margin: auto;
 }
 
+.options-holder {
+    height: 60px;
+}
+
 .options-list, 
 .options-list-minor {
     list-style: none;
     float: left;
     width: 100%;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
 }
 
 .option,
@@ -220,8 +225,8 @@
     padding-bottom: 30px;
 }
 
-.paypal-powered-by > .paypal-button-text {
-    color: white;
+.paypal-button-holder {
+    width: 150px;
 }
 
 .specification-key {
@@ -241,6 +246,12 @@
 
 .container-marketplace {
     max-width: unset;
+}
+
+.phone {
+    width: 100%;
+    float: left;
+    margin-bottom: 50px;
 }
 
 .phone-name {

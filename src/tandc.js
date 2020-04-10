@@ -19,7 +19,7 @@ export default class TermsAndConditions extends React.Component {
         </div>
       </div>
 
-      <div class="section tandc parallax">
+      <div class="tandc parallax">
         <div class="container">  
         <h1>TERMS AND CONDITIONS</h1>
         <p>Please read all these terms and conditions.</p>
