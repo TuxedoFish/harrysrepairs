@@ -1,14 +1,7 @@
 // React Imports
 import React from 'react'
-import ReactDOM from 'react-dom'
 
-// All CSS Files
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import './css/skeleton.css'
-import './css/normalize.css'
-import './css/custom.css'
-
-export default class TermsAndConditions extends React.Component {
+export default class Terms extends React.Component {
 
   render() {
   return ( 
@@ -187,8 +180,3 @@ export default class TermsAndConditions extends React.Component {
   }
   
 }
-
-ReactDOM.render(
-  <TermsAndConditions />,
-  document.getElementById(`app`)
-)

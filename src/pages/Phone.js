@@ -1,39 +1,15 @@
 // React Imports
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-
-// All CSS Files
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import './css/skeleton.css'
-import './css/normalize.css'
-import './css/custom.css'
 
 // Component Files
-import PhoneBox from './components/PhoneBox.jsx'
+import PhoneBox from '../components/PhoneBox.jsx'
 
 // Images
 
 // Phone data
-import { phones } from './sales/for_sale.jsx'
+import { phones } from '../sales/for_sale.jsx'
 
-class Main extends React.Component {
-
-    renderPhonePage = (props) => (
-      <Phone id={props.match.params.index} />
-    )
-
-    render() {
-      return (
-        <main>
-          <Switch>
-            <Route path='/phone/:index' render={this.renderPhonePage} />
-          </Switch>
-        </main>
-      )
-    }
-
-}
+// Takes index being the phone to be displayed
 
 export default class Phone extends React.Component {
 
@@ -43,9 +19,9 @@ export default class Phone extends React.Component {
 
     render() {
     
-        const { id } = this.props;
+        const { index } = this.props;
     
-        const phone = phones[id];
+        const phone = phones[index];
 
         return ( 
             <>
@@ -109,10 +85,3 @@ export default class Phone extends React.Component {
         )
     }
 }
-
-ReactDOM.render(
-    <BrowserRouter>
-      <Main />
-    </BrowserRouter>,
-    document.getElementById(`app`)
-)

@@ -1,11 +1,11 @@
 // React Imports
 import React from 'react';
+import { Link } from "react-router-dom"
 
 // Carousel
 import { Carousel } from "react-responsive-carousel"
 
 // Paypal
-
 import { PayPalButton } from "react-paypal-button-v2";
 
 // Default Image
@@ -228,15 +228,15 @@ export default class PhoneBox extends React.Component {
                                     </p>
                                     <p className="purchase-info">
                                         <a href="/termsandconditions"> 
-                                            Terms and Conditions
+                                            <Link to="/terms">Terms and Conditions</Link>
                                         </a>
                                     </p>
                                 </>
                                 ) : (
                                     <div className="paypal-button-holder">
-                                        <a class="button button-primary" href={"/phone/"+index}>
-                                            View Item
-                                        </a>
+                                        <div class="button button-primary">
+                                            <Link to={"/phone/"+index}>View Item</Link>
+                                        </div>
                                     </div>
                                 )}
                         </div>
