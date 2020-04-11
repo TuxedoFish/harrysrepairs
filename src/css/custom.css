@@ -4,6 +4,18 @@
     border-radius: 100px;
 }
 
+body {
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+#app {
+    min-height: 100vh;
+}
+
 /* Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .section {
@@ -106,6 +118,9 @@
     background-color: #222;
     padding: 0;
     height: 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
 }
 
 .navbar-title {
@@ -122,7 +137,6 @@
 .marketplace-heading {
     color: #fff;
     padding-bottom: 20px;
-    text-decoration: underline;
 }
 
 .screenshot-holder {
@@ -255,8 +269,14 @@
 }
 
 .phone-name {
-    color: #ccc;
+    color: white;
     text-align: left;
+}
+
+/* Phone Page */
+.phone-page-holder {
+    padding: 8rem 0 7rem;
+    text-align: center;
 }
 
 /* Mobile views */

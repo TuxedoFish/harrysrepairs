@@ -218,7 +218,7 @@ export default class PhoneBox extends React.Component {
                                                 });
                                             }}
                                             options={{
-                                                clientId: process.env.PAYPAL_CLIENT_ID,
+                                                clientId: "sb",
                                                 currency: "GBP"
                                             }}
                                         />
@@ -227,9 +227,7 @@ export default class PhoneBox extends React.Component {
                                         By clicking purchase you agree to our terms and conditions:
                                     </p>
                                     <p className="purchase-info">
-                                        <a href="/termsandconditions"> 
-                                            <Link to="/terms">Terms and Conditions</Link>
-                                        </a>
+                                        <Link to="/terms">Terms and Conditions</Link>
                                     </p>
                                 </>
                                 ) : (
