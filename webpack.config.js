@@ -7,16 +7,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
 
-const env = dotenv.config().parsed;
-  
-// reduce it to a nice object, the same as before
-const envKeys = Object.keys(env).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(env[next]);
-    return prev;
-}, {});
-
-const environment = new webpack.DefinePlugin(envKeys)
-
 module.exports = {
     context: __dirname,
     
@@ -39,8 +29,7 @@ module.exports = {
             template: './templates/index.html',
             chunks: ['index'],
             filename: './index.html' // relative to root of the application
-        }),
-        environment
+        })
     ],
     module: {
         rules: [
