@@ -218,7 +218,7 @@ export default class PhoneBox extends React.Component {
                                                 });
                                             }}
                                             options={{
-                                                clientId: "sb",
+                                                clientId: process.env.PAYPAL_CLIENT_ID,
                                                 currency: "GBP"
                                             }}
                                         />

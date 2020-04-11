@@ -4,8 +4,10 @@ const path = require( 'path' );
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const dotenv = require('dotenv');
 const webpack = require('webpack');
+
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || 'sb';
 
 module.exports = {
     context: __dirname,
@@ -29,6 +31,12 @@ module.exports = {
             template: './templates/index.html',
             chunks: ['index'],
             filename: './index.html' // relative to root of the application
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify(NODE_ENV),
+                'PAYPAL_CLIENT_ID': JSON.stringify(PAYPAL_CLIENT_ID),
+            }
         })
     ],
     module: {
