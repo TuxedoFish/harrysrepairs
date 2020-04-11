@@ -187,13 +187,13 @@ export default class PhoneBox extends React.Component {
                             </h4>
                             <div className="purchase-holder">
                                 <p className="purchase-info">
-                                    Cost: £{cost}
+                                    Cost: £{cost.toFixed(2)}
                                 </p>
                                 <p className="purchase-info">
-                                    Packaging: £{packaging}
+                                    Packaging: £{packaging.toFixed(2)}
                                 </p>
                                 <p className="purchase-info">
-                                    Total: £{cost + packaging}
+                                    Total: £{(cost + packaging).toFixed(2)}
                                 </p>
                             </div>
                             
@@ -232,9 +232,11 @@ export default class PhoneBox extends React.Component {
                                 </>
                                 ) : (
                                     <div className="paypal-button-holder">
-                                        <div class="button button-primary">
-                                            <Link to={"/phone/"+index}>View Item</Link>
-                                        </div>
+                                        <Link to={"/phone/"+index}>
+                                            <div class="button button-primary">
+                                                View Item
+                                            </div>
+                                        </Link>
                                     </div>
                                 )}
                         </div>
