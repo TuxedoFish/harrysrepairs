@@ -107,7 +107,26 @@ html {
 
 .social-media {
     padding: 20px 0 0 0;
-    margin: 0
+    margin: auto;
+    width: max-content;
+    cursor: pointer;
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-media:hover {
+    animation: poop-dance .8s infinite alternate ease-in-out;
+}
+
+@keyframes poop-dance {
+    from, 49% { transform-origin: -50% 100%; }
+    50%, 75%, to { transform-origin: 150% 100%; }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(10deg); }
 }
 
 /* Navbar

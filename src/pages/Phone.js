@@ -3,6 +3,7 @@ import React from 'react'
 
 // Component Files
 import PhoneBox from '../components/PhoneBox.jsx'
+import Footer from '../components/Footer.jsx'
 
 // Images
 
@@ -69,21 +70,7 @@ export default class Phone extends React.Component {
                 </div>
             </div>
 
-            <div class="footer">
-                <div class="container">
-                <div class="row">
-                    <div class="one-third column footer-container">
-                    <p class="social-media">💃Facebook</p>
-                    </div>
-                    <div class="one-third column footer-container">
-                    <p class="social-media">💃Twitter</p>
-                    </div>
-                    <div class="one-third column footer-container">
-                    <p class="social-media">💃Instagram</p>
-                    </div>
-                </div>
-                </div>
-            </div>
+            <Footer />
             </>
         )
     }

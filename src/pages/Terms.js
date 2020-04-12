@@ -1,6 +1,9 @@
 // React Imports
 import React from 'react'
 
+// Components
+import Footer from '../components/Footer.jsx'
+
 export default class Terms extends React.Component {
 
   render() {
@@ -160,21 +163,7 @@ export default class Terms extends React.Component {
         </div>
       </div>
 
-      <div class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="one-third column footer-container">
-              <p class="social-media">💃Facebook</p>
-            </div>
-            <div class="one-third column footer-container">
-              <p class="social-media">💃Twitter</p>
-            </div>
-            <div class="one-third column footer-container">
-              <p class="social-media">💃Instagram</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </>
   )
   }
