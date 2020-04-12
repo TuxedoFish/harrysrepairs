@@ -201,7 +201,7 @@ export default class PhoneBox extends React.Component {
                                 <>
                                     <div className="paypal-button-holder">
                                         <PayPalButton
-                                            amount={cost + packaging}
+                                            amount={(cost + packaging).toFixed(2)}
                                             currency="GBP"
                                             // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
                                             onSuccess={(details, data) => {
@@ -213,8 +213,8 @@ export default class PhoneBox extends React.Component {
                                                 return fetch("/paypal-transaction-complete", {
                                                         method: "post",
                                                         body: JSON.stringify({
-                                                        orderId: data.orderID
-                                                    })
+                                                            orderId: data.orderID
+                                                        })
                                                 });
                                             }}
                                             options={{
