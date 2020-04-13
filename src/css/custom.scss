@@ -1,0 +1,414 @@
+/* Colors
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$color-text-dark-1: #222;
+$color-text-dark-2: #555;
+$color-main: #222;
+
+$color-text-light: #fff;
+$color-text-p: #ccc;
+
+/* Text
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+p {
+    color: $color-text-p;
+}
+h1, h2, h3, h4 {
+    color: $color-text-light;
+}
+.dark-heading { 
+    color: $color-text-dark-1;
+}
+.dark-p { 
+    color: $color-text-dark-2;
+}
+
+/* Shared
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button {
+    border-radius: 100px;
+}
+
+body {
+    min-height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+#app {
+    min-height: 100vh;
+}
+
+/* Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.section {
+    padding: 8rem 0 7rem;
+    text-align: center;
+}
+.section-heading,
+.section-description {
+    margin-bottom: 1.2rem;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("../images/bg-darken.jpg");
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.square {
+    position: relative;
+    width: 50%;
+    background-color: #fff5;
+    min-width: 300px;
+}
+
+.square:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.content {position:absolute;
+    top:50%; 
+    height:100px; 
+    width:100%;
+    margin-top:-12.5%;
+    text-align:center;
+}
+
+/* Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.tandc {
+    text-align: left;
+    
+    padding: 20px 0;
+}
+
+/* Landing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.landing {
+    height: 200px;
+}
+
+/* Marquee
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.marquee-heading {
+    padding-top: 10px;
+    text-align: left;
+}
+
+/* Info
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.info {
+    background-color: #fff;
+    padding-bottom: 2rem;
+    padding-top: 0;
+    text-align: center;
+}
+.info-container {
+    top: -80px;
+}
+.value-multiplier {
+    margin-bottom: .5rem;
+}
+.instructions {
+    
+}
+.instructions-container {
+    margin-top: 5rem;
+}
+
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.footer {
+    text-align: center;
+    padding: 0;
+    background-color: $color-main;
+}
+
+.footer-container {
+    height: 60px;
+}
+
+.social-media {
+    padding: 20px 0 0 0;
+    margin: auto;
+    width: max-content;
+    cursor: pointer;
+}
+
+.social-media a {
+    text-decoration: none;
+}
+
+.social-media:hover {
+    animation: poop-dance .8s infinite alternate ease-in-out;
+}
+
+@keyframes poop-dance {
+    from, 49% { transform-origin: -50% 100%; }
+    50%, 75%, to { transform-origin: 150% 100%; }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(10deg); }
+}
+
+/* Navbar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.navbar {
+    text-align: left;
+    color: #fff;
+    background-color: $color-main;
+    padding: 0;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 102;
+}
+
+.navbar-title {
+    padding-top: 10px;
+}
+
+/* Marketplace
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.marketplace {
+    padding: 8rem 0 7rem;
+    text-align: center;
+}
+
+.marketplace-heading {
+    padding-bottom: 20px;
+}
+
+.screenshot-holder {
+    /* background: #ffffff88; */
+    background: none;
+}
+
+.carousel .slide {
+    background: none;
+}
+
+.carousel.carousel-slider {
+    /* border-radius: 10px; */
+}
+
+.carousel .slide img {
+    height: auto;
+}
+
+.carousel-holder {
+    max-width: 512px;
+    margin: auto;
+}
+
+.options-holder {
+    height: 60px;
+}
+
+.options-list, 
+.options-list-minor {
+    list-style: none;
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.option,
+.selected-option,
+.option-minor,
+.selected-option-minor {
+
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    margin-right: 35px;
+    text-decoration: none;
+    line-height: 4.5rem;
+
+    position: relative;
+    float: left;
+
+    transition: .2s linear all;
+    cursor: pointer;
+
+    padding: 0 15px;
+    margin: 0;
+
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.option-minor,
+.selected-option-minor {
+    margin-left: 0;
+    line-height: 2.5em;
+    /* border: none; */
+    transition: .2s linear all;
+    background: none;
+}
+
+.selected-option,
+.selected-option-minor {
+    color: $color-text-light;
+    background-color: #222;
+}
+
+.option:hover,
+.option-minor:hover {
+    background-color: #888;
+}
+
+.info-box {
+    text-align: left;
+}
+
+.purchase-info {
+    
+    margin-bottom: 0;
+}
+
+.purchase-holder {
+    padding-bottom: 30px;
+}
+
+.paypal-button-holder {
+    width: 150px;
+}
+
+.specification-key {
+    
+    margin: 0;
+}
+
+.specification-value {
+    margin: .2em;
+}
+
+.refurbishments-title {
+    
+    width: 100%;
+}
+
+.container-marketplace {
+    max-width: unset;
+}
+
+.phone {
+    width: 100%;
+    float: left;
+    margin-bottom: 50px;
+}
+
+.phone-name {
+    
+    text-align: left;
+}
+
+/* Phone Page */
+.phone-page-holder {
+    padding: 8rem 0 7rem;
+    text-align: center;
+}
+
+/* Mobile views */
+@media (max-width: 750px) {
+    .landing {
+        height: 400px;
+    }
+    .square {
+        margin: auto;
+    }
+    .info {
+        padding-bottom: 0;
+    }
+    .screenshot-holder {
+        margin-bottom: 20px;
+    }
+    .option,
+    .selected-option,
+    .option-minor,
+    .selected-option-minor {
+        margin: auto;
+    }
+    .options-list, 
+    .options-list-minor {
+        display: flex;
+    }
+    .notes-holder,
+    .info-box {
+        text-align: center;
+    }
+
+}
+
+/* Bigger than 550 */
+@media (min-width: 550px) {
+    .section {
+        padding: 12rem 0 11rem;
+    }
+}
+
+/* Bigger than 750 */
+@media (min-width: 750px) {
+    .hero {
+        height: 190px;
+    }
+    .hero-heading {
+        font-size: 2.6rem;
+    }
+    .section {
+        padding: 14rem 0 15rem;
+    }
+    .hero {
+        padding: 16rem 0 14rem;
+    }
+    .section-description {
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .phone {
+        top: -14rem;
+        right: 5rem;
+        max-height: 510px;
+    }
+    .phone + .phone {
+        top: -12rem;
+        max-height: 472px;
+    }
+    .categories {
+        padding: 15rem 0 8rem;
+    }
+}
+
+/* Bigger than 1000 */
+@media (min-width: 1000px) {
+    .section {
+        padding: 20rem 0 19rem;
+    }
+    .hero {
+        padding: 22rem 0;
+    }
+    .hero-heading {
+        font-size: 3.0rem;
+    }
+    .phone {
+        top: -16rem;
+        max-height: 615px;
+    }
+    .phone + .phone {
+        top: -14rem;
+        max-height: 570px;
+    }
+}

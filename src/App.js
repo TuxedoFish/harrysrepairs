@@ -16,7 +16,7 @@ import Phone from "./pages/Phone.js"
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import './css/skeleton.css'
 import './css/normalize.css'
-import './css/custom.css'
+import './css/custom.scss'
 
 export default function App() {
   return (

@@ -1,5 +1,6 @@
 // React Imports
 import React from 'react'
+import { Link } from "react-router-dom"
 
 // Component Files
 import PhoneBox from '../components/PhoneBox.jsx'
@@ -21,78 +22,71 @@ export default class Home extends React.Component {
   render() {
   return ( 
     <>
-      <div class="navbar">
-        <div class="container">
-          <h4 class="navbar-title">Harry's Repairs</h4>
+      <div className="navbar">
+        <div className="container">
+          <h4 className="navbar-title">Harry's Repairs</h4>
         </div>
       </div>
 
-      <div class="section landing parallax">
-        <div class="container">
-          <h2 class="landing-heading">Need an iPhone fixed in the Cranleigh area?</h2>
-          <p class="landing-description">📦 Get iPhones repaired 📦 Sell old iPhones 📦 Buy refurbished iPhones 📦</p>
-          <a class="button button-primary" href="mailto:harry@harrysrepairs.co.uk">Contact Me</a>
-          
-          <marquee scrollamount="10">
-            <p class="marquee-heading">Contact me at harry@harrysrepairs.co.uk</p>
-          </marquee>
+      <div className="section landing parallax">
+        <div className="container">
+          <h2 className="landing-heading">Buy Refurbished Phones</h2>
+          <a className="button button-primary" href="mailto:harry@harrysrepairs.co.uk">Email Me</a>
         </div>
       </div>
 
-      <div class="info">
-        <div class="container info-container">
-          <div class="row">
-            <div class="one-third column value">
+      <div className="info">
+        <div className="container info-container">
+          <div className="row">
+            <div className="one-third column value">
               <img src={buy} width={image_size} height={image_size}/>
-              <h5 class="value-heading">Sell Old Phones</h5>
-              <p class="value-description">Have an old iPhone that is broken but you don't use? Sell it to me for cash.</p>
+              <h5 className="dark-heading">Affordable</h5>
+              <p className="dark-p">Compared to out of the box phones and comparable refurbished phones I guarantee that the phones I offer will be the cheapest options you can find. If you can find a cheaper option online that meets the same quality get in touch and let me know so I can adjust my prices.</p>
             </div>
-            <div class="one-third column value">
+            <div className="one-third column value">
               <img src={fix} width={image_size} height={image_size}/>
-              <h5 class="value-heading">Get iPhones repaired</h5>
-              <p class="value-description">I will repair your broken iPhones: from screens to camera to home button replacements!</p>
+              <h5 className="dark-heading">Quality</h5>
+              <p className="dark-p">I go the extra mile to ensure phones are as close to perfect as possible. With a 14 day returns policy and PayPal protection I am dedicated to selling only quality refurbished phones. Unlike many large refurbished resellers, each phone involves alot of my own care and attention.</p>
             </div>
-            <div class="one-third column value">
+            <div className="one-third column value">
               <img src={sell} width={image_size} height={image_size}/>
-              <h5 class="value-heading">Buy Refurbished Phones</h5>
-              <p class="value-description">Buy iPhones that have been refurbished with working parts for much cheaper than other websites.</p>
+              <h5 className="dark-heading">Transparent</h5>
+              <p className="dark-p">Recycling technology means repairing broken phones for new owners instead of throwing them away. It is critical that these devices work as good as new. I will always note all repairs and refurbishments to the phone. Moreover I am prepared to give more detail where asked.</p>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="marketplace parallax">
-        
-        <h2 class="marketplace-heading">Refurbished Phones</h2>
-
-        <div class="container container-marketplace">
-          <div class="row">
+      
+      <div className="marketplace parallax">
+        <div className="container instructions-container">
+          <div className="row">
             {phones.map( (phone) =>
-              <PhoneBox
-                cost={phone.config.cost}
-                packaging={phone.config.packaging}
-                id={phone.config.id}
-                images={phone.config.images}
-                image_descriptions={phone.config.image_descriptions}
-                name={phone.config.name}
-                processorspeed={phone.config.processorspeed}
-                processortype={phone.config.processortype}
-                onboardram={phone.config.onboardram}
-                storage={phone.config.storage}
-                display={phone.config.display}
-                connectivity={phone.config.connectivity}
-                wireless={phone.config.wireless}
-                bluetooth={phone.config.bluetooth}
-                osinstalled={phone.config.osinstalled}
-                dimensions={phone.config.dimensions}
-                weight={phone.config.weight}
-                battery={phone.config.battery}
-                color={phone.config.color}
-                refurbs={phone.config.refurbs}
-                index={phone.index}
-                isFrontPage={true}
-              />
+              <div className="square">
+                <div className="content">
+                  <h5 className="dark-heading">{phone.config.name}</h5>
+                  <Link to={"/phone/"+phone.index}>
+                    <div class="button button-primary">
+                        View Item
+                    </div>
+                  </Link>
+                </div>
+              </div>
             )}
+          </div>
+        </div>
+      </div>
+
+      <div className="info">
+        <div className="container instructions-container">
+          <div className="row">
+            <h2 className="dark-heading">How it works</h2>
+            <div className="instructions">
+              <p className="dark-p">1. Find a phone that you wish to buy from below. Getting in touch if you need any extra information on a device.</p>
+              <p className="dark-p">2. Make sure to read the <Link to="/terms">terms and conditions</Link> and note the 14 day return policy.</p>
+              <p className="dark-p">3. Make a purchase through PayPal resting easy that you are protected by PayPal buyer's protection.</p>
+              <p className="dark-p">4. All deliveries will be done via royal mail special delivery. I will contact you personally with further details on the tracking id.</p>
+              <p className="dark-p">5. Track the delivery and wait for your new phone to be delivered.</p>
+            </div>
           </div>
         </div>
       </div>
