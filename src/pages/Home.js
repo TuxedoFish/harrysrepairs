@@ -81,7 +81,7 @@ export default class Home extends React.Component {
           <div className="row">
             <h2 className="dark-heading">How it works</h2>
             <div className="instructions">
-              <p className="dark-p">1. Find a phone that you wish to buy from below. Getting in touch if you need any extra information on a device.</p>
+              <p className="dark-p">1. Find a phone that you wish to buy. (Get in touch if you need any extra information on a device)</p>
               <p className="dark-p">2. Make sure to read the <Link to="/terms">terms and conditions</Link> and note the 14 day return policy.</p>
               <p className="dark-p">3. Make a purchase through PayPal resting easy that you are protected by PayPal buyer's protection.</p>
               <p className="dark-p">4. All deliveries will be done via royal mail special delivery. I will contact you personally with further details on the tracking id.</p>
