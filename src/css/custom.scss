@@ -216,14 +216,24 @@ html {
 
 .options-holder {
     height: 60px;
+    width: 250px;
+    margin: auto;
 }
 
 .options-list, 
 .options-list-minor {
     list-style: none;
-    float: left;
-    width: 100%;
     margin-bottom: 10px;
+}
+
+.options-list-minor {
+    width: 350px;
+    margin: auto;
+    height: 40px;
+}
+
+.notes-holder {
+    margin-left: 0;
 }
 
 .option,
@@ -273,11 +283,13 @@ html {
 }
 
 .info-box {
-    text-align: left;
+    text-align: center;
+    width: max-content;
+    max-width: 90%;
+    margin: auto;
 }
 
 .purchase-info {
-    
     margin-bottom: 0;
 }
 
@@ -286,7 +298,8 @@ html {
 }
 
 .paypal-button-holder {
-    width: 150px;
+    width: 200px;
+    margin: auto;
 }
 
 .specification-key {
@@ -314,8 +327,7 @@ html {
 }
 
 .phone-name {
-    
-    text-align: left;
+    padding: 3rem 0;
 }
 
 /* Phone Page */
@@ -338,23 +350,6 @@ html {
     }
     .info {
         padding-bottom: 0;
-    }
-    .screenshot-holder {
-        margin-bottom: 20px;
-    }
-    .option,
-    .selected-option,
-    .option-minor,
-    .selected-option-minor {
-        margin: auto;
-    }
-    .options-list, 
-    .options-list-minor {
-        display: flex;
-    }
-    .notes-holder,
-    .info-box {
-        text-align: center;
     }
 
 }
@@ -385,15 +380,6 @@ html {
         margin-left: auto;
         margin-right: auto;
     }
-    .phone {
-        top: -14rem;
-        right: 5rem;
-        max-height: 510px;
-    }
-    .phone + .phone {
-        top: -12rem;
-        max-height: 472px;
-    }
     .categories {
         padding: 15rem 0 8rem;
     }
@@ -409,13 +395,5 @@ html {
     }
     .hero-heading {
         font-size: 3.0rem;
-    }
-    .phone {
-        top: -16rem;
-        max-height: 615px;
-    }
-    .phone + .phone {
-        top: -14rem;
-        max-height: 570px;
     }
 }

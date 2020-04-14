@@ -37,7 +37,7 @@ export default class Phone extends React.Component {
 
             <div class="phone-page-holder parallax">
                 
-                <h2 class="marketplace-heading">Refurbished Phones</h2>
+                <h2 className="phone-name">{phone.config.name}</h2>
 
                 <div class="container container-marketplace">
                     <div class="row">

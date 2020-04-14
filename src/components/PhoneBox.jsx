@@ -145,7 +145,7 @@ export default class PhoneBox extends React.Component {
 
         return (
             <div className="phone">
-                <div className="one-half column screenshot-holder">
+                <div className="column screenshot-holder">
                     <div className="carousel-holder">
                         <Carousel
                             showThumbs={false}
@@ -169,8 +169,7 @@ export default class PhoneBox extends React.Component {
                         </Carousel>
                     </div>
                 </div>
-                <div className="one-half column notes-holder">
-                    <h4 className="phone-name">{name}</h4>
+                <div className="column notes-holder">
                     <div className="options-holder">
                         <ul className="options-list">
                             <li className={selected==0 ? "selected-option" : "option"} onClick={() => { this.changeSelected(0) }}>Buy</li>
@@ -197,7 +196,6 @@ export default class PhoneBox extends React.Component {
                                 </p>
                             </div>
                             
-                            {!isFrontPage ? (
                                 <>
                                     <div className="paypal-button-holder">
                                         <PayPalButton
@@ -230,15 +228,6 @@ export default class PhoneBox extends React.Component {
                                         <Link to="/terms">Terms and Conditions</Link>
                                     </p>
                                 </>
-                                ) : (
-                                    <div className="paypal-button-holder">
-                                        <Link to={"/phone/"+index}>
-                                            <div class="button button-primary">
-                                                View Item
-                                            </div>
-                                        </Link>
-                                    </div>
-                                )}
                         </div>
                     ) : null }
 
@@ -261,43 +250,45 @@ export default class PhoneBox extends React.Component {
 
                     {/* Specifications */}
                     {selected==2 ? (
-                        <div className="info-box specifications">
+                        <>
                             <ul className="options-list-minor">
                                 <li className={selectedSpecification==0 ? "selected-option-minor" : "option-minor"} onClick={() => { this.changeSelectedSpecification(0) }}>Summary</li>
                                 <li className={selectedSpecification==1 ? "selected-option-minor" : "option-minor"} onClick={() => { this.changeSelectedSpecification(1) }}>Internals</li>
                                 <li className={selectedSpecification==2 ? "selected-option-minor" : "option-minor"} onClick={() => { this.changeSelectedSpecification(2) }}>Software</li>
                             </ul>
-                            { selectedSpecification==0 ? specifications.summary.map( (specification) => 
-                                <>
-                                    <p className="specification-key">
-                                        {specification.title}
-                                    </p>
-                                    <p className="specification-value">
-                                        {specification.value}
-                                    </p>
-                                </>
-                            ) : null }
-                            { selectedSpecification==1 ? specifications.internals.map( (specification) => 
-                                <>
-                                    <p className="specification-key">
-                                        {specification.title}
-                                    </p>
-                                    <p className="specification-value">
-                                        {specification.value}
-                                    </p>
-                                </>
-                            ) : null}
-                            { selectedSpecification==2 ? specifications.software.map( (specification) => 
-                                <>
-                                    <p className="specification-key">
-                                        {specification.title}
-                                    </p>
-                                    <p className="specification-value">
-                                        {specification.value}
-                                    </p>
-                                </>
-                            ) : null}
-                        </div>
+                            <div className="info-box specifications">
+                                { selectedSpecification==0 ? specifications.summary.map( (specification) => 
+                                    <>
+                                        <p className="specification-key">
+                                            {specification.title}
+                                        </p>
+                                        <p className="specification-value">
+                                            {specification.value}
+                                        </p>
+                                    </>
+                                ) : null }
+                                { selectedSpecification==1 ? specifications.internals.map( (specification) => 
+                                    <>
+                                        <p className="specification-key">
+                                            {specification.title}
+                                        </p>
+                                        <p className="specification-value">
+                                            {specification.value}
+                                        </p>
+                                    </>
+                                ) : null}
+                                { selectedSpecification==2 ? specifications.software.map( (specification) => 
+                                    <>
+                                        <p className="specification-key">
+                                            {specification.title}
+                                        </p>
+                                        <p className="specification-value">
+                                            {specification.value}
+                                        </p>
+                                    </>
+                                ) : null}
+                            </div>
+                        </>
                     ) : null }
 
                 </div>
