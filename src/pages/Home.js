@@ -29,7 +29,7 @@ export default class Home extends React.Component {
       </div>
 
       <div className="section landing parallax">
-        <div className="container">
+        <div className="container landing-container">
           <h2 className="landing-heading">Buy Refurbished Phones</h2>
           <a className="button button-primary" href="mailto:harry@harrysrepairs.co.uk">Email Me</a>
         </div>
@@ -58,7 +58,7 @@ export default class Home extends React.Component {
       </div>
       
       <div className="marketplace parallax">
-        <div className="container instructions-container">
+        <div className="container">
           <div className="row">
             {phones.map( (phone) =>
               <div className="square">
