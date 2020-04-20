@@ -65,7 +65,9 @@ html {
 
 .square {
     position: relative;
-    width: 50%;
+    width: 46%;
+    margin: 2%;
+    float: left;
     background-color: #fff5;
 }
 
@@ -227,7 +229,7 @@ html {
 }
 
 .options-list-minor {
-    width: 350px;
+    width: 355px;
     margin: auto;
     height: 40px;
 }
@@ -303,7 +305,8 @@ html {
 }
 
 .specification-key {
-    
+    color: #222;
+    text-decoration: underline;
     margin: 0;
 }
 
