@@ -11,6 +11,7 @@ import {
 import Home from "./pages/Home.js"
 import Terms from "./pages/Terms.js"
 import Phone from "./pages/Phone.js"
+import Polls from "./pages/Polls.js"
 
 // All CSS Files
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -27,9 +28,10 @@ export default function App() {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/terms" component={Terms} />
-                <Route path="/phone/:index">
+                <Route path="/polls" component={Polls} />
+                {/* <Route path="/phone/:index">
                     <PhonePage />
-                </Route>
+                </Route> */}
             </Switch>
         </div>
     </Router>

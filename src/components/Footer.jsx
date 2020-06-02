@@ -34,7 +34,7 @@ export default class PhoneBox extends React.Component {
                         </div>
                         <div className="one-third column footer-container">
                            <div className="social-media">
-                                <a href="https://www.instagram.com/harrysrepairs/">
+                                <a href="https://www.instagram.com/harryliversedge/">
                                     💃Instagram
                                 </a>
                             </div>
