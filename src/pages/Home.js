@@ -40,18 +40,18 @@ export default class Home extends React.Component {
           <div className="row">
             <div className="one-third column value">
               <img src={buy} width={image_size} height={image_size}/>
-              <h5 className="dark-heading">Affordable</h5>
-              <p className="dark-p">Compared to out of the box phones and comparable refurbished phones I guarantee that the phones I offer will be the cheapest options you can find. If you can find a cheaper option online that meets the same quality get in touch and let me know so I can adjust my prices.</p>
+              <h5 className="dark-heading">Repairs</h5>
+              <p className="dark-p">Recycling technology means repairing broken phones for new owners instead of throwing them away. It is critical that these devices work as good as new. I will always note all repairs and refurbishments to the phone. Moreover I am prepared to give more detail where asked.</p>
             </div>
             <div className="one-third column value">
               <img src={fix} width={image_size} height={image_size}/>
-              <h5 className="dark-heading">Quality</h5>
-              <p className="dark-p">I go the extra mile to ensure phones are as close to perfect as possible. With a 14 day returns policy and PayPal protection I am dedicated to selling only quality refurbished phones. Unlike many large refurbished resellers, each phone involves alot of my own care and attention.</p>
+              <h5 className="dark-heading">App development</h5>
+              <p className="dark-p">I have developed multiple apps that are currently on the app store. My work includes Refme, a referencing app for students and Pendulum Drop, a casual mobile game for people of all ages.</p>
             </div>
             <div className="one-third column value">
               <img src={sell} width={image_size} height={image_size}/>
-              <h5 className="dark-heading">Transparent</h5>
-              <p className="dark-p">Recycling technology means repairing broken phones for new owners instead of throwing them away. It is critical that these devices work as good as new. I will always note all repairs and refurbishments to the phone. Moreover I am prepared to give more detail where asked.</p>
+              <h5 className="dark-heading">Electronics</h5>
+              <p className="dark-p">As well as all of this I am learning to create guitar pedals from scratch. I have always been curious about electronics and pursued a degree in Physics and Mathematics and Statistics because of my love of electronics. Having graduated I am trying to apply this learning to making guitar pedals!</p>
             </div>
           </div>
         </div>

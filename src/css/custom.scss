@@ -351,6 +351,22 @@ html {
     text-align: left;
 }
 
+/** BODYPIX GAME **/
+.game-camera {
+    margin: 50px auto;
+    width: 640px;
+}
+
+// .game-canvas-holder {
+    
+// }
+
+// .game-canvas-holder canvas {
+//     position: absolute;
+//     left:0;
+//     top:0;
+// }
+
 /* Mobile views */
 @media (max-width: 750px) {
     .landing {
