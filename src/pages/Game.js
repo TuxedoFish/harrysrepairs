@@ -64,7 +64,7 @@ export default class Game extends React.Component {
 
                         let model, timeElapsed, score, isPlaying, video, instruction_text,
                         c_out, ctx_out, c_tmp, ctx_tmp, left, size, state_text, button,
-                        isUserInArea;
+                        isUserInArea, maxTimer;
 
                         function init() {
                             // The webcam video
@@ -90,6 +90,7 @@ export default class Game extends React.Component {
 
                             left = 100;
                             size = 400;
+                            maxTimer = 3;
                             
                             console.log("Started");
                             computeFrame();
@@ -107,6 +108,7 @@ export default class Game extends React.Component {
                                 console.log("Am i playing now? " + isPlaying);
                                 left = 100;
                                 size = 400;
+                                maxTimer = 3;
                             }
                         }
 
@@ -117,6 +119,8 @@ export default class Game extends React.Component {
                                 isPlaying = false;
                                 console.log("Am i playing now? " + isPlaying);
                                 state_text.innerHTML = "Your score was: " + score;
+                                left = 100;
+                                size = 400;
                             }
                         }
 
@@ -124,7 +128,7 @@ export default class Game extends React.Component {
                             // If still playing
                             if(isPlaying) {
                                 timeElapsed += 200;
-                                let currentTime = 5 - Math.round(timeElapsed/1000);
+                                let currentTime = maxTimer - Math.round(timeElapsed/1000);
                                 state_text.innerHTML = "Score: " + score + " Timer: " + currentTime;
                                
                                 if(currentTime <= 0) {
@@ -132,6 +136,12 @@ export default class Game extends React.Component {
                                         score += 1;
                                         timeElapsed = 0;
                                         changeArea();
+                                        if(score > 3) {
+                                            maxTimer = 2;
+                                        }
+                                        if(score > 5) {
+                                            maxTimer = 1;
+                                        }
                                     } else {
                                         stop();   
                                     }
@@ -140,7 +150,9 @@ export default class Game extends React.Component {
                         }
 
                         function changeArea() {
-                            size -= 20;
+                            if(size > 200) {
+                                size -= 20;
+                            }
                             left = Math.round(Math.random() * (640 - size));
                         }
 
@@ -251,6 +263,7 @@ export default class Game extends React.Component {
                 <div className="section parallax">
                     <div className="container landing-container">
                         <div className="game-camera">
+                            <h2>Welcome to "hole in the wall"</h2>
                             <Webcam 
                                 className="raw-camera"
                                 audio={false} 
