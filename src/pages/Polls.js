@@ -33,7 +33,7 @@ export default class Polls extends React.Component {
   }
 
   getVote = (voteID) => {
-    axios.get(`http://lda.data.parliament.uk/commonsdivisions/id/${voteID}.json`)
+    axios.get(`https://lda.data.parliament.uk/commonsdivisions/id/${voteID}.json`)
       .then((response) => {
         console.log(response.data);
 
