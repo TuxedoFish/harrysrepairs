@@ -94,7 +94,8 @@ html {
     padding-bottom: 100%;
 }
 
-.content {position:absolute;
+.content {
+    position:absolute;
     top:50%; 
     height:100px; 
     width:100%;
@@ -149,7 +150,7 @@ html {
 .footer {
     text-align: center;
     padding: 0;
-    background-color: $color-background;
+    background-color: $color-main;
 }
 
 .footer-container {
@@ -163,7 +164,7 @@ html {
     cursor: pointer;
 
     a {
-        color: $color-text-p;
+        color: $color-text-light;
     }
 }
 
@@ -365,8 +366,39 @@ html {
     text-align: left;
 }
 
+/** BODYPIX GAME **/
+.game-camera {
+    margin: 50px auto;
+    width: 640px;
+}
+
+/* Portfolio
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.wide-container {
+    width: 80%;
+    margin: auto;
+    padding: 3rem 0;
+}
+
+.portfolio-row {
+    
+}
+
+.portfolio-image {
+    width: 100%;
+    max-width: 500px;
+}
+
+.portfolio-content-right {
+    text-align: right;
+}
+
 /* Mobile views */
 @media (max-width: 750px) {
+    .portfolio-content {
+        text-align: center;
+    }
     .landing {
         height: 400px;
     }

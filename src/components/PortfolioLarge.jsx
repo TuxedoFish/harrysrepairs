@@ -20,16 +20,50 @@ export default class PortfolioLarge extends React.Component {
     
     render() {
         
-        const { title, description, link, image } = this.props
+        const { title, description, link, image, index } = this.props
 
-        return (
-            <div className={"container info-container " + (index%2==0) ? "parallax" : "no-parallax"}>
-                <div className="row">
-                    <h5>{title}</h5>
-                    <p>{description}</p>
-                    <img src={image} width={"500"} height={"500"}/>
+        const isEven = (index%2==0)
+
+        if(isEven) {
+            // Parallax and left aligned
+            return (
+                <div className={"parallax"}>
+                    <div className="wide-container">
+                        <div class="row portfolio-row">
+                            <div className="one-third column">
+                                <img className="portfolio-image" src={image}/>
+                            </div>
+                            <div className="two-thirds column portfolio-content">
+                                <h2>{title}</h2>
+                                {description.map( paragraph => (
+                                    <p>{paragraph}</p>
+                                ))}
+                                <a className="button button-primary" href={link}>Discover</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        } else {
+            // White background and right aligned
+            return (
+                <div className={"info"}>
+                    <div className="wide-container">
+                        <div class="row portfolio-row">
+                            <div className="two-thirds column portfolio-content portfolio-content-right">
+                                <h2 className="dark-heading">{title}</h2>
+                                {description.map( paragraph => (
+                                    <p>{paragraph}</p>
+                                ))}
+                                <a className="button button-primary" href={link}>Discover</a>
+                            </div>
+                            <div className="one-third column">
+                                <img className="portfolio-image" src={image}/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
     }
 }
