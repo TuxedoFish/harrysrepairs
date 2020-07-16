@@ -10,6 +10,7 @@ import Footer from '../components/Footer.jsx'
 import buy from '../images/buy.svg'
 import fix from '../images/fix.svg'
 import sell from '../images/sell.svg'
+import costs from '../images/costs.png'
 
 // Phone data
 import { phones } from '../sales/for_sale.jsx'
@@ -33,7 +34,8 @@ export default class Home extends React.Component {
 
         <div className="section landing parallax">
           <div className="container landing-container">
-            <h2 className="landing-heading">Harry Liversedge</h2>
+            <h2 className="landing-heading">Local Cranleigh Phone Repairs</h2>
+            <h4 className="landing-heading">If you are instead looking for my portfolio:</h4>
             <a className="button button-primary" href="/portfolio" style={{width: '150px'}}>Portfolio</a>
           </div>
         </div>
@@ -43,20 +45,35 @@ export default class Home extends React.Component {
             <div className="row">
               <div className="one-third column value">
                 <img src={buy} width={image_size} height={image_size}/>
-                <h5 className="dark-heading">Repairs</h5>
-                <p className="dark-p">Recycling technology means repairing broken phones for new owners instead of throwing them away. It is critical that these devices work as good as new. I do repairs in the Cranleigh/Guildford area, get in touch with me directly as I am currently offering repairs for the price of parts + £20 per repair. This price will be much cheaper then any store!</p>
+                <h5 className="dark-heading">Cheap</h5>
+                <p className="dark-p">
+                  I guarantee my prices are the cheapest you will find in Surrey and if not I will match the price of any vendor you can find!
+                </p>
               </div>
               <div className="one-third column value">
                 <img src={fix} width={image_size} height={image_size}/>
-                <h5 className="dark-heading">App development</h5>
-                <p className="dark-p">I have developed multiple apps that are currently on the Google Play Store. My work includes RefMe, a referencing app for students and Pendulum Drop, a casual mobile game for people of all ages. Alongside this I have apps that I am working on: Coronaware, a contact tracing app for the coronavirus and W8S, a virtual working out partner on your phone.</p>
+                <h5 className="dark-heading">Reliable</h5>
+                <p className="dark-p">
+                  I only use OEM screens and have repaired 10 phones as of 16/07/20. I have had great feedback on my repairs through my facebook page:
+                </p>
+                <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">harry's repairs on facebook</a>
               </div>
               <div className="one-third column value">
                 <img src={sell} width={image_size} height={image_size}/>
-                <h5 className="dark-heading">Electronics</h5>
-                <p className="dark-p">As well as all of this I am learning to create guitar pedals from scratch. I have always been curious about electronics and pursued a degree in Physics and Mathematics and Statistics because of my love of electronics. Having graduated, I am trying to apply this learning to making guitar pedals, but more generally I am interested in all types of electronics projects</p>
+                <h5 className="dark-heading">Personal</h5>
+                <p className="dark-p">
+                  I can communicate directly with you and I will always be honest and show you evidence of my work as I go! 
+                </p>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className={"parallax"}>
+          <div className="wide-container">
+              <div class="row portfolio-row">
+                <img src={costs} className="costs-image"></img>
+              </div>
           </div>
         </div>
         

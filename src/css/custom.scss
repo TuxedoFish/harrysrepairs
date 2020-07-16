@@ -163,7 +163,14 @@ html {
 .footer {
     text-align: center;
     padding: 0;
-    background-color: $color-main;
+    background-color: $color-background;
+}
+
+.costs-image {
+    width: 50%;
+    position: relative;
+    margin: auto;
+    display: block;
 }
 
 .footer-container {
@@ -177,7 +184,7 @@ html {
     cursor: pointer;
 
     a {
-        color: $color-text-light;
+        color: $color-text-dark-2;
     }
 }
 
@@ -201,8 +208,7 @@ html {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .navbar {
     text-align: left;
-    color: #fff;
-    background-color: $color-main;
+    background-color: $color-background;
     padding: 0;
     height: 60px;
     position: fixed;
@@ -211,6 +217,7 @@ html {
 }
 
 .navbar-title {
+    color: $color-text-dark-1;
     padding-top: 10px;
 }
 
@@ -409,6 +416,9 @@ html {
 
 /* Mobile views */
 @media (max-width: 750px) {
+    .costs-image {
+        width: 100%;
+    }
     .portfolio-content {
         text-align: center;
     }
