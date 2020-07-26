@@ -91,8 +91,8 @@ export default class Quote extends React.Component {
                 <div className="small-spacing"></div>
 
                 <Container>
-                    <Grid centered columns={2}>
-                        <Grid.Column>
+                    <Grid centered columns={2} doubling>
+                        <Grid.Column mobile={8}>
                         <Header as="h1" textAlign="center" color="blue" inverted size="huge">
                             What phone do you have?
                         </Header>
@@ -121,9 +121,9 @@ export default class Quote extends React.Component {
 
                 <Container>
                     
-                    <Grid columns={3}>
+                    <Grid columns={3} centered doubling className="repair-quote-holder">
                         {pricing.map( (phone, key) => 
-                            <Grid.Column key={key}>
+                            <Grid.Column key={key} stretched>
                                 <Segment>
                                     <Header as="h2" textAlign="center">
                                         {phone.name}
@@ -137,6 +137,10 @@ export default class Quote extends React.Component {
                         )}
                     </Grid>
                 </Container>
+
+                <div className="small-spacing"></div>
+                
+                <Footer />
             </>
         )
     }
