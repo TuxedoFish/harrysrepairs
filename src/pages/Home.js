@@ -31,7 +31,7 @@ export default class Home extends React.Component {
 
         <div className="section landing parallax">
           <div className="container landing-container">
-            <h2 className="landing-heading">Local Cranleigh Phone Repairs</h2>
+            <h2 className="landing-heading">Phone Repairs in Cranleigh</h2>
           </div>
         </div>
 
@@ -49,7 +49,7 @@ export default class Home extends React.Component {
                 <img src={fix} width={image_size} height={image_size}/>
                 <h5 className="dark-heading">Reliable</h5>
                 <p className="dark-p">
-                  I only use OEM screens and have repaired 10 phones as of 16/07/20. I have had great feedback on my repairs through my facebook page:
+                  I only use OEM screens and have repaired 10 phones as of 16/07/20. I have had great feedback on my repairs through my Facebook page:
                 </p>
                 <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">harry's repairs on facebook</a>
               </div>
