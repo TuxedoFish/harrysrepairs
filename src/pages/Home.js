@@ -11,7 +11,7 @@ import HeaderNav from '../components/HeaderNav/HeaderNav.jsx';
 import buy from '../images/buy.svg'
 import fix from '../images/fix.svg'
 import sell from '../images/sell.svg'
-import costs from '../images/costs.png'
+import costs from '../images/costs.jpg'
 
 // Phone data
 import { phones } from '../sales/for_sale.jsx'
