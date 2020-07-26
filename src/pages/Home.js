@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 // Component Files
 import PhoneBox from '../components/PhoneBox.jsx'
 import Footer from '../components/Footer.jsx'
+import HeaderNav from '../components/HeaderNav/HeaderNav.jsx';
 
 // Images
 import buy from '../images/buy.svg'
@@ -26,17 +27,11 @@ export default class Home extends React.Component {
     
     return ( 
       <>
-        <div className="navbar">
-          <div className="container">
-            <h4 className="navbar-title">Harry's Repairs</h4>
-          </div>
-        </div>
+        <HeaderNav/>
 
         <div className="section landing parallax">
           <div className="container landing-container">
             <h2 className="landing-heading">Local Cranleigh Phone Repairs</h2>
-            <h4 className="landing-heading">If you are instead looking for my portfolio:</h4>
-            <a className="button button-primary" href="/portfolio" style={{width: '150px'}}>Portfolio</a>
           </div>
         </div>
 

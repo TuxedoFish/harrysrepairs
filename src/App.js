@@ -14,6 +14,7 @@ import Phone from "./pages/Phone.js"
 import Polls from "./pages/Polls.js"
 import Game from "./pages/Game.js"
 import Portfolio from "./pages/Portfolio.js"
+import Quote from "./pages/Quote/Quote.js";
 
 // All CSS Files
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -32,6 +33,7 @@ export default function App() {
                 <Route path="/terms" component={Terms} />
                 <Route path="/polls" component={Polls} />
                 <Route path="/game" component={Game} />
+                <Route path="/quote" component={Quote} />
                 <Route path="/portfolio" component={Portfolio} />
                 {/* <Route path="/phone/:index">
                     <PhonePage />
@@ -40,17 +42,4 @@ export default function App() {
         </div>
     </Router>
   );
-}
-
-function HomePage() {
-    return <Home/>;
-}
-
-function TermsPage() {
-    return <Terms/>
-}
-
-function PhonePage() {
-    let { index } = useParams();
-    return <Phone index={index} />
 }

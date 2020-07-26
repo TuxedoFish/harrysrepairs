@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import PhoneBox from '../components/PhoneBox.jsx'
 import Footer from '../components/Footer.jsx'
 import PortfolioLarge from '../components/PortfolioLarge.jsx'
+import HeaderNav from '../components/HeaderNav/HeaderNav.jsx';
 
 // Images
 import buy from '../images/buy.svg'
@@ -194,11 +195,7 @@ export default class Home extends React.Component {
     console.log(portfolio)
     return ( 
       <>
-        <div className="navbar">
-          <div className="container">
-            <h4 className="navbar-title">Harry's Repairs</h4>
-          </div>
-        </div>
+        <HeaderNav />
 
         <div className="section landing parallax">
           <div className="container landing-container">
