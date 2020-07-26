@@ -42,22 +42,21 @@ export default class Home extends React.Component {
                 <img src={buy} width={image_size} height={image_size}/>
                 <h5 className="dark-heading">Cheap</h5>
                 <p className="dark-p">
-                  I guarantee my prices are the cheapest you will find in Surrey and if not I will match the price of any vendor you can find!
+                  My prices are the cheapest you will find in Surrey and I will match the price of any repair house. <a href="/quote">Click here for a quote</a>.
                 </p>
               </div>
               <div className="one-third column value">
                 <img src={fix} width={image_size} height={image_size}/>
                 <h5 className="dark-heading">Reliable</h5>
                 <p className="dark-p">
-                  I only use OEM screens and have repaired 10 phones as of 16/07/20. I have had great feedback on my repairs through my Facebook page:
+                  I only use OEM screens and always make sure the phone is completely functional before returning it. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/reviews/?ref=page_internal">Click here for my reviews</a>.
                 </p>
-                <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">harry's repairs on facebook</a>
               </div>
               <div className="one-third column value">
                 <img src={sell} width={image_size} height={image_size}/>
                 <h5 className="dark-heading">Personal</h5>
                 <p className="dark-p">
-                  I can communicate directly with you and I will always be honest and show you evidence of my work as I go! 
+                  I communicate directly and constantly throughout the repair process. I am always honest and provide all evidence of my work as I go. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in contact</a>.
                 </p>
               </div>
             </div>
