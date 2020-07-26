@@ -64,13 +64,13 @@ export default class Home extends React.Component {
           </div>
         </div>
 
-        <div className={"parallax"}>
+        {/* <div className={"parallax"}>
           <div className="wide-container">
               <div class="row portfolio-row">
                 <img src={costs} className="costs-image"></img>
               </div>
           </div>
-        </div>
+        </div> */}
         
         {/* <div className="marketplace parallax">
           <div className="container">

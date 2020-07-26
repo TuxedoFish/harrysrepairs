@@ -27,10 +27,17 @@ export class HeaderNav extends React.Component {
         </Menu.Item>
         <Menu.Menu position='right'>
             {/* Link to home */}
-            <Menu.Item as={ Link } name='home' to='' className="header-link">
+            {/* <Menu.Item as={ Link } name='home' to='' className="header-link">
                 <Icon className='header-icon' name='home' size='large'/>
                 <Header as="h2" textAlign="left" className="website-title">
                     Home
+                </Header>
+            </Menu.Item> */}
+            {/* Link to quote */}
+            <Menu.Item as={ Link } name='quote' to='quote' className="header-link">
+                <Icon className='header-icon' name='money bill alternate outline' size='large'/>
+                <Header as="h2" textAlign="left" className="website-title">
+                    Quote
                 </Header>
             </Menu.Item>
             {/* Link to portfolio */}

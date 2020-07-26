@@ -16,7 +16,48 @@ import {
     Header,
     Message,
     Segment,
+    Image,
  } from 'semantic-ui-react';
+import PhoneBox from '../../components/Footer.jsx';
+import iphone from '../../images/iphone.png'
+
+const pricing = [
+    {
+        name: "iPhone 6",
+        price: 50.00,
+        image: iphone
+    },
+    {
+        name: "iPhone 6 Plus ",
+        price: 60.00,
+        image: iphone
+    },
+    {
+        name: "iPhone 7",
+        price: 70.00,
+        image: iphone
+    },
+    {
+        name: "iPhone 7 Plus",
+        price: 70.00,
+        image: iphone
+    },
+    {
+        name: "iPhone 8",
+        price: 75.00,
+        image: iphone
+    },
+    {
+        name: "iPhone 8 Plus",
+        price: 80.00,
+        image: iphone
+    },
+    {
+        name: "iPhone SE 2",
+        price: 75.00,
+        image: iphone
+    },
+]
 
 export default class Quote extends React.Component {
 
@@ -47,20 +88,22 @@ export default class Quote extends React.Component {
             <>
                 <HeaderNav/>
                 
+                <div className="small-spacing"></div>
+
                 <Container>
                     <Grid centered columns={2}>
-                        
-                        <div className="small-spacing"></div>
-
                         <Grid.Column>
-                        <Header as="h2" textAlign="center">
+                        <Header as="h1" textAlign="center" color="blue" inverted size="huge">
                             What phone do you have?
                         </Header>
+
+                        <div className="tiny-spacing"></div>
+
                         <Segment>
-                            <Form size="large">
+                            <Form size="huge">
                             <Form.Input
                                 fluid
-                                icon="mobile"
+                                icon="search"
                                 iconPosition="left"
                                 placeholder="e.g. iPhone 7 Plus"
                             />
@@ -71,6 +114,27 @@ export default class Quote extends React.Component {
                             Any questions? <a  href="mailto:harry@harrysrepairs.co.uk">Email me</a>
                         </Message>
                         </Grid.Column>
+                    </Grid>
+                </Container>
+
+                <div className="small-spacing"></div>
+
+                <Container>
+                    
+                    <Grid columns={3}>
+                        {pricing.map( (phone, key) => 
+                            <Grid.Column key={key}>
+                                <Segment>
+                                    <Header as="h2" textAlign="center">
+                                        {phone.name}
+                                    </Header>
+                                    <Image src={phone.image} size="small" centered/>
+                                    <Header as="h2" textAlign="center">
+                                        {"Screen:  £" + phone.price}
+                                    </Header>
+                                </Segment>
+                            </Grid.Column>
+                        )}
                     </Grid>
                 </Container>
             </>

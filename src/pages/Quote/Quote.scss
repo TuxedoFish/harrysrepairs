@@ -2,6 +2,24 @@
     height: 10rem;
     width: 100%;
 }
+.tiny-spacing {
+    height: 5rem;
+    width: 100%;
+}
 .continue-button {
     width: 100%;
+}
+/* Makes the background parallax */
+#app {
+    /* The image used */
+    background-image: url("../../images/bg-darken.jpg");
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.column {
+    margin: 0 !important; 
 }
