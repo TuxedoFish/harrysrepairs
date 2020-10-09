@@ -31,7 +31,7 @@ export default class Home extends React.Component {
 
         <div className="section landing parallax">
           <div className="container landing-container">
-            <h2 className="landing-heading">Phone Repairs in Cranleigh</h2>
+            <h2 className="landing-heading">Phone Repairs in Earl's Court</h2>
           </div>
         </div>
 
@@ -42,7 +42,7 @@ export default class Home extends React.Component {
                 <img src={buy} width={image_size} height={image_size}/>
                 <h5 className="dark-heading">Cheap</h5>
                 <p className="dark-p">
-                  My prices are the cheapest you will find in Surrey and I will match the price of any repair house. <a href="/quote">Click here for a quote</a>.
+                  My prices are the cheapest you will find in Surrey and I will match the price of any repair house. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in touch for a quote</a>.
                 </p>
               </div>
               <div className="one-third column value">

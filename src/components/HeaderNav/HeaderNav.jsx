@@ -4,7 +4,9 @@ import {
     Menu, 
     Icon,
     Header,
-    Responsive
+    Responsive,
+    Sidebar,
+    Segment
 } from 'semantic-ui-react';
 import './HeaderNav.scss';
 import logo from '../../images/logo.png';
@@ -14,11 +16,72 @@ import {
     Link,
 } from "react-router-dom";
 
+const menuItems = (
+    <>
+        {/* Link to home */}
+            <Menu.Item as={ Link } name='home' to='' className="header-link">
+            <Icon className='header-icon' name='home' size='large'/>
+            <Header as="h2" textAlign="center" className="website-title">
+                Home
+            </Header>
+        </Menu.Item>
+        {/* Link to quote */}
+        {/* <Menu.Item as={ Link } name='quote' to='quote' className="header-link">
+            <Icon className='header-icon' name='money bill alternate outline' size='large'/>
+            <Header as="h2" textAlign="left" className="website-title">
+                Quote
+            </Header>
+        </Menu.Item> */}
+        {/* Link to portfolio */}
+        <Menu.Item as={ Link } name='portfolio' to='portfolio' className="header-link">
+            <Icon className='header-icon' name='grid layout' size='large'/>
+            <Header as="h2" textAlign="center" className="website-title">
+                Portfolio
+            </Header>
+        </Menu.Item>    
+    </>
+)
+
 export class HeaderNav extends React.Component {
+
+  constructor(props) {
+      super(props)
+
+      this.state = {
+          sidebar: false,
+      }
+  }
+
+  toggleSideBar = () => {
+    
+    const { sidebar } = this.state
+    console.log("Toggled sidebar: " + sidebar)
+
+    this.setState({
+        sidebar: !sidebar
+    })
+
+  }
+
   render() {
+
+    const { sidebar } = this.state
+
     return (
       <>
         <Responsive {...Responsive.onlyMobile}>
+            
+            <Sidebar
+                visible={sidebar}
+                as={Menu}
+                animation='overlay'
+                icon='labeled'
+                vertical
+                width='thin'
+            >
+                {menuItems}
+            </Sidebar>
+
             <Menu borderless className='top-menu' fixed='top'>
                 <Menu.Item header className='logo'>
                     <Image src={logo} size='tiny'/>
@@ -29,7 +92,7 @@ export class HeaderNav extends React.Component {
                     </Header>
                 </Menu.Item>
                 <Menu.Menu position='right'>
-                    <Menu.Item as={ Link } name='home' to='' className="header-link">
+                    <Menu.Item as={ Link } onClick={this.toggleSideBar} name='home' className="header-link">
                         <Icon className='header-icon' name='bars' size='large'/>
                     </Menu.Item>
                 </Menu.Menu>
@@ -47,27 +110,7 @@ export class HeaderNav extends React.Component {
                     </Header>
                 </Menu.Item>
                 <Menu.Menu position='right'>
-                    {/* Link to home */}
-                    <Menu.Item as={ Link } name='home' to='' className="header-link">
-                        <Icon className='header-icon' name='home' size='large'/>
-                        <Header as="h2" textAlign="left" className="website-title">
-                            Home
-                        </Header>
-                    </Menu.Item>
-                    {/* Link to quote */}
-                    <Menu.Item as={ Link } name='quote' to='quote' className="header-link">
-                        <Icon className='header-icon' name='money bill alternate outline' size='large'/>
-                        <Header as="h2" textAlign="left" className="website-title">
-                            Quote
-                        </Header>
-                    </Menu.Item>
-                    {/* Link to portfolio */}
-                    <Menu.Item as={ Link } name='portfolio' to='portfolio' className="header-link">
-                        <Icon className='header-icon' name='grid layout' size='large'/>
-                        <Header as="h2" textAlign="left" className="website-title">
-                            Portfolio
-                        </Header>
-                    </Menu.Item>    
+                    {menuItems}
                 </Menu.Menu>
             </Menu>
         </Responsive>
