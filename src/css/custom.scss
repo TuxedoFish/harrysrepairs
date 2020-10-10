@@ -25,6 +25,12 @@ h1, h2, h3, h4 {
 .dark-p { 
     color: $color-text-dark-2;
 }
+.light-p { 
+    color: $color-text-p;
+}
+.light-h { 
+    color: $color-text-light;
+}
 
 /* Shared
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -71,6 +77,10 @@ html {
 /* Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .section {
+    padding: 8rem 0 7rem;
+    text-align: center;
+}
+.section-low-padding {
     padding: 8rem 0 7rem;
     text-align: center;
 }

@@ -21,6 +21,24 @@ import { motion } from "framer-motion"
 
 const image_size = "150px"
 
+const reviews = [
+  {
+    name: 'Nick',
+    review: 'Dropped my phone to Harry for an iPhone 6 screen repair, he told me to come back in a hour and it will be ready, very quick turn around. I fully recommend him!!! What a lovely chap, priced brilliantly too!',
+    date: `4th July '20`
+  },
+  {
+    name: 'Ben',
+    review: 'Great bloke, explains everything he’s doing with the phone and gets it fixed the same day and shipped. Couldn’t recommend using his repair service any more... It’s also the cheapest screen repair I’ve seen advertised in the Surrey/Hampshire (Before moving to London) area.',
+    date: `16th July '20`
+  },
+  {
+    name: 'Darren',
+    review: 'So please(d) with the screen replacement Harry did. Quick, great price, and nice follow up, telling me to let him know if I get any problems. Highly recommended',
+    date: `7th July '20`
+  },
+]
+
 export default class Home extends React.Component {
 
   render() {
@@ -59,6 +77,21 @@ export default class Home extends React.Component {
                   I communicate directly and constantly throughout the repair process. I am always honest and provide all evidence of my work as I go. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in contact</a>.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="section-low-padding parallax">
+        <div className="container">
+            <h2 className="landing-heading">Customer reviews</h2>
+            <div className="row">
+              {reviews.map( (review) => 
+                <div className="one-third column value">
+                  <p className="light-p">"{review.review}"</p>
+                  <h5 className="light-h">- {review.name}</h5>
+                  <p className="light-h">{review.date}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
