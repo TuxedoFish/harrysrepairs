@@ -23,19 +23,19 @@ const image_size = "150px"
 
 const reviews = [
   {
-    name: 'Nick',
-    review: 'Dropped my phone to Harry for an iPhone 6 screen repair, he told me to come back in a hour and it will be ready, very quick turn around. I fully recommend him!!! What a lovely chap, priced brilliantly too!',
-    date: `4th July '20`
+    name: 'Benedict',
+    review: 'Great service and definitely the lowest price I could find in Chelsea & Kensington. Battery replacement done in well under an hour and excellent customer service. Would 100% recommend',
+    date: `12th November '20`
   },
   {
-    name: 'Ben',
-    review: 'Great bloke, explains everything he’s doing with the phone and gets it fixed the same day and shipped. Couldn’t recommend using his repair service any more... It’s also the cheapest screen repair I’ve seen advertised in the Surrey/Hampshire (Before moving to London) area.',
-    date: `16th July '20`
+    name: 'George',
+    review: 'Very knowledgeable repairer who knows his stuff very well. Had to get my IPhone 7 home button replaced, and was very put at ease with Harry’s knowledge of the internal routings of the phone and how to take apart and replace every component. Very reasonably priced (far better than any companies offering similar services), which coupled with the peace of mind of Harry working on the phone, means that I cannot recommend Harry’s Repairs service enough 10/10',
+    date: `7th November '20`
   },
   {
-    name: 'Darren',
-    review: 'So please(d) with the screen replacement Harry did. Quick, great price, and nice follow up, telling me to let him know if I get any problems. Highly recommended',
-    date: `7th July '20`
+    name: 'Rob',
+    review: 'I’m impressed with the level of service provided as my phone was repaired on the day it was received and then it was sent back to me on the same day in a very well packaged box to protect the phone. Harry offers a very good deal which is cheaper than most repair shops. If I ever have any problems in the future with my phone then I’m definitely using Harry’s repairs. 10/10 and a great bloke.',
+    date: `23rd October '20`
   },
 ]
 
