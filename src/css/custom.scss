@@ -2,6 +2,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 $color-background: #fff;
+$color-background-dark: #000;
 
 $color-text-dark-1: #222;
 $color-text-dark-2: #555;
@@ -168,7 +169,7 @@ html {
     margin: 5rem auto;
 }
 
-.review-container {
+.large-container {
     width: 100%;
     padding: 0 50px;
 }
@@ -176,9 +177,47 @@ html {
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .footer {
-    text-align: center;
-    padding: 0;
+    text-align: left;
+    padding: 20px;
+    background-color: $color-background-dark;
+    color: white;
+}
+
+.footer-main {
     background-color: $color-background;
+    padding: 50px 0;
+
+    h4 {
+        color: black;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        border-bottom: #000 1px solid;
+    }
+
+    p {
+        color: black;
+        margin-bottom: 7px;
+    }
+
+    h5 {
+        color: $color-background;
+    }
+
+    ul {
+        list-style-type: square;
+    }
+
+    li {
+        margin-bottom: 0;
+        a {
+            color: black;
+            transition: color linear .2s;
+        }
+        a:hover {
+            color: #ddd;
+        }
+    }
+
 }
 
 .costs-image {
@@ -443,9 +482,17 @@ html {
     .fb-post {
         padding-bottom: 20px;
     }
-    .review-container {
+    .full-width-mobile {
         padding: 0;
         overflow: hidden;
+    }
+    .footer-main {
+        .hidden {
+            display: none;
+        }
+        .columns {
+            margin-bottom: 20px;
+        }
     }
     .landing {
         height: 400px;

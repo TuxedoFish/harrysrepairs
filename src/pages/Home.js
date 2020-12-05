@@ -76,7 +76,7 @@ export default class Home extends React.Component {
         </div>
 
         <div className="section-low-padding parallax">
-        <div className="review-container">
+        <div className="large-container full-width-mobile">
             <h2 className="landing-heading">Customer reviews</h2>
             <div className="row">
               {reviews.map( (review) => 
