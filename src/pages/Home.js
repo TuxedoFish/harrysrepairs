@@ -75,6 +75,43 @@ export default class Home extends React.Component {
           </div>
         </div>
 
+        <div className="parallax video-section">
+          <div className="large-container">
+            <div className="row">
+              {/* Embed most recent video */}
+              <div className="six columns">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/0GDua0p4e04" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div className="six columns">
+                <h2>Video Guides</h2>
+                <p>Intrigued as to the behind the scenes of my repairs? I upload regularly to YouTube to show how to carry out a repair. I am always keen to take on new problems so if you have something wacky that needs repairing, please get in touch!</p>
+                <p>I will always be happy to talk through a repair as in depth or not as you want with your repair. If you are electronically inclined then this means I can go through step by step how I work. If you just want the cheapest a cheap repair with quality service then I can simply do the repair and return it quickly to you.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="list-section">
+          <div className="large-container">
+              <div className="row">
+                  <div className="three columns">
+                    <h2>iPhone Screens</h2>
+                    <ul>
+                      <li>iPhone 6 - £45</li>
+                      <li>iPhone 6 Plus - £55</li>
+                      <li>iPhone 6s - £45</li>
+                      <li>iPhone 6s Plus - £55</li>
+                      <li>iPhone 7 - £60</li>
+                      <li>iPhone 7 Plus - £70</li>
+                      <li>iPhone 8 / SE 2 - £65</li>
+                      <li>iPhone X - £150</li>
+                      <li>iPhone XR - £85</li>
+                    </ul>
+                  </div>
+              </div>
+          </div>
+        </div>
+
         <div className="section-low-padding parallax">
         <div className="large-container full-width-mobile">
             <h2 className="landing-heading">Customer reviews</h2>

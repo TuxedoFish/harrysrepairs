@@ -174,20 +174,31 @@ html {
     padding: 0 50px;
 }
 
+/* Video Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.video-section {
+    padding: 5rem 0;
+    text-align: left;
+
+    iframe {
+        max-width: 100%;
+    }
+}
+
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .footer {
     text-align: left;
-    padding: 20px;
+    padding: 20px 50px;
     background-color: $color-background-dark;
     color: white;
 }
 
-.footer-main {
+.list-section {
     background-color: $color-background;
     padding: 50px 0;
 
-    h4 {
+    h4, h2 {
         color: black;
         padding-bottom: 15px;
         margin-bottom: 25px;
@@ -486,7 +497,7 @@ html {
         padding: 0;
         overflow: hidden;
     }
-    .footer-main {
+    .list-section {
         .hidden {
             display: none;
         }

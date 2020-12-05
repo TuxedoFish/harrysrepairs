@@ -17,7 +17,7 @@ export default class PhoneBox extends React.Component {
         return (
             <>
                 {/* Top information and links */}
-                <div className="footer-main">
+                <div className="list-section">
                     <div className="large-container">
                         <div className="row">
                             <div className="three columns">
