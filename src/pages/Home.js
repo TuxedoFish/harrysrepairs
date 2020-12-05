@@ -22,21 +22,15 @@ import { motion } from "framer-motion"
 const image_size = "150px"
 
 const reviews = [
-  {
-    name: 'Benedict',
-    review: 'Great service and definitely the lowest price I could find in Chelsea & Kensington. Battery replacement done in well under an hour and excellent customer service. Would 100% recommend',
-    date: `12th November '20`
-  },
-  {
-    name: 'George',
-    review: 'Very knowledgeable repairer who knows his stuff very well. Had to get my IPhone 7 home button replaced, and was very put at ease with Harry’s knowledge of the internal routings of the phone and how to take apart and replace every component. Very reasonably priced (far better than any companies offering similar services), which coupled with the peace of mind of Harry working on the phone, means that I cannot recommend Harry’s Repairs service enough 10/10',
-    date: `7th November '20`
-  },
-  {
-    name: 'Rob',
-    review: 'I’m impressed with the level of service provided as my phone was repaired on the day it was received and then it was sent back to me on the same day in a very well packaged box to protect the phone. Harry offers a very good deal which is cheaper than most repair shops. If I ever have any problems in the future with my phone then I’m definitely using Harry’s repairs. 10/10 and a great bloke.',
-    date: `23rd October '20`
-  },
+  (
+    <div class="fb-post" data-href="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529" data-show-text="true" data-width=""><blockquote cite="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529" class="fb-xfbml-parse-ignore"><p>Great service and definitely the lowest price I could find in Chelsea &amp; Kensington. Battery replacement done in well under an hour and excellent customer service. Would 100% recommend.</p>Posted by <a href="#" role="button">Benedict Wilson</a> on&nbsp;<a href="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529">Thursday, 12 November 2020</a></blockquote></div>
+  ),
+  (
+    <div class="fb-post" data-href="https://www.facebook.com/george.hill.79230305/posts/3422551254636553" data-show-text="true" data-width=""><blockquote cite="https://www.facebook.com/george.hill.79230305/posts/3422551254636553" class="fb-xfbml-parse-ignore"><p>Very knowledgeable repairer who knows his stuff very well. Had to get my IPhone 7 home button replaced, and was very put...</p>Posted by <a href="#" role="button">George Hill</a> on&nbsp;<a href="https://www.facebook.com/george.hill.79230305/posts/3422551254636553">Saturday, 7 November 2020</a></blockquote></div>
+  ),
+  (
+    <div class="fb-post" data-href="https://www.facebook.com/robert.warzee/posts/3506356199453170" data-show-text="true" data-width=""><blockquote cite="https://www.facebook.com/robert.warzee/posts/3506356199453170" class="fb-xfbml-parse-ignore"><p>I’m impressed with the level of service provided as my phone was repaired on the day it was received and then it was...</p>Posted by <a href="#" role="button">Robert Warzée</a> on&nbsp;<a href="https://www.facebook.com/robert.warzee/posts/3506356199453170">Friday, 23 October 2020</a></blockquote></div>
+  )
 ]
 
 export default class Home extends React.Component {
@@ -82,14 +76,12 @@ export default class Home extends React.Component {
         </div>
 
         <div className="section-low-padding parallax">
-        <div className="container">
+        <div className="review-container">
             <h2 className="landing-heading">Customer reviews</h2>
             <div className="row">
               {reviews.map( (review) => 
                 <div className="one-third column value">
-                  <p className="light-p">"{review.review}"</p>
-                  <h5 className="light-h">- {review.name}</h5>
-                  <p className="light-h">{review.date}</p>
+                  {review}
                 </div>
               )}
             </div>
