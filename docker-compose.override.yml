@@ -1,6 +1,14 @@
 version: "3.3"
 services:
   web:
+    env_file: web/.env
     command: npm run start
     volumes:
-      - ./dist:/usr/src/app/dist
+      - ./web:/usr/src/app
+      - /usr/src/app/node_modules
+  strapi:
+    env_file: strapi/.env
+    command: npm run start
+    volumes:
+      - ./strapi:/usr/src/strapi
+      - /usr/src/strapi/node_modules
