@@ -30,7 +30,8 @@
     "semantic-ui-react": "^1.0.0"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js --legacy-watch",
+    "start:prod": "node server.js",
     "build": "webpack --progress --colors",
     "dev": "webpack --watch --mode=development",
     "prod": "webpack --mode=production"

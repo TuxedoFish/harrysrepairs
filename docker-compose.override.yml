@@ -1,0 +1,6 @@
+version: "3.3"
+services:
+  web:
+    command: npm run start
+    volumes:
+      - ./dist:/usr/src/app/dist
