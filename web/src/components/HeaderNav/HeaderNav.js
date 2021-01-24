@@ -82,7 +82,7 @@ export class HeaderNav extends React.Component {
                 {menuItems}
             </Sidebar>
 
-            <Menu borderless className='top-menu' fixed='top'>
+            <Menu borderless size="mini" className='top-menu' fixed='top'>
                 <Menu.Item header className='logo'>
                     <Image src={logo} size='tiny'/>
                 </Menu.Item>
@@ -100,7 +100,7 @@ export class HeaderNav extends React.Component {
         </Responsive>
         
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-            <Menu borderless className='top-menu' fixed='top'>
+            <Menu size="mini"  borderless className='top-menu' fixed='top'>
                 <Menu.Item header className='logo'>
                     <Image src={logo} size='tiny'/>
                 </Menu.Item>

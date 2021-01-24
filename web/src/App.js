@@ -15,11 +15,8 @@ import {
   Device
 } from './pages'
 
-// All CSS Files
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import './css/skeleton.css'
-import './css/normalize.css'
-import './css/custom.scss'
+// TODO: Why does it need to be imported here?
+import 'semantic-ui-css/semantic.min.css'
 
 export default function App() {
 

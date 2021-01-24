@@ -1,0 +1,36 @@
+.device-detail-overview {
+    .image {
+        padding: 2rem !important;
+        img {
+            width: 100%;
+        }
+    }
+    .content {
+        padding: 3rem !important;
+    }
+    .description {
+        text-align: left;
+    }
+}
+
+.device-view {
+    padding: 12rem 0 7rem !important;
+}
+
+.device-page-column {
+    min-width: 250px;
+}
+
+
+/* Mobile views */
+@media (max-width: 750px) {
+    .device-detail-overview {
+        margin-bottom: 7rem;
+    }
+    .device-page-column {
+        margin: auto;
+    }
+    .device-view {
+        padding: 4rem 0 7rem !important;
+    }
+}

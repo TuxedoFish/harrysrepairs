@@ -1,0 +1,56 @@
+.fb-post {
+    span {
+        border-radius: 15px !important;
+        overflow: hidden !important;
+    }
+}
+
+/* Video Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.video-section {
+    padding: 5rem 0;
+    text-align: left;
+
+    iframe {
+        width: 100%;
+    }
+}
+
+// Align the reviews vertically
+.review-column {
+    height: 350px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.video-text {
+    max-width: 450px !important;
+
+    p {
+        text-align: justify !important;
+    }
+}
+
+.review-heading {
+    margin-bottom: 4rem;
+}
+
+/* Mobile views */
+@media (max-width: 750px) {
+    .review-column {
+        height: unset;
+    }
+    .fb-post {
+        width: 80%;
+        margin: auto;
+        padding-bottom: 2.5rem;
+    }
+    .video-text {
+        text-align: center;
+
+        h2 {
+            margin: 2.5rem;
+        }
+    }
+}

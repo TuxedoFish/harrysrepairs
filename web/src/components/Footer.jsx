@@ -61,7 +61,7 @@ export default class PhoneBox extends React.Component {
                 </div>
                 {/* Bottom row - social media / copyright / policies */}
                 <div className="footer">
-                    Copyright © 2020 Harry's Repairs
+                    Copyright © 2021 Harry's Repairs
                 </div>
             </>
         )

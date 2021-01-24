@@ -9,7 +9,7 @@ import { GET_DEVICES } from "../../queries/repairs/device"
 import DeviceCard from './DeviceCard'
 import { Card } from 'semantic-ui-react'
 
-export default function DeviceOverview() {
+const DeviceOverview = () => {
 
     const {loading, error, data} = useQuery(GET_DEVICES)
 
@@ -25,3 +25,5 @@ export default function DeviceOverview() {
     )
 
 }
+
+export default DeviceOverview

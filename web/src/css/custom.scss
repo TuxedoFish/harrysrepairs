@@ -1,3 +1,17 @@
+/* Component Level Stylings
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@import '../pages/Device/device.scss';
+@import '../pages/Home/home.scss';
+@import '../components/DevicePricing/device-pricing.scss';
+@import '../components/DeviceOverview/device-card.scss';
+
+/* Global Semantic Overrides
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.card {
+    border-radius: 15px !important;
+    overflow: hidden
+}
+
 /* Colors
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -163,17 +177,6 @@ html {
 .large-container {
     width: 100%;
     padding: 0 50px;
-}
-
-/* Video Section
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.video-section {
-    padding: 5rem 0;
-    text-align: left;
-
-    iframe {
-        max-width: 100%;
-    }
 }
 
 /* Footer
@@ -487,9 +490,6 @@ html {
     }
     .empty-column {
         height: 0;
-    }
-    .fb-post {
-        padding-bottom: 20px;
     }
     .full-width-mobile {
         padding: 0;

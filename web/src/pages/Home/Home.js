@@ -3,19 +3,19 @@ import React from 'react'
 import { Link } from "react-router-dom"
 
 // Component Files
-import PhoneBox from '../components/PhoneBox.jsx'
-import Footer from '../components/Footer.jsx'
-import HeaderNav from '../components/HeaderNav';
-import DeviceOverview from '../components/DeviceOverview'
+import PhoneBox from '../../components/PhoneBox.jsx'
+import Footer from '../../components/Footer.jsx'
+import HeaderNav from '../../components/HeaderNav';
+import DeviceOverview from '../../components/DeviceOverview'
 
 // Images
-import buy from '../images/buy.svg'
-import fix from '../images/fix.svg'
-import sell from '../images/sell.svg'
-import costs from '../images/costs.jpg'
+import buy from '../../images/buy.svg'
+import fix from '../../images/fix.svg'
+import sell from '../../images/sell.svg'
+import costs from '../../images/costs.jpg'
 
 // Phone data
-import { phones } from '../sales/for_sale.jsx'
+import { phones } from '../../sales/for_sale.jsx'
 
 // Animation
 import { motion } from "framer-motion"
@@ -80,10 +80,10 @@ export default class Home extends React.Component {
           <div className="large-container">
             <div className="row">
               {/* Embed most recent video */}
-              <div className="six columns">
+              <div className="six columns video-container">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/0GDua0p4e04" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
-              <div className="six columns">
+              <div className="six columns video-text">
                 <h2>Video Guides</h2>
                 <p>Intrigued as to the behind the scenes of my repairs? I upload regularly to YouTube to show how to carry out a repair. I am always keen to take on new problems so if you have something wacky that needs repairing, please get in touch!</p>
                 <p>I will always be happy to talk through a repair as in depth or not as you want with your repair. If you are electronically inclined then this means I can go through step by step how I work. If you just want the cheapest a cheap repair with quality service then I can simply do the repair and return it quickly to you.</p>
@@ -103,10 +103,10 @@ export default class Home extends React.Component {
 
         <div className="section-low-padding parallax">
         <div className="large-container full-width-mobile">
-            <h2 className="landing-heading">Customer reviews</h2>
+            <h2 className="review-heading">Customer reviews</h2>
             <div className="row">
               {reviews.map( (review) => 
-                <div className="one-third column value">
+                <div className="one-third column value review-column">
                   {review}
                 </div>
               )}

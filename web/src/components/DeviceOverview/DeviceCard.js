@@ -8,25 +8,22 @@ import {
     Button,
     Image
 } from 'semantic-ui-react'
+import { getURLFromObject } from "../../utils/GetObject"
 
 const ViewButton = (id) => (
     <Link to={`/device/${id}`}>
-        <Button>
+        <Button primary>
             View repairs
         </Button>
     </Link>
   )
 
-export default function DeviceCard({name, type, image, id}) {
+const DeviceCard = ({name, type, image, id}) => {
 
-    // Extract the image url from the Strapi graphql output
-    let { formats: { small: { url: imageURL } } } = image
-
-    // Since it is relative to the Strapi backend prepend the URL
-    imageURL = `${process.env.REACT_APP_BACKEND_URL}${imageURL}`
+    const imageURL = getURLFromObject(image)
 
     return (
-        <Card>
+        <Card className="device-homepage-card">
             <Image src={imageURL} wrapped ui={false} />
             <Card.Content>
                 <Card.Header>{name}</Card.Header>
@@ -38,3 +35,5 @@ export default function DeviceCard({name, type, image, id}) {
         </Card>
     )
 }
+
+export default DeviceCard
