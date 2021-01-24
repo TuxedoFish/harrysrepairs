@@ -6,6 +6,8 @@ import App from './App';
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
+import 'semantic-ui-css/semantic.min.css'
+
 const client = new ApolloClient({
   uri: `${process.env.REACT_APP_BACKEND_URL}/graphql`,
   cache: new InMemoryCache()

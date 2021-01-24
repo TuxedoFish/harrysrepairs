@@ -1,5 +1,6 @@
 // React import
 import React from "react"
+import { Link } from "react-router-dom"
 
 // Semantic UI components
 import {
@@ -8,16 +9,17 @@ import {
     Image
 } from 'semantic-ui-react'
 
-const extra = (
-    <Button>
-        View repairs
-    </Button>
+const ViewButton = (id) => (
+    <Link to={`/device/${id}`}>
+        <Button>
+            View repairs
+        </Button>
+    </Link>
   )
 
-export default function DeviceCard({name, type, description, image}) {
+export default function DeviceCard({name, type, image, id}) {
 
     // Extract the image url from the Strapi graphql output
-    console.log(image)
     let { formats: { small: { url: imageURL } } } = image
 
     // Since it is relative to the Strapi backend prepend the URL
@@ -29,12 +31,9 @@ export default function DeviceCard({name, type, description, image}) {
             <Card.Content>
                 <Card.Header>{name}</Card.Header>
                 <Card.Meta>{`Device Type: ${type}`}</Card.Meta>
-                <Card.Description>
-                    {description}
-                </Card.Description>
             </Card.Content>
             <Card.Content extra>
-                {extra}
+                {ViewButton(id)}
             </Card.Content>
         </Card>
     )
