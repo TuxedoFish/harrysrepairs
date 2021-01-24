@@ -95,21 +95,8 @@ export default class Home extends React.Component {
         <div className="list-section">
           <div className="large-container">
               <div className="row">
-                  <div className="three columns">
-                    <h2>iPhone Screens</h2>
-                    <DeviceOverview />
-                    <ul>
-                      <li>iPhone 6 - £45</li>
-                      <li>iPhone 6 Plus - £55</li>
-                      <li>iPhone 6s - £45</li>
-                      <li>iPhone 6s Plus - £55</li>
-                      <li>iPhone 7 - £60</li>
-                      <li>iPhone 7 Plus - £70</li>
-                      <li>iPhone 8 / SE 2 - £65</li>
-                      <li>iPhone X - £150</li>
-                      <li>iPhone XR - £85</li>
-                    </ul>
-                  </div>
+                  <h2>Select your device:</h2>
+                  <DeviceOverview />
               </div>
           </div>
         </div>

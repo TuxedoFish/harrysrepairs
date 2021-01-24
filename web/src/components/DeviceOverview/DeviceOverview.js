@@ -1,32 +1,27 @@
-import { useQuery } from "@apollo/client"
+// Importing React
 import React from "react"
+
+// Querying via apollo client
+import { useQuery } from "@apollo/client"
 import GET_DEVICES_QUERY from "../../queries/repairs/device"
+
+// View component
+import DeviceCard from './DeviceCard'
+import { Card } from 'semantic-ui-react'
 
 export default function DeviceOverview() {
 
-    console.log("Device Overview")
-
-    // const GET_DEVICES_QUERY = gql`
-    // query Get_Devices {
-    //         devices {
-    //         id
-    //         name
-    //         description
-    //         image {
-    //             formats
-    //         }
-    //     }
-    // }
-    // `;
-
     const {loading, error, data} = useQuery(GET_DEVICES_QUERY)
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :(</p>;
+    if (loading) return <p>Loading...</p>
+    if (error) return <p>Error :(</p>
 
-    return data.devices.map( ({name, description}) => (
-        <div>
-            <p>{name}, {description}</p>
-        </div>
-    ));
+    return (
+        <Card.Group centered>
+            {data.devices.map( ({name, type, description, image}) => (
+                <DeviceCard name={name} description={description} image={image} type={type} />
+            ))}
+        </Card.Group>
+    )
+
 }

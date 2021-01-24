@@ -118,15 +118,6 @@ html {
     padding-bottom: 100%;
 }
 
-.content {
-    position:absolute;
-    top:50%; 
-    height:100px; 
-    width:100%;
-    margin-top:-12.5%;
-    text-align:center;
-}
-
 /* Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .tandc {
@@ -198,11 +189,11 @@ html {
     background-color: $color-background;
     padding: 50px 0;
 
-    h4, h2 {
+    h2 {
         color: black;
         padding-bottom: 15px;
         margin-bottom: 25px;
-        border-bottom: #000 1px solid;
+        text-align: center;
     }
 
     p {

@@ -4,6 +4,7 @@ const GET_DEVICES_QUERY = gql`
     query Get_Devices {
             devices {
             id
+            type
             name
             description
             image {
