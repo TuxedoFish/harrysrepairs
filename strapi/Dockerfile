@@ -22,4 +22,4 @@ COPY . /usr/src/strapi
 RUN npm run build
 
 # Define the start command 
-CMD [ "npm", "run", "start:prod" ]
+CMD [ "npm", "run", "start" ]
