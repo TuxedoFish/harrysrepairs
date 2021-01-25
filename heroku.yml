@@ -1,0 +1,11 @@
+build:
+  docker:
+    web: web/Dockerfile
+    strapi: strapi/Dockerfile
+  config:
+    HOST: 0.0.0.0
+    STRAPI_PORT: 1337
+    REACT_APP_BACKEND_URL: https://harrysrepairs-staging.herokuapp.com:1337
+run:
+  web: npm run start:prod
+  strapi: npm run start:prod
