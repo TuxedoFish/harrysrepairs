@@ -7,14 +7,27 @@ import { GET_DEVICES } from "../../queries/repairs/device"
 
 // View component
 import DeviceCard from './DeviceCard'
-import { Card } from 'semantic-ui-react'
+import { 
+    Card,
+} from 'semantic-ui-react'
+import { 
+    Loader
+} from '../../components/'
 
 const DeviceOverview = () => {
 
     const {loading, error, data} = useQuery(GET_DEVICES)
 
-    if (loading) return <p>Loading...</p>
-    if (error) return <p>Error :(</p>
+    if (loading) {
+        return <>
+            <Loader>Loading</Loader>
+        </>
+    }
+    if (error) {
+        console.log(GET_DEVICES)
+        console.log(`Error at DeviceOverview loading graphql data: ${error}`)
+        return <p>{`Error :( ${error}`}</p>
+    }
 
     return (
         <Card.Group centered>

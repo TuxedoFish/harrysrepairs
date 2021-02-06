@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 const GET_DEVICES = gql`
     query Get_Devices {
-            devices {
+            devices(sort: "releaseDate:DESC,priority:ASC") {
             id
             type
             name
@@ -17,7 +17,7 @@ const GET_DEVICES = gql`
 const GET_DEVICE_BY_ID = (id) => 
     gql`
     query Get_Repairs_By_Device {
-        devices ( where: { id_eq: ${id} } ) {
+        devices (where: { id_eq: ${id} } ) {
         id
         name
         type
