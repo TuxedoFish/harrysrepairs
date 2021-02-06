@@ -13,6 +13,7 @@ WORKDIR /usr/src/app
 
 # Required port variables
 ENV PORT 8000
+ENV REACT_APP_BACKEND_URL="https://harrysrepairs-staging-strapi.herokuapp.com"
 
 # Copy package and package-lock files to root level
 COPY package*.json ./
