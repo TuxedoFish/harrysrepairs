@@ -7,8 +7,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const webpack = require('webpack');
 
-console.log("environment")
-console.log(process.env)
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || 'sb';
 const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:1337';
