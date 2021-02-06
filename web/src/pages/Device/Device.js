@@ -9,10 +9,13 @@ import { GET_DEVICE_BY_ID } from '../../queries/repairs/device.js'
 import Footer from '../../components/Footer.jsx'
 import HeaderNav from '../../components/HeaderNav'
 import DevicePricing from '../../components/DevicePricing'
+import { 
+  Loader 
+} from '../../components/'
 import {
   Grid,
   Image,
-  Card
+  Card,
 } from 'semantic-ui-react'
 import { getURLFromObject } from '../../utils/GetObject.js'
 
@@ -22,8 +25,23 @@ const Device = (props) => {
     const deviceId = props.match.params.deviceId
     const {loading, error, data} = useQuery(GET_DEVICE_BY_ID(deviceId))
 
-    if (loading) return <p>Loading...</p>
-    if (error) return <p>{`Error :( ${error}`}</p>
+    if (loading) {
+      return <>
+        <HeaderNav/>
+
+        <div className="section parallax device-view">
+          <div className="container landing-container">
+            <Loader inverted/>
+          </div>
+        </div>
+
+        <Footer />
+      </>
+    }
+    if (error) {
+      console.log(`ERR: ${error}`)
+      return <p>{`Error :( ${error}`}</p>
+    }
 
     // The first result is the device we are looking at
     const { devices } = data
@@ -38,9 +56,9 @@ const Device = (props) => {
         <div className="section parallax device-view">
           <div className="container landing-container">
             <Grid>
-              <Grid.Row columns={5}>
+              <Grid.Row>
 
-                <Grid.Column className="device-page-column">
+                <Grid.Column width={5}className="device-page-column">
                   <Card className="device-detail-overview">
                       <Image src={imageURL} wrapped ui={false} />
                       <Card.Content>
@@ -50,8 +68,8 @@ const Device = (props) => {
                   </Card>
                 </Grid.Column>
 
-                <Grid.Column columns={4} className="device-page-column">
-                  <Card.Group centered>
+                <Grid.Column width={10} className="device-page-column">
+                  <Card.Group>
                     {pricings.map( ({name, amount, image}) => (
                       <DevicePricing name={name} amount={amount} image={image} />
                     ))}

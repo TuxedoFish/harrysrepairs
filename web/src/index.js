@@ -15,10 +15,11 @@ import './css/skeleton.css'
 import './css/normalize.css'
 import './css/custom.scss'
 
+const strapiURI =  `${process.env.REACT_APP_BACKEND_URL}/graphql`
 const client = new ApolloClient({
-  uri: `${process.env.REACT_APP_BACKEND_URL}/graphql`,
+  uri: strapiURI,
   cache: new InMemoryCache()
-});
+})
 
 ReactDOM.render(
     (
