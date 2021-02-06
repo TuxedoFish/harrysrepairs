@@ -1,5 +1,6 @@
 // React Imports
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // Querying via apollo client
 import { useQuery } from "@apollo/client"
@@ -16,6 +17,7 @@ import {
   Grid,
   Image,
   Card,
+  Button
 } from 'semantic-ui-react'
 import { getURLFromObject } from '../../utils/GetObject.js'
 
@@ -56,6 +58,15 @@ const Device = (props) => {
         <div className="section parallax device-view">
           <div className="container landing-container">
             <Grid>
+
+              <Grid.Row>
+                <Link to={`/`}>
+                    <Button primary floated="left">
+                        Back
+                    </Button>
+                </Link>
+              </Grid.Row>
+
               <Grid.Row>
 
                 <Grid.Column width={5}className="device-page-column">

@@ -7,6 +7,9 @@ import PhoneBox from '../../components/PhoneBox.jsx'
 import Footer from '../../components/Footer.jsx'
 import HeaderNav from '../../components/HeaderNav';
 import DeviceOverview from '../../components/DeviceOverview'
+import { 
+  Loader
+} from '../../components/'
 
 // Images
 import buy from '../../images/buy.svg'
@@ -20,24 +23,57 @@ import { phones } from '../../sales/for_sale.jsx'
 // Animation
 import { motion } from "framer-motion"
 
+// Facebook components
+import { EmbeddedPost } from 'react-facebook';
+
 const image_size = "150px"
 
 const reviews = [
   (
-    <div class="fb-post" data-href="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529" data-show-text="true" data-width=""><blockquote cite="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529" class="fb-xfbml-parse-ignore"><p>Great service and definitely the lowest price I could find in Chelsea &amp; Kensington. Battery replacement done in well under an hour and excellent customer service. Would 100% recommend.</p>Posted by <a href="#" role="button">Benedict Wilson</a> on&nbsp;<a href="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529">Thursday, 12 November 2020</a></blockquote></div>
+    <EmbeddedPost width="200px" href="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529"/>
   ),
   (
-    <div class="fb-post" data-href="https://www.facebook.com/george.hill.79230305/posts/3422551254636553" data-show-text="true" data-width=""><blockquote cite="https://www.facebook.com/george.hill.79230305/posts/3422551254636553" class="fb-xfbml-parse-ignore"><p>Very knowledgeable repairer who knows his stuff very well. Had to get my IPhone 7 home button replaced, and was very put...</p>Posted by <a href="#" role="button">George Hill</a> on&nbsp;<a href="https://www.facebook.com/george.hill.79230305/posts/3422551254636553">Saturday, 7 November 2020</a></blockquote></div>
+    <EmbeddedPost width="200px" href="https://www.facebook.com/george.hill.79230305/posts/3422551254636553"/>
   ),
   (
-    <div class="fb-post" data-href="https://www.facebook.com/robert.warzee/posts/3506356199453170" data-show-text="true" data-width=""><blockquote cite="https://www.facebook.com/robert.warzee/posts/3506356199453170" class="fb-xfbml-parse-ignore"><p>I’m impressed with the level of service provided as my phone was repaired on the day it was received and then it was...</p>Posted by <a href="#" role="button">Robert Warzée</a> on&nbsp;<a href="https://www.facebook.com/robert.warzee/posts/3506356199453170">Friday, 23 October 2020</a></blockquote></div>
+    <EmbeddedPost width="200px" href="https://www.facebook.com/robert.warzee/posts/3506356199453170"/>
   )
 ]
 
 export default class Home extends React.Component {
 
+  constructor(props) {
+    super(props)
+
+    let intervalId = setInterval(this.checkCommentsVisibility, 500);
+
+    this.state = {
+      intervalId: intervalId,
+      hasCommentsLoaded: false
+    }
+  }
+
+  checkCommentsVisibility = () => {
+
+    const post = document.getElementsByClassName("fb-post")[0].getElementsByTagName('span')[0].getElementsByTagName('iframe')[0]
+    console.log(post.style.visibility)
+
+    if(post.style.visibility == "visible") {
+
+      const { intervalId } = this.state
+      clearInterval(intervalId)
+
+      this.setState({
+        hasCommentsLoaded: true
+      })
+
+    }
+  }
+
   render() {
     
+    const { hasCommentsLoaded } = this.state
+
     return ( 
       <>
         <HeaderNav/>
@@ -102,7 +138,8 @@ export default class Home extends React.Component {
         </div>
 
         <div className="section-low-padding parallax">
-        <div className="large-container full-width-mobile">
+        {!hasCommentsLoaded && <Loader inverted/>}
+        <div className="large-container full-width-mobile" style={{display: hasCommentsLoaded ? "" : "none"}}>
             <h2 className="review-heading">Customer reviews</h2>
             <div className="row">
               {reviews.map( (review) => 
@@ -113,48 +150,6 @@ export default class Home extends React.Component {
             </div>
           </div>
         </div>
-
-        {/* <div className={"parallax"}>
-          <div className="wide-container">
-              <div class="row portfolio-row">
-                <img src={costs} className="costs-image"></img>
-              </div>
-          </div>
-        </div> */}
-        
-        {/* <div className="marketplace parallax">
-          <div className="container">
-            <div className="row">
-              {phones.map( (phone) =>
-                <div className="square">
-                  <div className="content">
-                    <h5 className="dark-heading">{phone.config.name}</h5>
-                    <Link to={"/phone/"+phone.index}>
-                      <div class="button button-primary">
-                          View Item
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        <div className="info">
-          <div className="container instructions-container">
-            <div className="row">
-              <h2 className="dark-heading">How it works</h2>
-              <div className="instructions">
-                <p className="dark-p">1. Find a phone that you wish to buy. (Get in touch if you need any extra information on a device)</p>
-                <p className="dark-p">2. Make sure to read the <Link to="/terms">terms and conditions</Link> and note the 14 day return policy.</p>
-                <p className="dark-p">3. Make a purchase through PayPal resting easy that you are protected by PayPal buyer's protection.</p>
-                <p className="dark-p">4. All deliveries will be done via royal mail special delivery. I will contact you personally with further details on the tracking id.</p>
-                <p className="dark-p">5. Track the delivery and wait for your new phone to be delivered.</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         <Footer />
       </>
