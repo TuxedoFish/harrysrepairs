@@ -60,14 +60,6 @@ const Device = (props) => {
             <Grid>
 
               <Grid.Row>
-                <Link to={`/`}>
-                    <Button primary floated="left">
-                        Back
-                    </Button>
-                </Link>
-              </Grid.Row>
-
-              <Grid.Row>
 
                 <Grid.Column width={5}className="device-page-column">
                   <Card className="device-detail-overview">

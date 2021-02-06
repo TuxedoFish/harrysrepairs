@@ -122,7 +122,7 @@ export default class Home extends React.Component {
               <div className="six columns video-text">
                 <h2>Video Guides</h2>
                 <p>Intrigued as to the behind the scenes of my repairs? I upload regularly to YouTube to show how to carry out a repair. I am always keen to take on new problems so if you have something wacky that needs repairing, please get in touch!</p>
-                <p>I will always be happy to talk through a repair as in depth or not as you want with your repair. If you are electronically inclined then this means I can go through step by step how I work. If you just want the cheapest a cheap repair with quality service then I can simply do the repair and return it quickly to you.</p>
+                <p>I will always be happy to talk through a repair as in depth or not as you want with your repair. If you are electronically inclined then this means I can go through step by step how I work. If you just want a cheap repair with quality service then I can simply do the repair and return it quickly to you.</p>
               </div>
             </div>
           </div>
@@ -144,7 +144,9 @@ export default class Home extends React.Component {
             <div className="row">
               {reviews.map( (review) => 
                 <div className="one-third column value review-column">
-                  {review}
+                  <div style={{ margin: "auto" }}>
+                    {review}
+                  </div>
                 </div>
               )}
             </div>
