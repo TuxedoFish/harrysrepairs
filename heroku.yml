@@ -2,6 +2,6 @@ build:
   docker:
     web: web/Dockerfile
   config:
-    REACT_APP_BACKEND_URL: https://harrysrepairs-staging.herokuapp.com:1337
+    REACT_APP_BACKEND_URL: https://harrysrepairs-staging-strapi.herokuapp.com
 run:
   web: npm run start:prod
