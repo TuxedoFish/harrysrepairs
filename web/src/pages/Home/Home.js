@@ -143,19 +143,19 @@ export default class Home extends React.Component {
         </div>
 
         <div className="section-low-padding parallax">
-        {!hasCommentsLoaded && <Loader inverted/>}
-        <div className="large-container full-width-mobile" style={{display: hasCommentsLoaded ? "" : "none"}}>
-            <h2 className="review-heading">Customer reviews</h2>
-            <div className="row">
-              {reviews.map( (review) => 
-                <div className="one-third column value review-column">
-                  <div className="review-column-container">
-                    {review}
+          <div className="large-container full-width-mobile">
+              <h2 className="review-heading">Customer reviews</h2>
+              <div className="row" style={{display: hasCommentsLoaded ? "" : "none"}}>
+                {reviews.map( (review) => 
+                  <div className="one-third column value review-column">
+                    <div className="review-column-container">
+                      {review}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
           </div>
+          {!hasCommentsLoaded && <Loader inverted/>}
         </div>
 
         <Footer />
