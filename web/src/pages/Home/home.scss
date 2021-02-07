@@ -1,13 +1,21 @@
 .fb-post {
+    
+    width: 100% !important;
+
     span {
+        width: 100% !important;
         width: 200px;
         border-radius: 15px !important;
         overflow: hidden !important;
+
+        iframe {
+            width: 100% !important;
+        }
     }
 }
 
 .review-column-container {
-    margin: auto;
+    width: 100% !important;
 }
 
 /* Video Section
@@ -47,16 +55,21 @@
         height: unset;
     }
     .fb-post {
-        width: 80% !important;
         margin: auto;
         padding-bottom: 2.5rem;
-
-        span {
-            width: 80% !important;
-        }
     }
-    .review-column-container {
-        width: 100%;
+    .fb-post {
+    
+        width: 90% !important;
+    
+        span {
+            
+            width: 90% !important;
+    
+            iframe {
+                width: 90% !important;
+            }
+        }
     }
     .video-text {
         text-align: center;

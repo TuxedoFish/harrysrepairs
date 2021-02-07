@@ -30,13 +30,13 @@ const image_size = "150px"
 
 const reviews = [
   (
-    <EmbeddedPost width="170px" href="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529"/>
+    <EmbeddedPost href="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529"/>
   ),
   (
-    <EmbeddedPost width="170px" href="https://www.facebook.com/george.hill.79230305/posts/3422551254636553"/>
+    <EmbeddedPost href="https://www.facebook.com/george.hill.79230305/posts/3422551254636553"/>
   ),
   (
-    <EmbeddedPost width="170px" href="https://www.facebook.com/robert.warzee/posts/3506356199453170"/>
+    <EmbeddedPost href="https://www.facebook.com/robert.warzee/posts/3506356199453170"/>
   )
 ]
 
