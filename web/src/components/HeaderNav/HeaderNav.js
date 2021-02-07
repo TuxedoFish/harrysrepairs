@@ -19,14 +19,14 @@ import {
 const menuItems = (
     <>
         {/* Link to home */}
-        <Menu.Item as={ Link } name='home' to='' className="header-link">
+        <Menu.Item as={ Link } name='home' to='/' className="header-link">
             <Icon className='header-icon' name='home' size='large'/>
             <Header as="h2" textAlign="center" className="website-title">
                 Home
             </Header>
         </Menu.Item>
         {/* Link to portfolio */}
-        <Menu.Item as={ Link } name='portfolio' to='portfolio' className="header-link">
+        <Menu.Item as={ Link } name='portfolio' to='/portfolio' className="header-link">
             <Icon className='header-icon' name='grid layout' size='large'/>
             <Header as="h2" textAlign="center" className="website-title">
                 Portfolio

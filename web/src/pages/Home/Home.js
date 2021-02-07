@@ -10,6 +10,9 @@ import DeviceOverview from '../../components/DeviceOverview'
 import { 
   Loader
 } from '../../components/'
+import { 
+  Bounce
+} from '../../animations'
 
 // Images
 import buy from '../../images/buy.svg'
@@ -20,9 +23,6 @@ import costs from '../../images/costs.jpg'
 // Phone data
 import { phones } from '../../sales/for_sale.jsx'
 
-// Animation
-import { motion } from "framer-motion"
-
 // Facebook components
 import { EmbeddedPost } from 'react-facebook';
 
@@ -30,13 +30,13 @@ const image_size = "150px"
 
 const reviews = [
   (
-    <EmbeddedPost width="200px" href="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529"/>
+    <EmbeddedPost width="170px" href="https://www.facebook.com/ben.wilson.3139/posts/4631873183553529"/>
   ),
   (
-    <EmbeddedPost width="200px" href="https://www.facebook.com/george.hill.79230305/posts/3422551254636553"/>
+    <EmbeddedPost width="170px" href="https://www.facebook.com/george.hill.79230305/posts/3422551254636553"/>
   ),
   (
-    <EmbeddedPost width="200px" href="https://www.facebook.com/robert.warzee/posts/3506356199453170"/>
+    <EmbeddedPost width="170px" href="https://www.facebook.com/robert.warzee/posts/3506356199453170"/>
   )
 ]
 
@@ -56,8 +56,7 @@ export default class Home extends React.Component {
   checkCommentsVisibility = () => {
 
     const post = document.getElementsByClassName("fb-post")[0].getElementsByTagName('span')[0].getElementsByTagName('iframe')[0]
-    console.log(post.style.visibility)
-
+    
     if(post.style.visibility == "visible") {
 
       const { intervalId } = this.state
@@ -88,21 +87,27 @@ export default class Home extends React.Component {
           <div className="container info-container">
             <div className="row">
               <div className="one-third column value">
-                <img src={buy} width={image_size} height={image_size}/>
+                <Bounce>
+                  <img src={buy} width={image_size} height={image_size}/>
+                </Bounce>
                 <h5 className="dark-heading">Cheap</h5>
                 <p className="dark-p">
                   My prices are the cheapest you will find in the Earl's Court area and I will match the price of any repair house. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in touch for a quote</a>.
                 </p>
               </div>
               <div className="one-third column value">
-                <img src={fix} width={image_size} height={image_size}/>
+                <Bounce>
+                  <img src={fix} width={image_size} height={image_size}/>
+                </Bounce>
                 <h5 className="dark-heading">Reliable</h5>
                 <p className="dark-p">
                   I only use OEM screens and always make sure the phone is completely functional before returning it. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/reviews/?ref=page_internal">Click here for my reviews</a>.
                 </p>
               </div>
               <div className="one-third column value">
-                <img src={sell} width={image_size} height={image_size}/>
+                <Bounce>
+                  <img src={sell} width={image_size} height={image_size}/>
+                </Bounce>
                 <h5 className="dark-heading">Personal</h5>
                 <p className="dark-p">
                   I communicate directly and constantly throughout the repair process. I am always honest and provide all evidence of my work as I go. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in contact</a>.
@@ -144,7 +149,7 @@ export default class Home extends React.Component {
             <div className="row">
               {reviews.map( (review) => 
                 <div className="one-third column value review-column">
-                  <div style={{ margin: "auto" }}>
+                  <div className="review-column-container">
                     {review}
                   </div>
                 </div>

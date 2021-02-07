@@ -24,10 +24,11 @@
 /* Mobile views */
 @media (max-width: 750px) {
     .device-detail-overview {
-        margin-bottom: 7rem;
+        margin-bottom: 3.5rem !important;
     }
     .device-page-column {
         margin: auto;
+        margin-bottom: 3.5rem !important;
     }
     .device-view {
         padding: 4rem 0 7rem !important;

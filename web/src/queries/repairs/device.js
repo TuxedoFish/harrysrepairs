@@ -14,10 +14,10 @@ const GET_DEVICES = gql`
     }
 `;
 
-const GET_DEVICE_BY_ID = (id) => 
+const GET_DEVICE_BY_NAME = (name) => 
     gql`
     query Get_Repairs_By_Device {
-        devices (where: { id_eq: ${id} } ) {
+        devices (where: { name_eq: "${name}" } ) {
         id
         name
         type
@@ -40,5 +40,5 @@ const GET_DEVICE_BY_ID = (id) =>
 
 export {
     GET_DEVICES,
-    GET_DEVICE_BY_ID
+    GET_DEVICE_BY_NAME
 };

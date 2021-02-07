@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 // Querying via apollo client
 import { useQuery } from "@apollo/client"
-import { GET_DEVICE_BY_ID } from '../../queries/repairs/device.js'
+import { GET_DEVICE_BY_NAME } from '../../queries/repairs/device.js'
 
 // Component Files
 import Footer from '../../components/Footer.jsx'
@@ -24,8 +24,11 @@ import { getURLFromObject } from '../../utils/GetObject.js'
 const Device = (props) => {
 
     // Get the device id from the props and query Strapi 
-    const deviceId = props.match.params.deviceId
-    const {loading, error, data} = useQuery(GET_DEVICE_BY_ID(deviceId))
+    let deviceName = props.match.params.deviceName
+    deviceName = deviceName.replaceAll("-and-", "/")
+    deviceName = deviceName.replaceAll("-", " ")
+    console.log(`device name: ${deviceName}`)
+    const {loading, error, data} = useQuery(GET_DEVICE_BY_NAME(deviceName))
 
     if (loading) {
       return <>

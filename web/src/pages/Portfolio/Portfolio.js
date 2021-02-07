@@ -3,33 +3,24 @@ import React from 'react'
 import { Link } from "react-router-dom"
 
 // Component Files
-import PhoneBox from '../components/PhoneBox.jsx'
-import Footer from '../components/Footer.jsx'
-import PortfolioLarge from '../components/PortfolioLarge.jsx'
-import HeaderNav from '../components/HeaderNav';
-
-// Images
-import buy from '../images/buy.svg'
-import fix from '../images/fix.svg'
-import sell from '../images/sell.svg'
-
-// Phone data
-
-import { phones } from '../sales/for_sale.jsx'
+import PhoneBox from '../../components/PhoneBox.jsx'
+import Footer from '../../components/Footer.jsx'
+import PortfolioLarge from '../../components/PortfolioLarge.jsx'
+import HeaderNav from '../../components/HeaderNav';
 
 const image_size = "150px"
 
 // Portfolio jazz
 // App images
-import coronaware from '../images/portfolio/corona.png'
-import pendulum from '../images/portfolio/pendulum.png'
-import refme from '../images/portfolio/refme.png'
-import tutorial from '../images/portfolio/tutorial.png'
-import w8s from '../images/portfolio/w8s.png'
-import fitspiration from '../images/portfolio/fitspiration.png'
+import coronaware from '../../images/portfolio/corona.png'
+import pendulum from '../../images/portfolio/pendulum.png'
+import refme from '../../images/portfolio/refme.png'
+import tutorial from '../../images/portfolio/tutorial.png'
+import w8s from '../../images/portfolio/w8s.png'
+import fitspiration from '../../images/portfolio/fitspiration.png'
 // Website images
-import w8sweb from '../images/portfolio/w8s-website.png'
-import uclapi from '../images/portfolio/uclapi.png'
+import w8sweb from '../../images/portfolio/w8s-website.png'
+import uclapi from '../../images/portfolio/uclapi.png'
 // Descriptions
 const portfolio = [
     
@@ -192,7 +183,7 @@ const portfolio = [
 export default class Home extends React.Component {
 
   render() {
-    console.log(portfolio)
+    
     return ( 
       <>
         <HeaderNav />

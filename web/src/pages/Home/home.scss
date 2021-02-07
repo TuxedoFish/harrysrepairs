@@ -1,8 +1,13 @@
 .fb-post {
     span {
+        width: 200px;
         border-radius: 15px !important;
         overflow: hidden !important;
     }
+}
+
+.review-column-container {
+    margin: auto;
 }
 
 /* Video Section
@@ -42,9 +47,16 @@
         height: unset;
     }
     .fb-post {
-        width: 80%;
+        width: 80% !important;
         margin: auto;
         padding-bottom: 2.5rem;
+
+        span {
+            width: 80% !important;
+        }
+    }
+    .review-column-container {
+        width: 100%;
     }
     .video-text {
         text-align: center;

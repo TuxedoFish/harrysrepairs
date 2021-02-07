@@ -15,6 +15,11 @@ import {
   Device
 } from './pages'
 
+// Components
+import { 
+  ScrollToTop
+} from './components'
+
 import { FacebookProvider } from 'react-facebook';
 
 // TODO: Why does it need to be imported here?
@@ -25,6 +30,7 @@ export default function App() {
   return (
     <FacebookProvider appId="140005087951381">
       <Router>
+        <ScrollToTop />
         <div>
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
@@ -32,7 +38,7 @@ export default function App() {
                 <Route exact path="/" component={Home} />
                 <Route path="/terms" component={Terms} />
                 <Route path="/game" component={Game} />
-                <Route path="/device/:deviceId" component={Device} />
+                <Route path="/device/:deviceName" component={Device} />
                 <Route path="/portfolio" component={Portfolio} />
                 {/* <Route path="/phone/:index">
                     <PhonePage />
