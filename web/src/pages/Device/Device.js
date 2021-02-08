@@ -80,7 +80,7 @@ const Device = (props) => {
           <div className="large-container">
               <div className="row">
                 <h2>Repair Offerings</h2>
-                <Card.Group>
+                <Card.Group itemsPerRow={4}>
                   {pricings.map( ({name, amount, image}) => (
                     <DevicePricing name={name} amount={amount} image={image} />
                   ))}
