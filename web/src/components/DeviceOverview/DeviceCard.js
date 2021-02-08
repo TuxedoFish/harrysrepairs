@@ -18,11 +18,9 @@ const ViewButton = (name) => (
     </Link>
   )
 
-const DeviceCard = ({name, type, image, id}) => {
+const DeviceCard = ({name, type, image, urlName, id}) => {
 
     const imageURL = getURLFromObject(image)
-    let linkName = name.replaceAll(" ", "-")
-    linkName = linkName.replaceAll("/", "-and-")
 
     return (
         <Card className="device-homepage-card">
@@ -32,7 +30,7 @@ const DeviceCard = ({name, type, image, id}) => {
                 <Card.Meta>{`Device Type: ${type}`}</Card.Meta>
             </Card.Content>
             <Card.Content extra>
-                {ViewButton(linkName)}
+                {ViewButton(urlName)}
             </Card.Content>
         </Card>
     )

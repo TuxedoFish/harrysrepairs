@@ -7,6 +7,7 @@ const GET_DEVICES = gql`
             type
             name
             description
+            urlName
             image {
                 formats
             }
@@ -17,7 +18,7 @@ const GET_DEVICES = gql`
 const GET_DEVICE_BY_NAME = (name) => 
     gql`
     query Get_Repairs_By_Device {
-        devices (where: { name_eq: "${name}" } ) {
+        devices (where: { urlName_eq: "${name}" } ) {
         id
         name
         type

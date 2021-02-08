@@ -31,8 +31,8 @@ const DeviceOverview = () => {
 
     return (
         <Card.Group centered>
-            {data.devices.map( ({name, type, image, id}) => (
-                <DeviceCard name={name} image={image} type={type} id={id} />
+            {data.devices.map( ({name, type, image, id, urlName}) => (
+                <DeviceCard name={name} image={image} type={type} id={id} urlName={urlName} />
             ))}
         </Card.Group>
     )

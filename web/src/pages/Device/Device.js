@@ -24,8 +24,6 @@ const Device = (props) => {
 
     // Get the device id from the props and query Strapi 
     let deviceName = props.match.params.deviceName
-    deviceName = deviceName.replaceAll("-and-", "/")
-    deviceName = deviceName.replaceAll("-", " ")
     console.log(`device name: ${deviceName}`)
     const {loading, error, data} = useQuery(GET_DEVICE_BY_NAME(deviceName))
 
