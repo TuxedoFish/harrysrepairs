@@ -88,3 +88,15 @@ $color-text-p: #ccc;
         color: #000;
     }
 }
+
+/* Mobile views */
+@media (max-width: 750px) {
+    .footer {
+        text-align: center;
+
+        h4 { 
+            font-weight: bold;
+            text-align: center !important;
+        }
+    }
+}

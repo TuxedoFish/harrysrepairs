@@ -15,6 +15,7 @@ const Footer = ({inverted}) => {
                             <p>Kensington</p>
                             <p>London</p>
                             <p>SW10 9DU</p>
+                            <br />
                         </div>
                         <div className="three columns">
                             <h4>Links</h4>
