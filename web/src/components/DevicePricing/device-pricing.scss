@@ -1,4 +1,7 @@
 .device-pricing {
+
+    text-align: center;
+
     .image {
         background: none !important;
         border: none !important;
@@ -11,10 +14,22 @@
     }
     .content {
         border: none !important;
+
+        .header, .description {
+            font-size: 24px !important;
+        }
     }
 }
 
 .repair-price-text {
     // font-weight: bold !important;
     // color: #2EB2FF !important;
+}
+
+/* Mobile views */
+@media (max-width: 750px) {
+    .device-pricing { 
+        min-width: 320px !important;
+        margin: auto !important;
+    }
 }

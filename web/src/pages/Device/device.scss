@@ -14,11 +14,25 @@
 }
 
 .device-view {
-    padding: 12rem 0 7rem !important;
+    padding: 7rem 0 2rem !important;
 }
 
 .device-page-column {
     min-width: 250px;
+}
+
+.device-title-overview {
+    display: flex !important;
+    align-items: center !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    height: fit-content;
+    text-align: left;
+    top: 20px;
+
+    .header {
+        flex: 0 1 100%;
+    }
 }
 
 /* Mobile views */
@@ -26,11 +40,24 @@
     .device-detail-overview {
         margin-bottom: 3.5rem !important;
     }
+    .device-title-overview {
+        text-align: justify !important;
+
+        h2 { 
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
     .device-page-column {
         margin: auto;
         margin-bottom: 3.5rem !important;
     }
     .device-view {
         padding: 4rem 0 7rem !important;
+
+        .column { 
+            min-width: 320px !important;
+            margin: auto !important;
+        }
     }
 }

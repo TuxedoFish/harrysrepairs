@@ -1,20 +1,18 @@
-import React from 'react';
+import React from 'react'
 import {
     Image, 
     Menu, 
     Icon,
     Header,
     Responsive,
-    Sidebar,
-    Segment
-} from 'semantic-ui-react';
-import './HeaderNav.scss';
-import logo from '../../images/logo.png';
+    Sidebar
+} from 'semantic-ui-react'
+import logo from '../../images/logo.png'
 
 // Routing
 import {
     Link,
-} from "react-router-dom";
+} from "react-router-dom"
 
 const menuItems = (
     <>
@@ -35,7 +33,7 @@ const menuItems = (
     </>
 )
 
-export class HeaderNav extends React.Component {
+class NavBar extends React.Component {
 
   constructor(props) {
       super(props)
@@ -112,4 +110,4 @@ export class HeaderNav extends React.Component {
   }
 }
 
-export default HeaderNav;
+export default NavBar;

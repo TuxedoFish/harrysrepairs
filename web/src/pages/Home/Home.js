@@ -1,14 +1,12 @@
 // React Imports
 import React from 'react'
-import { Link } from "react-router-dom"
 
 // Component Files
-import PhoneBox from '../../components/PhoneBox.jsx'
-import Footer from '../../components/Footer.jsx'
-import HeaderNav from '../../components/HeaderNav';
 import DeviceOverview from '../../components/DeviceOverview'
 import { 
-  Loader
+  Loader,
+  Footer,
+  NavBar,
 } from '../../components/'
 import { 
   Bounce
@@ -18,10 +16,6 @@ import {
 import buy from '../../images/buy.svg'
 import fix from '../../images/fix.svg'
 import sell from '../../images/sell.svg'
-import costs from '../../images/costs.jpg'
-
-// Phone data
-import { phones } from '../../sales/for_sale.jsx'
 
 // Facebook components
 import { EmbeddedPost } from 'react-facebook';
@@ -75,7 +69,7 @@ export default class Home extends React.Component {
 
     return ( 
       <>
-        <HeaderNav/>
+        <NavBar/>
 
         <div className="section landing parallax">
           <div className="container landing-container">
@@ -133,7 +127,7 @@ export default class Home extends React.Component {
           </div>
         </div>
 
-        <div className="list-section">
+        <div className="plain-section">
           <div className="large-container">
               <div className="row">
                   <h2>Select your device:</h2>

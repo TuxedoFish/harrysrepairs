@@ -2,7 +2,10 @@
 import React from 'react'
 
 // Components
-import Footer from '../components/Footer.jsx'
+import { 
+  Footer, 
+  NavBar
+} from '../components'
 
 export default class Terms extends React.Component {
 

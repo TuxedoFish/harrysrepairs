@@ -3,10 +3,11 @@ import React from 'react'
 import { Link } from "react-router-dom"
 
 // Component Files
-import PhoneBox from '../../components/PhoneBox.jsx'
-import Footer from '../../components/Footer.jsx'
 import PortfolioLarge from '../../components/PortfolioLarge.jsx'
-import HeaderNav from '../../components/HeaderNav';
+import { 
+  NavBar, 
+  Footer
+} from '../../components/'
 
 const image_size = "150px"
 
@@ -186,7 +187,7 @@ export default class Home extends React.Component {
     
     return ( 
       <>
-        <HeaderNav />
+        <NavBar />
 
         <div className="section landing parallax">
           <div className="container landing-container">

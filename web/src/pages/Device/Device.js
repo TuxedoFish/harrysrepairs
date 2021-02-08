@@ -7,17 +7,16 @@ import { useQuery } from "@apollo/client"
 import { GET_DEVICE_BY_NAME } from '../../queries/repairs/device.js'
 
 // Component Files
-import Footer from '../../components/Footer.jsx'
-import HeaderNav from '../../components/HeaderNav'
 import DevicePricing from '../../components/DevicePricing'
 import { 
-  Loader 
+  Loader,
+  Footer,
+  NavBar,
 } from '../../components/'
 import {
   Grid,
   Image,
   Card,
-  Button
 } from 'semantic-ui-react'
 import { getURLFromObject } from '../../utils/GetObject.js'
 
@@ -32,7 +31,7 @@ const Device = (props) => {
 
     if (loading) {
       return <>
-        <HeaderNav/>
+        <NavBar/>
 
         <div className="section parallax device-view">
           <div className="container landing-container">
@@ -56,7 +55,7 @@ const Device = (props) => {
 
     return ( 
       <>
-        <HeaderNav/>
+        <NavBar/>
 
         <div className="section parallax device-view">
           <div className="container landing-container">
@@ -64,22 +63,13 @@ const Device = (props) => {
 
               <Grid.Row>
 
-                <Grid.Column width={5}className="device-page-column">
-                  <Card className="device-detail-overview">
-                      <Image src={imageURL} wrapped ui={false} />
-                      <Card.Content>
-                          <Card.Header>{name}</Card.Header>
-                          <Card.Description>{description}</Card.Description>
-                      </Card.Content>
-                  </Card>
+                <Grid.Column width={5}>
+                  <Image src={imageURL} width="200px" wrapped ui={false} />
                 </Grid.Column>
 
-                <Grid.Column width={10} className="device-page-column">
-                  <Card.Group>
-                    {pricings.map( ({name, amount, image}) => (
-                      <DevicePricing name={name} amount={amount} image={image} />
-                    ))}
-                  </Card.Group>
+                <Grid.Column width={8} className="device-title-overview">
+                  <h2>{name}</h2>
+                  <p>{description}</p>
                 </Grid.Column>
 
               </Grid.Row>
@@ -87,7 +77,21 @@ const Device = (props) => {
           </div>
         </div>
 
-        <Footer />
+        
+        <div className="plain-section">
+          <div className="large-container">
+              <div className="row">
+                <h2>Repair Offerings</h2>
+                <Card.Group>
+                  {pricings.map( ({name, amount, image}) => (
+                    <DevicePricing name={name} amount={amount} image={image} />
+                  ))}
+                </Card.Group>
+              </div>
+            </div>
+          </div>
+
+        <Footer inverted />
       </>
     )
   

@@ -3,7 +3,10 @@ import React from 'react'
 
 // Component Files
 import PhoneBox from '../components/PhoneBox.jsx'
-import Footer from '../components/Footer.jsx'
+import { 
+    Footer, 
+    NavBar
+} from '../components'
 
 // Images
 

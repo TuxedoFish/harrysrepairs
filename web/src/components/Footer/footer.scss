@@ -1,0 +1,90 @@
+/* Colors
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$color-background: #fff;
+$color-background-dark: #000;
+
+$color-text-dark-1: #222;
+$color-text-dark-2: #555;
+$color-main: #2eb2ff;
+$color-main-dark: #1d73a5;
+
+$color-text-light: #fff;
+$color-text-p: #ccc;
+
+.footer {
+
+    background-color: $color-background;
+    padding: 50px 0;
+
+    h2 {
+        color: black;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    h4 {
+        color: black;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+        text-align: left;
+    }
+
+    p {
+        color: black;
+        margin-bottom: 7px;
+    }
+
+    h5 {
+        color: $color-background;
+    }
+
+    ul {
+        list-style-type: square;
+    }
+
+    li {
+        margin-bottom: 0;
+        a {
+            color: black;
+            transition: color linear .2s;
+        }
+        a:hover {
+            color: #ddd;
+        }
+    }
+
+    &__inverted {
+
+        color: white;
+        
+        p, h1, h2, h3, h4, h5, h6 {
+            color: #fff;
+        }
+
+        li {
+            a {
+                color: #fff;
+
+                &:hover {
+                    color: #222;
+                }
+            }
+        }
+
+    }
+
+}
+
+.bottom-footer {
+    text-align: left;
+    padding: 20px 50px;
+    background-color: $color-background-dark;
+    color: white;
+
+    &__inverted {
+        background-color: #fff;
+        color: #000;
+    }
+}

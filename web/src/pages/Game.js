@@ -3,7 +3,10 @@ import React from 'react'
 import Webcam from "react-webcam";
 
 // Component Files
-import Footer from '../components/Footer.jsx'
+import { 
+    Footer, 
+    NavBar
+} from '../components'
 
 // Helper for adding scripts
 import { Helmet } from "react-helmet";
