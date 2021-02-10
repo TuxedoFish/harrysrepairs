@@ -13,7 +13,7 @@ import { getURLFromObject } from "../../utils/GetObject"
 const ViewButton = (name) => (
     <Link to={`/device/${name}`}>
         <Button primary>
-            View repairs
+            View
         </Button>
     </Link>
   )
@@ -27,7 +27,7 @@ const DeviceCard = ({name, type, image, urlName, id}) => {
             <Image src={imageURL} wrapped ui={false} />
             <Card.Content>
                 <Card.Header>{name}</Card.Header>
-                <Card.Meta>{`Device Type: ${type}`}</Card.Meta>
+                <Card.Meta>{type}</Card.Meta>
             </Card.Content>
             <Card.Content extra>
                 {ViewButton(urlName)}

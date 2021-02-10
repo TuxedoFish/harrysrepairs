@@ -1,10 +1,8 @@
 .device-homepage-card {
 
-    width: 200px !important;
-
     .image {
         img {
-            width: 150px !important;
+            width: 80% !important;
             margin: auto !important;
         }
     }
@@ -13,5 +11,15 @@
     }
     button {
         width: 80%;
+    }
+}
+
+
+/* Mobile views */
+@media (max-width: 750px) {
+    .device-homepage-card { 
+        min-width: 100% !important;
+        margin: auto !important;
+        margin-bottom: 3.5rem !important;
     }
 }

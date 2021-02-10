@@ -9,7 +9,8 @@ import {
   NavBar,
 } from '../../components/'
 import { 
-  Bounce
+  Bounce,
+  FadeUp
 } from '../../animations'
 
 // Images
@@ -143,7 +144,9 @@ export default class Home extends React.Component {
                 {reviews.map( (review) => 
                   <div className="one-third column value review-column">
                     <div className="review-column-container">
-                      {review}
+                      <FadeUp animate={hasCommentsLoaded ? "closed" : "open"}>
+                        {review}
+                      </FadeUp>
                     </div>
                   </div>
                 )}
