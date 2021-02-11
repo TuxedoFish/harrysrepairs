@@ -8,3 +8,10 @@
     overflow: hidden;
     padding: 10px;
 }
+
+/* Mobile views */
+@media (max-width: 750px) {
+    .device-container {
+        padding: 15px;
+    }
+}

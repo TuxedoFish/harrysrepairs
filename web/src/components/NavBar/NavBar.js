@@ -14,24 +14,20 @@ import {
     Link,
 } from "react-router-dom"
 
-const menuItems = (
-    <>
-        {/* Link to home */}
-        <Menu.Item as={ Link } name='home' to='/' className="header-link">
-            <Icon className='header-icon' name='home' size='large'/>
-            <Header as="h2" textAlign="center" className="website-title">
-                Home
-            </Header>
-        </Menu.Item>
-        {/* Link to portfolio */}
-        <Menu.Item as={ Link } name='portfolio' to='/portfolio' className="header-link">
-            <Icon className='header-icon' name='grid layout' size='large'/>
-            <Header as="h2" textAlign="center" className="website-title">
-                Portfolio
-            </Header>
-        </Menu.Item>    
-    </>
-)
+const menuItems = [
+    {
+        name: 'home',
+        link: '/',
+        text: 'Home',
+        iconName: 'home'
+    }, 
+    {
+        name: 'portfolio',
+        link: '/portfolio',
+        text: 'Portfolio',
+        iconName: 'grid layout'
+    }
+]
 
 class NavBar extends React.Component {
 
@@ -70,7 +66,16 @@ class NavBar extends React.Component {
                 vertical
                 width='thin'
             >
-                {menuItems}
+                {menuItems.map( item => (
+                        
+                    <Menu.Item as={ Link } name={item.name} to={item.link} className="header-link">
+                        <Icon className='header-icon' name={item.iconName} size='large'/>
+                        <Header as="h2" textAlign="center" className="website-title">
+                            {item.text}
+                        </Header>
+                    </Menu.Item>   
+
+                ))}
             </Sidebar>
 
             <Menu borderless size="mini" className='top-menu' fixed='top'>
@@ -101,7 +106,16 @@ class NavBar extends React.Component {
                     </Header>
                 </Menu.Item>
                 <Menu.Menu position='right'>
-                    {menuItems}
+                    {menuItems.map( item => (
+                        
+                        <Menu.Item as={ Link } name={item.name} to={item.url} className="header-link">
+                            <Icon className='header-icon' name={item.iconName} size='large'/>
+                            <Header as="h2" textAlign="center" className="website-title">
+                                {item.text}
+                            </Header>
+                        </Menu.Item>   
+
+                    ))}
                 </Menu.Menu>
             </Menu>
         </Responsive>
