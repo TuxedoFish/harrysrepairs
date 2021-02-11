@@ -108,7 +108,7 @@ class NavBar extends React.Component {
                 <Menu.Menu position='right'>
                     {menuItems.map( item => (
                         
-                        <Menu.Item as={ Link } name={item.name} to={item.url} className="header-link">
+                        <Menu.Item as={ Link } name={item.name} to={item.link} className="header-link">
                             <Icon className='header-icon' name={item.iconName} size='large'/>
                             <Header as="h2" textAlign="center" className="website-title">
                                 {item.text}
