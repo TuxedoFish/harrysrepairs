@@ -140,7 +140,7 @@ export default class Home extends React.Component {
         <div className="section-low-padding parallax">
           <div className="large-container full-width-mobile">
               <h2 className="review-heading">Customer reviews</h2>
-              <div className="row" style={{display: hasCommentsLoaded ? "" : "none"}}>
+              <div className="row review-row" style={{display: hasCommentsLoaded ? "" : "none"}}>
                 {reviews.map( (review) => 
                   <div className="one-third column value review-column">
                     <div className="review-column-container">
