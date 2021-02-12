@@ -48,16 +48,31 @@
 .review-heading {
     margin-bottom: 4rem;
 }
-
-/* Mobile views */
-@media (max-width: 750px) {
+/* Tablet Views */
+@media (max-width: 768px) {
     .review-column {
         height: unset;
+        width: 100% !important;
+        margin: auto !important;
+        padding-bottom: 2.5rem !important;
+    }
+}
+/* Mobile views */
+@media (max-width: 480px) {
+    .video-container {
+        height: 150px;
+    }
+    .video-section {
+        iframe {
+            height: 100% !important;
+        }
+    }
+    .review-column {
+        width: 100%;
     }
     .review-column-container {
-        width: 90%;
-        margin: auto;
-        padding-bottom: 2.5rem;
+        width: 95% !important;
+        margin: auto !important;
     }
     .video-text {
         text-align: center;

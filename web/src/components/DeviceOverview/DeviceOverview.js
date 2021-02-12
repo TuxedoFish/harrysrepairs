@@ -51,17 +51,16 @@ const DeviceOverview = () => {
     }
 
     const onViewMore = () => { setIsViewingMore(true) }
-
-    console.log(`HEIGHT: ${height}`)
+    const ITEMS_PER_ROW = 7
 
     return (
 
         <div className="device-container" style={{height: height + "px"}}>
 
             <div ref={ref}>
-                <Card.Group itemsPerRow={5} className="device-card-holder">
+                <Card.Group itemsPerRow={ITEMS_PER_ROW} className="device-card-holder">
 
-                    {data.devices.slice(0, isViewingMore ? data.devices.length : 5)
+                    {data.devices.slice(0, isViewingMore ? data.devices.length : ITEMS_PER_ROW)
                         .map( ({name, type, image, id, urlName}) => (
                             <DeviceCard name={name} image={image} type={type} id={id} urlName={urlName} />
                         ))

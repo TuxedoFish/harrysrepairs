@@ -14,11 +14,22 @@
     }
 }
 
-/* Mobile views */
+/* Mobile views + Tablet Views*/
+@media (max-width: 1180px) {
+    .device-homepage-card {
+        width: 46% !important;
+        margin-left: 1% !important;
+        margin-right: 1% !important;
+    }
+}
+
+/* Mobile views + Tablet Views*/
 @media (max-width: 750px) {
     .device-homepage-card { 
         min-width: 100% !important;
         margin: auto !important;
         margin-bottom: 3.5rem !important;
+        margin-left: unset !important;
+        margin-right: unset !important;
     }
 }
