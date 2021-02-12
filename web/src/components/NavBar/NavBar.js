@@ -78,7 +78,7 @@ class NavBar extends React.Component {
                 ))}
             </Sidebar>
 
-            <Menu borderless size="mini" className='top-menu' fixed='top'>
+            <Menu borderless size="huge" className='top-menu' fixed='top'>
                 <Menu.Item header className='logo'>
                     <Image src={logo} size='tiny'/>
                 </Menu.Item>
@@ -96,7 +96,7 @@ class NavBar extends React.Component {
         </Responsive>
         
         <Responsive minWidth={Responsive.onlyTablet.minWidth}>
-            <Menu size="mini"  borderless className='top-menu' fixed='top'>
+            <Menu size="huge"  borderless className='top-menu' fixed='top'>
                 <Menu.Item header className='logo'>
                     <Image src={logo} size='tiny'/>
                 </Menu.Item>
