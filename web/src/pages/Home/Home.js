@@ -7,6 +7,7 @@ import {
   Loader,
   Footer,
   NavBar,
+  ReviewSection,
 } from '../../components/'
 import { 
   Bounce,
@@ -18,22 +19,7 @@ import buy from '../../images/buy.svg'
 import fix from '../../images/fix.svg'
 import sell from '../../images/sell.svg'
 
-// Facebook components
-import { EmbeddedPost } from 'react-facebook';
-
 const image_size = "150px"
-
-const reviews = [
-  (
-    <EmbeddedPost width="auto" href="https://www.facebook.com/jasmin.sharpe.3/posts/3713118968794996"/>
-  ),
-  (
-    <EmbeddedPost width="auto" href="https://www.facebook.com/george.hill.79230305/posts/3422551254636553"/>
-  ),
-  (
-    <EmbeddedPost width="auto" href="https://www.facebook.com/robert.warzee/posts/3506356199453170"/>
-  )
-]
 
 export default class Home extends React.Component {
 
@@ -137,23 +123,7 @@ export default class Home extends React.Component {
           </div>
         </div>
 
-        <div className="section-low-padding parallax">
-          <div className="large-container full-width-mobile">
-              <h2 className="review-heading">Customer reviews</h2>
-              <div className="row review-row" style={{display: hasCommentsLoaded ? "" : "none"}}>
-                {reviews.map( (review) => 
-                  <div className="one-third column value review-column">
-                    <div className="review-column-container">
-                      <FadeUp animate={hasCommentsLoaded ? "closed" : "open"}>
-                        {review}
-                      </FadeUp>
-                    </div>
-                  </div>
-                )}
-              </div>
-          </div>
-          {!hasCommentsLoaded && <Loader inverted/>}
-        </div>
+        <ReviewSection />
 
         <Footer />
       </>
