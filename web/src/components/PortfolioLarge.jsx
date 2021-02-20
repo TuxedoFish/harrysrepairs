@@ -11,6 +11,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 // Default Image
 import defaultImage from "../images/marketplace/default.png"
 import refurb from "../images/marketplace/refurb.svg"
+import { getURLFromObject } from '../../utils/GetObject.js'
 
 // Animation
 import { motion } from "framer-motion"
@@ -24,6 +25,7 @@ export default class PortfolioLarge extends React.Component {
     render() {
         
         const { title, description, link, image, index } = this.props
+        const imageURL = getURLFromObject(image)
 
         const isEven = (index%2==0)
 
@@ -92,7 +94,7 @@ export default class PortfolioLarge extends React.Component {
                                     animate={{opacity: 1, marginLeft: '0px'}}
                                     transition={{duration: 1}}
                                 >
-                                    <img className="portfolio-image" src={image}/>
+                                    <img className="portfolio-image" src={imageURL}/>
                                 </motion.div>
                             </div>
                         </div>
