@@ -12,12 +12,11 @@ import {
 
 // Querying via apollo client
 import { useQuery } from "@apollo/client"
-import { GET_DEVICE_BY_NAME } from '../../queries/repairs/device.js'
+import { GET_PORTFOLIO } from '../../queries/portfolio/portfolio.js'
 
 const Portfolio = () => {
 
-  const {loading, error, data} = useQuery(GET_DEVICE_BY_NAME(deviceName))
-  console.log(data)
+  const {loading, error, data} = useQuery(GET_PORTFOLIO)
 
   return ( 
       <>
@@ -30,27 +29,29 @@ const Portfolio = () => {
           </div>
         </div>
 
-        { loading ? (
-          data.map( (app, index) => (
+        { !loading ? (
+          data.portfolios.map( (app, index) => (
             <PortfolioLarge
               index={index} 
               title={app.title}
               description={app.description}
-              link={app.link}
+              url={app.url}
               image={app.image}
             />
           ))
         ) : (
-          <div className={"parallax"}>
-            <Loader inverted />
+          <div className={"info"}>
+            <div className="wide-container">
+              <div class="row portfolio-row">
+                <Loader />
+              </div>
+            </div>
           </div>
         )}
 
         <Footer />
       </>
     )
-  }
-  
 }
 
 export default Portfolio

@@ -469,6 +469,12 @@ html {
     
 }
 
+.portfolio-content {
+    p {
+        white-space: break-spaces;
+    }
+}
+
 .portfolio-image {
     width: 100%;
     max-width: 500px;

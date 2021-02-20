@@ -11,7 +11,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 // Default Image
 import defaultImage from "../images/marketplace/default.png"
 import refurb from "../images/marketplace/refurb.svg"
-import { getURLFromObject } from '../../utils/GetObject.js'
+import { getURLFromObject } from '../utils/GetObject.js'
 
 // Animation
 import { motion } from "framer-motion"
@@ -24,7 +24,7 @@ export default class PortfolioLarge extends React.Component {
     
     render() {
         
-        const { title, description, link, image, index } = this.props
+        const { title, description, url, image, index } = this.props
         const imageURL = getURLFromObject(image)
 
         const isEven = (index%2==0)
@@ -33,7 +33,7 @@ export default class PortfolioLarge extends React.Component {
             // Parallax and left aligned
             return (
                 
-                <div className={"parallax"}>
+                <div className={"parallax"} key={index}>
                     <div className="wide-container">
                         <div class="row portfolio-row">
                             <div className="one-half column">
@@ -42,15 +42,13 @@ export default class PortfolioLarge extends React.Component {
                                     animate={{opacity: 1, marginLeft: '0px'}}
                                     transition={{duration: 1}}
                                 >
-                                    <img className="portfolio-image" src={image}/>
+                                    <img className="portfolio-image" src={imageURL}/>
                                 </motion.div>
                             </div>
                             <div className="one-half column portfolio-content">
                                 <h2>{title}</h2>
-                                {description.map( paragraph => (
-                                    <p>{paragraph}</p>
-                                ))}
-                                <a href={link}>
+                                <p>{description}</p>
+                                <a href={url}>
                                     <motion.div
                                         style={{width: 'fit-content'}}
                                         animate={{ rotate: [0, 10, -10, 5, -5, 0] }}
@@ -68,15 +66,13 @@ export default class PortfolioLarge extends React.Component {
         } else {
             // White background and right aligned
             return (
-                <div className={"info"}>
+                <div className={"info"} key={index}>
                     <div className="wide-container">
                         <div class="row portfolio-row">
                             <div className="one-half column portfolio-content portfolio-content-right">
                                 <h2 className="dark-heading">{title}</h2>
-                                {description.map( paragraph => (
-                                    <p>{paragraph}</p>
-                                ))}
-                                <a href={link}>
+                                <p>{description}</p>
+                                <a href={url}>
                                     <motion.div
                                         style={{width: 'fit-content', marginBottom: '40px'}}
                                         animate={{ rotate: [0, 10, -10, 5, -5, 0] }}
