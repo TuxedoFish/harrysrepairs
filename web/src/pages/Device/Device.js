@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 // Querying via apollo client
 import { useQuery } from "@apollo/client"
-import { GET_DEVICE_BY_NAME } from '../../queries/repairs/device.js'
+import { GET_DEVICE_BY_NAME } from '../../queries/device.js'
 
 // Component Files
 import DevicePricing from '../../components/DevicePricing'

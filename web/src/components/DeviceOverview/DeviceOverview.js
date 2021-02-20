@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 
 // Querying via apollo client
 import { useQuery } from "@apollo/client"
-import { GET_DEVICES } from "../../queries/repairs/device"
+import { GET_DEVICES } from "../../queries/device"
 
 // View component
 import DeviceCard from './DeviceCard'

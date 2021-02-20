@@ -12,7 +12,7 @@ import {
 
 // Querying via apollo client
 import { useQuery } from "@apollo/client"
-import { GET_PORTFOLIO } from '../../queries/portfolio/portfolio.js'
+import { GET_PORTFOLIO } from '../../queries/portfolio.js'
 
 const Portfolio = () => {
 
