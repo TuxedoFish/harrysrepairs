@@ -3,18 +3,21 @@ import React from "react"
 // Stylings
 import * as S from './Container.styles'
 
-const Container = ({ inverted, children }) => {
+const Container = (props) => {
 
     return (
-        <S.Container inverted={inverted}>
-            {children}
+
+        <S.Container {...props}>
+            {props.children}
         </S.Container>
+
     )
 
 }
 
 Container.defaultProps = {
-    inverted: false
+    inverted: false,
+    hero: false
 }
 
 export default Container

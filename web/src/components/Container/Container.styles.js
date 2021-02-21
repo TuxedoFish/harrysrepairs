@@ -1,17 +1,30 @@
 import styled from 'styled-components'
+import parallax_image from '../../images/bg-darken.jpg'
 
 export const Container = styled.div`
 
-    background-image: url("../../images/bg-darken.jpg");
+    background-image: url(${parallax_image});
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
     padding: 5rem 0;
+    display: flex;
 
     ${({ inverted }) => inverted && `
+
         background-color: #fff;
         background-image: unset;
+
     `}
+
+    ${({ hero }) => hero && `
+
+        justify-content: center;
+        align-items: center;
+        height: 40vh;
+
+    `}
+
 `

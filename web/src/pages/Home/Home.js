@@ -32,7 +32,7 @@ export default class Home extends React.Component {
       <>
         <NavBar/>
 
-        <Container>
+        <Container hero>
           <h2 className="landing-heading">Phone Repairs in Earl's Court</h2>
         </Container>
 
