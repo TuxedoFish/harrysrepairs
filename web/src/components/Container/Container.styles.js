@@ -23,7 +23,7 @@ export const Container = styled.div`
 
         justify-content: center;
         align-items: center;
-        height: 40vh;
+        height: 55vh;
 
     `}
 
@@ -34,4 +34,19 @@ export const Row = styled.div`
     width: ${({ width }) => width};
     margin: auto;
     
+
+    ${({ popout }) => popout && `
+
+        margin-top: -13rem;
+        margin-bottom: 5rem;
+
+    `}
+
+    @media (max-width: 968px) {
+
+        & .column:not(:last-child) {
+            padding-bottom: 4rem;
+        }
+    }
+
 `

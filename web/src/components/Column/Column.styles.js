@@ -10,4 +10,12 @@ export const Column = styled.div`
 
     `}
 
+    @media (max-width: 968px) {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
 `

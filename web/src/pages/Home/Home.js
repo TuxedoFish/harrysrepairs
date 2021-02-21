@@ -39,14 +39,14 @@ export default class Home extends React.Component {
           <Text as="h2" align="center">Phone Repairs in Earl's Court</Text>
         </Container>
         {/* 3 KEY POINTS - Highlighting USP */}
-        <Container inverted width="50%">
+        <Container inverted width="50%" popout>
 
           <Column size="one-third" centered>
             <Bounce>
               <img src={buy} width={image_size} height={image_size}/>
             </Bounce>
             <Text as="h5" inverted>Cheap</Text>
-            <Text as="p" inverted>
+            <Text as="p" inverted align="justify">
               My prices are the cheapest you will find in the Earl's Court area and I will match the price of any repair house. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in touch for a quote</a>.
             </Text>
           </Column>
@@ -56,7 +56,7 @@ export default class Home extends React.Component {
               <img src={fix} width={image_size} height={image_size}/>
             </Bounce>
             <Text as="h5" inverted>Reliable</Text>
-            <Text as="p" inverted>
+            <Text as="p" inverted align="justify">
             I only use OEM screens and always make sure the phone is completely functional before returning it. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/reviews/?ref=page_internal">Click here for my reviews</a>.
             </Text>
           </Column>
@@ -66,7 +66,7 @@ export default class Home extends React.Component {
               <img src={sell} width={image_size} height={image_size}/>
             </Bounce>
             <Text as="h5" inverted>Personal</Text>
-            <Text as="p" inverted>
+            <Text as="p" inverted align="justify">
             I communicate directly and constantly throughout the repair process. I am always honest and provide all evidence of my work as I go. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in contact</a>.
             </Text>
           </Column>
@@ -76,7 +76,7 @@ export default class Home extends React.Component {
         <Container>
 
           <Column size="one-half">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/0GDua0p4e04" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/0GDua0p4e04" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </Column>
           
           <Column size="one-half">
@@ -94,7 +94,12 @@ export default class Home extends React.Component {
 
         </Container>
         {/* REVIEWS - Dynamic recent reviews from Strapi */}
-        <ReviewSection />
+        <Container>
+
+            <Text as="h2" align="center">Customer reviews</Text>
+            <ReviewSection />
+
+        </Container>
         {/* FOOTER - Contact details and social media*/}
         <Footer />
 

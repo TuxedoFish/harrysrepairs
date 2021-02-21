@@ -20,7 +20,8 @@ const Container = (props) => {
 Container.defaultProps = {
     inverted: false,
     hero: false,
-    width: "66.7%"
+    width: "66.7%",
+    popout: false
 }
 
 export default Container
