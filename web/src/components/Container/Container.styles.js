@@ -9,7 +9,7 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
 
-    padding: 5rem 0;
+    padding: ${({padding}) => padding};
     display: flex;
 
     ${({ inverted }) => inverted && `

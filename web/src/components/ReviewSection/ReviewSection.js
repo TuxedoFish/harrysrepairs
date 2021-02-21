@@ -50,7 +50,7 @@ const ReviewSection = () => {
         <div style={{display: hasCommentsLoaded ? "" : "none"}}>
             {!loading && (
                 data.reviews.map( (review) => 
-                    <Column size="one-third">
+                    <Column size="four">
                         <FadeUp animate={hasCommentsLoaded ? "closed" : "open"}>
                             <EmbeddedPost width="auto" href={review.URL}/>
                         </FadeUp>

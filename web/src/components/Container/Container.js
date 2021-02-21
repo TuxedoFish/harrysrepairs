@@ -21,7 +21,8 @@ Container.defaultProps = {
     inverted: false,
     hero: false,
     width: "66.7%",
-    popout: false
+    popout: false,
+    padding: "5rem 0"
 }
 
 export default Container

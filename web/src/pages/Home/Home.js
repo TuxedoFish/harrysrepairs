@@ -41,7 +41,7 @@ export default class Home extends React.Component {
         {/* 3 KEY POINTS - Highlighting USP */}
         <Container inverted width="50%" popout>
 
-          <Column size="one-third" centered>
+          <Column size="four" centered>
             <Bounce>
               <img src={buy} width={image_size} height={image_size}/>
             </Bounce>
@@ -51,7 +51,7 @@ export default class Home extends React.Component {
             </Text>
           </Column>
           
-          <Column size="one-third" centered>
+          <Column size="four" centered>
             <Bounce>
               <img src={fix} width={image_size} height={image_size}/>
             </Bounce>
@@ -61,7 +61,7 @@ export default class Home extends React.Component {
             </Text>
           </Column>
 
-          <Column size="one-third" centered>
+          <Column size="four" centered>
             <Bounce>
               <img src={sell} width={image_size} height={image_size}/>
             </Bounce>
@@ -75,11 +75,11 @@ export default class Home extends React.Component {
         {/* VIDEO - Most recent youtube video */}
         <Container>
 
-          <Column size="one-half">
+          <Column size="six">
             <iframe width="100%" height="315" src="https://www.youtube.com/embed/0GDua0p4e04" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </Column>
           
-          <Column size="one-half">
+          <Column size="six">
             <Text as="h2">Video Guides</Text>
             <Text as="p" align="justify">Intrigued as to the behind the scenes of my repairs? I upload regularly to YouTube to show how to carry out a repair. I am always keen to take on new problems so if you have something wacky that needs repairing, please get in touch!</Text>
             <Text as="p" align="justify">I will always be happy to talk through a repair as in depth or not as you want with your repair. If you are electronically inclined then this means I can go through step by step how I work. If you just want a cheap repair with quality service then I can simply do the repair and return it quickly to you.</Text>
