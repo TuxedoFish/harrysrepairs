@@ -8,7 +8,9 @@ const Container = (props) => {
     return (
 
         <S.Container {...props}>
-            {props.children}
+            <S.Row {...props}>
+                {props.children}
+            </S.Row>
         </S.Container>
 
     )
@@ -17,7 +19,8 @@ const Container = (props) => {
 
 Container.defaultProps = {
     inverted: false,
-    hero: false
+    hero: false,
+    width: "66.7%"
 }
 
 export default Container

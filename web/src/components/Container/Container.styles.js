@@ -28,3 +28,10 @@ export const Container = styled.div`
     `}
 
 `
+
+export const Row = styled.div`
+
+    width: ${({ width }) => width};
+    margin: auto;
+    
+`

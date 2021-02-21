@@ -16,7 +16,9 @@ const Text = (props) => {
 }
 
 Text.defaultProps = {
-
+    as: "p",
+    inverted: false,
+    align: "unset"
 }
 
 export default Text

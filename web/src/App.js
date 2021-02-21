@@ -1,9 +1,10 @@
 // React imports
-import React, { useLocation, useEffect } from "react";
+import React, { useEffect } from "react";
 
 // Router
 import {
   BrowserRouter as Router,
+  useLocation,
   Switch,
   Route,
 } from "react-router-dom";
@@ -23,16 +24,24 @@ import { FacebookProvider } from 'react-facebook';
 // TODO: Why does it need to be imported here?
 import 'semantic-ui-css/semantic.min.css'
 
-const App = () => {
+// Ensures always goes to top of page on load
+const ScrollToTop = () => {
 
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+
+}
+
+const App = () => {
 
   return (
     <FacebookProvider appId="140005087951381">
+      <ScrollToTop />
       <Router>
         <div>
             {/* A <Switch> looks through its children <Route>s and
