@@ -9,6 +9,9 @@ import {
     Card,
     Image
 } from 'semantic-ui-react'
+import {
+    Text
+} from '../../components'
 
 const DevicePricing = ({name, amount, image}) => {
 
@@ -16,13 +19,9 @@ const DevicePricing = ({name, amount, image}) => {
 
     return (
         <Card className="device-pricing">
-            <Card.Content>
-                <Card.Header>{name}</Card.Header>
-            </Card.Content>
             <Image src={imageURL} wrapped ui={false} />
-            <Card.Content>
-                <Card.Description className="repair-price-text">{`£${amount.toFixed(2)}`}</Card.Description>
-            </Card.Content>
+            <Text as="p" inverted align="center" style={{fontWeight: "bold"}}>{name}</Text>
+            <Text as="p" inverted align="center">{`£${amount.toFixed(2)}`}</Text>
         </Card>
     )
 }

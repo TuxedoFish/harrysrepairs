@@ -44,7 +44,7 @@ const Device = (props) => {
             <Loader inverted />
           ) : (
             <>
-              <Column size="four">
+              <Column size="four" style={{width: 'fit-content'}}>
                 <Image 
                   src={getURLFromObject(data.devices[0].image)} 
                   width="200px" 
@@ -53,7 +53,7 @@ const Device = (props) => {
                 />
               </Column>
 
-              <Column size="eight">
+              <Column size="six">
                 <Text as="h2">{data.devices[0].name}</Text>
                 <Text as="p">{data.devices[0].description}</Text>
               </Column>

@@ -7,6 +7,9 @@ import {
     Column,
     Text
 } from '../../components'
+import {
+    Button
+} from 'semantic-ui-react'
 
 const Footer = ({inverted}) => {
 
@@ -14,41 +17,23 @@ const Footer = ({inverted}) => {
         <>
             {/* Top information and links */}
             <Container inverted={!inverted}>
-                <Column size="three">
+                <Column size="four">
                     <Text as="h4" inverted={!inverted}>About</Text>
                     <Text as="p" inverted={!inverted}>Cheap independent electronics repairs in SW10. Specialising in iPhone, iPad and MacBook repairs. Located at:</Text>
                     <Text as="p" inverted={!inverted}>107 Finborough Road</Text>
                     <Text as="p" inverted={!inverted}>Kensington</Text>
                     <Text as="p" inverted={!inverted}>London</Text>
                     <Text as="p" inverted={!inverted}>SW10 9DU</Text>
-                    <br />
                 </Column>
-                <Column size="three">
+                <Column size="four">
                     <Text as="h4" inverted={!inverted}>Links</Text>
-                    <ul>
-                    <li>
-                        <a href="https://www.facebook.com/Harrys-Repairs-106851114324167">
-                            Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/devtuxedofish">
-                            Twitter
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/harryliversedge/">
-                            Instagram
-                        </a>
-                    </li>
-                    </ul>
+                    <Button as="a" href="https://www.facebook.com/Harrys-Repairs-106851114324167">Facebook</Button>
+                    <br /><br />
+                    <Button as="a" href="https://twitter.com/devtuxedofish">Twitter</Button>
+                    <br /><br />
+                    <Button as="a" href="https://www.instagram.com/harryliversedge/">Instagram</Button>
                 </Column>
-                <Column size="three">
-                    <div style={{visibility: "hidden"}}>
-                        <h5>Hackerman</h5>
-                    </div>
-                </Column>
-                <Column size="three">
+                <Column size="four">
                     <Text as="h4" inverted={!inverted}>Contact</Text>
                     <Text as="p" inverted={!inverted}>E-mail: harry@harrysrepairs.co.uk</Text>
                     <Text as="p" inverted={!inverted}>Mobile: 07773201051</Text>

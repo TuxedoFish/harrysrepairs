@@ -2,11 +2,14 @@
 
     text-align: center;
     min-width: 200px !important;
+    padding-bottom: 2rem !important;
+    box-shadow: 0 0 0 -2px #d4d4d5, 0 5px 0 0 #2185d0, 0 0px 3px 0 #d4d4d5 !important;
+    -webkit-box-shadow: 0 0 0 -2px #d4d4d5, 0 5px 0 0 #2185d0, 0 0px 3px 0 #d4d4d5 !important;
+    -moz-box-shadow: 0 0 0 -2px #d4d4d5, 0 5px 0 0 #2185d0, 0 0px 3px 0 #d4d4d5 !important;
 
     .image {
-        background: none !important;
-        border: none !important;
-        padding: 1rem 3rem !important;
+        padding: 2rem 0 !important;
+        margin-bottom: 2rem;
 
         img {
             width: 100px !important;

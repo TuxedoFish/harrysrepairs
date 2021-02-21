@@ -7,7 +7,7 @@ const Column = (props) => {
 
     return (
 
-        <S.Column className={`columns ${props.size}`} {...props}>
+        <S.Column className={`columns ${props.size}`} {...props} style={props.style}>
             {props.children}
         </S.Column>
 

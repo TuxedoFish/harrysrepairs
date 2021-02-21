@@ -7,7 +7,7 @@ const Text = (props) => {
     
     return (
 
-        <S.Text {...props}>
+        <S.Text {...props} style={{...props.style}}>
             {props.children}
         </S.Text>
 
