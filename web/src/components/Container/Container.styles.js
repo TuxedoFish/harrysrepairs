@@ -42,9 +42,17 @@ export const Row = styled.div`
 
     `}
 
+    ${({ hero }) => hero && `
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+    `}
+
     @media (max-width: 968px) {
 
-        & .column:not(:last-child) {
+        & .columns:not(:last-child) {
             padding-bottom: 4rem;
         }
     }

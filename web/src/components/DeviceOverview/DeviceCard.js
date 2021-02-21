@@ -12,7 +12,7 @@ import { getURLFromObject } from "../../utils/GetObject"
 
 const ViewButton = (name) => (
     <Link to={`/device/${name}`}>
-        <Button primary>
+        <Button primary style={{width: "100%"}}>
             View
         </Button>
     </Link>

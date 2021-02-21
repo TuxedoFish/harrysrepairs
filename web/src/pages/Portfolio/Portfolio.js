@@ -1,14 +1,18 @@
 // React Imports
 import React from 'react'
-import { Link } from "react-router-dom"
 
 // Component Files
 import PortfolioLarge from '../../components/PortfolioLarge.jsx'
 import { 
   NavBar, 
   Footer,
-  Loader
+  Loader,
+  Container,
+  Text
 } from '../../components/'
+import {
+    Button
+} from 'semantic-ui-react'
 
 // Querying via apollo client
 import { useQuery } from "@apollo/client"
@@ -22,12 +26,10 @@ const Portfolio = () => {
       <>
         <NavBar />
 
-        <div className="section landing parallax">
-          <div className="container landing-container">
-            <h2 className="landing-heading">Harry Liversedge</h2>
-            <a className="button button-primary" href="mailto:harry@harrysrepairs.co.uk" style={{width: '150px'}}>Email Me</a>
-          </div>
-        </div>
+        <Container hero>
+          <Text as="h2" align="center">Harry Liversedge</Text>
+          <Button as="a" href="mailto:harry@harrysrepairs.co.uk" style={{width: '150px'}} align="center">Email Me</Button>
+        </Container>
 
         { !loading ? (
           data.portfolios.map( (app, index) => (
@@ -40,13 +42,9 @@ const Portfolio = () => {
             />
           ))
         ) : (
-          <div className={"info"}>
-            <div className="wide-container">
-              <div class="row portfolio-row">
-                <Loader />
-              </div>
-            </div>
-          </div>
+          <Container inverted>
+            <Loader />
+          </Container>
         )}
 
         <Footer />
