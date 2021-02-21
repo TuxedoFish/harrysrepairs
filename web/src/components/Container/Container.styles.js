@@ -23,7 +23,7 @@ export const Container = styled.div`
 
         justify-content: center;
         align-items: center;
-        height: 55vh;
+        min-height: 55vh;
 
     `}
 

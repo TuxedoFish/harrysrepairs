@@ -38,7 +38,7 @@ const Device = (props) => {
       <>
         <NavBar/>
 
-        <Container padding="10rem 0 5rem 0">
+        <Container hero>
 
           {loading ? (
             <Loader inverted />
@@ -53,9 +53,9 @@ const Device = (props) => {
                 />
               </Column>
 
-              <Column size="six">
-                <Text as="h2">{data.devices[0].name}</Text>
-                <Text as="p">{data.devices[0].description}</Text>
+              <Column size="six" style={{marginLeft: "0"}}>
+                <Text as="h2" align="center">{data.devices[0].name}</Text>
+                <Text as="p" align="justify">{data.devices[0].description}</Text>
               </Column>
             </>
           )}
