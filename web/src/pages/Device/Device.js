@@ -12,9 +12,11 @@ import {
   Loader,
   Footer,
   NavBar,
+  Container,
+  Text,
+  Column
 } from '../../components/'
 import {
-  Grid,
   Image,
   Card,
 } from 'semantic-ui-react'
@@ -27,67 +29,49 @@ const Device = (props) => {
     console.log(`device name: ${deviceName}`)
     const {loading, error, data} = useQuery(GET_DEVICE_BY_NAME(deviceName))
 
-    if (loading) {
-      return <>
-        <NavBar/>
-
-        <div className="section parallax device-view">
-          <div className="container landing-container">
-            <Loader inverted/>
-          </div>
-        </div>
-
-        <Footer />
-      </>
-    }
     if (error) {
       console.log(`ERR: ${error}`)
       return <p>{`Error :( ${error}`}</p>
     }
 
-    // The first result is the device we are looking at
-    const { devices } = data
-    const [ device ] = devices
-    const { name, type, description, image, pricings } = device 
-    const imageURL = getURLFromObject(image)
-
     return ( 
       <>
         <NavBar/>
 
-        <div className="section parallax device-view">
-          <div className="container landing-container">
-            <Grid>
+        <Container padding="10rem 0 5rem 0">
 
-              <Grid.Row>
+          {loading ? (
+            <Loader inverted />
+          ) : (
+            <>
+              <Column size="four">
+                <Image 
+                  src={getURLFromObject(data.devices[0].image)} 
+                  width="200px" 
+                  wrapped 
+                  ui={false} 
+                />
+              </Column>
 
-                <Grid.Column width={5}>
-                  <Image src={imageURL} width="200px" wrapped ui={false} />
-                </Grid.Column>
+              <Column size="eight">
+                <Text as="h2">{data.devices[0].name}</Text>
+                <Text as="p">{data.devices[0].description}</Text>
+              </Column>
+            </>
+          )}
 
-                <Grid.Column width={8} className="device-title-overview">
-                  <h2>{name}</h2>
-                  <p>{description}</p>
-                </Grid.Column>
-
-              </Grid.Row>
-            </Grid>
-          </div>
-        </div>
-
+        </Container>
         
-        <div className="plain-section">
-          <div className="large-container">
-              <div className="row">
-                <h2>Repair Offerings</h2>
-                <Card.Group itemsPerRow={4}>
-                  {pricings.map( ({name, amount, image}) => (
-                    <DevicePricing name={name} amount={amount} image={image} />
-                  ))}
-                </Card.Group>
-              </div>
-            </div>
-          </div>
+        { !loading && (
+          <Container inverted>
+            <Text as="h2" align="center" inverted>Repair Offerings</Text>
+            <Card.Group itemsPerRow={4} className="device-pricing-card-group">
+              {data.devices[0].pricings.map( ({name, amount, image}) => (
+                <DevicePricing name={name} amount={amount} image={image} />
+              ))}
+            </Card.Group>
+          </Container>
+        )}
 
         <Footer inverted />
       </>

@@ -32,6 +32,7 @@
     "react-webcam": "^5.1.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.0.0",
+    "styled-components": "^5.2.1",
     "use-callback-ref": "^1.2.5"
   },
   "scripts": {

@@ -10,7 +10,8 @@ import {
     FadeUp
 } from '../../animations'
 import {
-    Loader
+    Loader,
+    Column
 } from '../../components'
 
 // Facebook components
@@ -44,29 +45,23 @@ const ReviewSection = () => {
 
     }
 
-    return <>
-    
-        <div className="section-low-padding parallax">
-            <div className="large-container full-width-mobile">
-                <h2 className="review-heading">Customer reviews</h2>
-                <div className="row review-row" style={{display: hasCommentsLoaded ? "" : "none"}}>
-                    {!loading && (
-                        data.reviews.map( (review) => 
-                        <div className="one-third column value review-column">
-                            <div className="review-column-container">
-                            <FadeUp animate={hasCommentsLoaded ? "closed" : "open"}>
-                                <EmbeddedPost width="auto" href={review.URL}/>
-                            </FadeUp>
-                            </div>
-                        </div>
-                        )
-                    )}
-                </div>
-            </div>
-            {(!hasCommentsLoaded || loading) && <Loader inverted/>}
+    return (
+    <>
+        <div style={{display: hasCommentsLoaded ? "" : "none"}}>
+            {!loading && (
+                data.reviews.map( (review) => 
+                    <Column size="four">
+                        <FadeUp animate={hasCommentsLoaded ? "closed" : "open"}>
+                            <EmbeddedPost width="auto" href={review.URL}/>
+                        </FadeUp>
+                    </Column>
+                )
+            )}
         </div>
-
+        {(!hasCommentsLoaded || loading) && <Loader inverted/>}
     </>
+    )
+
 }
 
 export default ReviewSection

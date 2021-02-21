@@ -30,27 +30,6 @@ $color-main-dark: #1d73a5;
 $color-text-light: #fff;
 $color-text-p: #ccc;
 
-/* Text
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-p {
-    color: $color-text-p;
-}
-h1, h2, h3, h4 {
-    color: $color-text-light;
-}
-.dark-heading { 
-    color: $color-text-dark-1;
-}
-.dark-p { 
-    color: $color-text-dark-2;
-}
-.light-p { 
-    color: $color-text-p;
-}
-.light-h { 
-    color: $color-text-light;
-}
-
 /* Shared
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button {
@@ -91,6 +70,10 @@ html {
 
 .empty-column {
     height: 10px;
+}
+
+.ui.button {
+    font-size: 1.5rem !important;
 }
 
 /* Sections

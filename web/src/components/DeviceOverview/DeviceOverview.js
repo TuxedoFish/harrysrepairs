@@ -51,7 +51,7 @@ const DeviceOverview = () => {
     }
 
     const onViewMore = () => { setIsViewingMore(true) }
-    const ITEMS_PER_ROW = 7
+    const ITEMS_PER_ROW = 5
 
     return (
 

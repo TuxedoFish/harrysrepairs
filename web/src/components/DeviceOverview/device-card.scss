@@ -15,16 +15,22 @@
 }
 
 /* Mobile views + Tablet Views*/
-@media (max-width: 960px) {
+@media (max-width: 1020px) {
     .device-homepage-card {
         width: 46% !important;
         margin-left: 2% !important;
         margin-right: 2% !important;
+
+        .image {
+            img {
+                width: 40% !important;
+            }
+        }
     }
 }
 
 /* Mobile views + Tablet Views*/
-@media (max-width: 750px) {
+@media (max-width: 540px) {
     .device-homepage-card { 
         min-width: 100% !important;
         margin: auto !important;

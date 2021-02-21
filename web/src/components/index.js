@@ -1,13 +1,20 @@
+// Page specific component
+import ReviewSection from './ReviewSection'
+
+// Standardized components
+import Container from './Container'
+import Column from './Column'
 import Loader from './Loader'
 import NavBar from './NavBar'
 import Footer from './Footer'
-import ScrollToTop from './ScrollToTop'
-import ReviewSection from './ReviewSection'
+import Text from './Text'
 
 export { 
     Loader,
     Footer,
     NavBar,
-    ScrollToTop,
+    Container,
+    Column,
+    Text,
     ReviewSection
 }
