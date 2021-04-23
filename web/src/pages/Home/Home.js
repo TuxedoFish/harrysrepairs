@@ -45,9 +45,9 @@ export default class Home extends React.Component {
             <Bounce>
               <img src={buy} width={image_size} height={image_size}/>
             </Bounce>
-            <Text as="h5" inverted>Cheap</Text>
+            <Text as="h5" inverted>Affordable</Text>
             <Text as="p" inverted align="justify">
-              My prices are the cheapest you will find in the Earl's Court area and I will match the price of any repair house. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in touch for a quote</a>.
+              The prices are the cheapest you will find in the Earl's Court area and we will match the price of any repair house. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in touch for a quote</a>.
             </Text>
           </Column>
           
@@ -57,7 +57,7 @@ export default class Home extends React.Component {
             </Bounce>
             <Text as="h5" inverted>Reliable</Text>
             <Text as="p" inverted align="justify">
-            I only use OEM screens and always make sure the phone is completely functional before returning it. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/reviews/?ref=page_internal">Click here for my reviews</a>.
+            We only use OEM screens and always make sure the phone is completely functional before returning it. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/reviews/?ref=page_internal">Click here for reviews</a>.
             </Text>
           </Column>
 
@@ -67,7 +67,7 @@ export default class Home extends React.Component {
             </Bounce>
             <Text as="h5" inverted>Personal</Text>
             <Text as="p" inverted align="justify">
-            I communicate directly and constantly throughout the repair process. I am always honest and provide all evidence of my work as I go. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in contact</a>.
+            We communicate directly and constantly throughout the repair process. We are always honest and provide all evidence of the work carried out. <a href="https://www.facebook.com/Harrys-Repairs-106851114324167/">Click here to get in contact</a>.
             </Text>
           </Column>
 
@@ -76,7 +76,7 @@ export default class Home extends React.Component {
         <Container>
 
           <Column size="six">
-            <iframe width="100%" height="50vw" style={{maxHeight: "315px", height: "50vw"}} src="https://www.youtube.com/embed/0GDua0p4e04" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="100%" height="50vw" style={{maxHeight: "315px", height: "50vw"}} src="https://www.youtube.com/embed/LBctCgdzwS0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </Column>
           
           <Column size="six">
