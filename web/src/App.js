@@ -26,18 +26,13 @@ import 'semantic-ui-css/semantic.min.css'
 
 // Ensures always goes to top of page on load
 const ScrollToTop = () => {
-
   const { pathname } = useLocation()
-
-  console.log(pathname)
-
+  
   useEffect(() => {
     window.scrollTo(0, 0)
-    console.log("scroll to top...")
   }, [pathname])
 
   return null
-
 }
 
 const App = () => {
