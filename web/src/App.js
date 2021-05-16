@@ -29,8 +29,11 @@ const ScrollToTop = () => {
 
   const { pathname } = useLocation()
 
+  console.log(pathname)
+
   useEffect(() => {
     window.scrollTo(0, 0)
+    console.log("scroll to top...")
   }, [pathname])
 
   return null
@@ -38,11 +41,10 @@ const ScrollToTop = () => {
 }
 
 const App = () => {
-
   return (
     <FacebookProvider appId="140005087951381">
-      <ScrollToTop />
       <Router>
+        <ScrollToTop />
         <div>
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}

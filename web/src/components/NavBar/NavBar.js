@@ -42,7 +42,6 @@ class NavBar extends React.Component {
   toggleSideBar = () => {
     
     const { sidebar } = this.state
-    console.log("Toggled sidebar: " + sidebar)
 
     this.setState({
         sidebar: !sidebar

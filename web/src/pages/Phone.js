@@ -22,12 +22,7 @@ export default class Phone extends React.Component {
     }
 
     render() {
-
-        console.log("ENVIRONMENT")
-        console.log(process.env.NODE_ENV)
-    
         const { index } = this.props;
-    
         const phone = phones[index];
 
         return ( 

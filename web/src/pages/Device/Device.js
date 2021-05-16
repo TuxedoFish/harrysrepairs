@@ -26,11 +26,9 @@ const Device = (props) => {
 
     // Get the device id from the props and query Strapi 
     let deviceName = props.match.params.deviceName
-    console.log(`device name: ${deviceName}`)
     const {loading, error, data} = useQuery(GET_DEVICE_BY_NAME(deviceName))
 
     if (error) {
-      console.log(`ERR: ${error}`)
       return <p>{`Error :( ${error}`}</p>
     }
 

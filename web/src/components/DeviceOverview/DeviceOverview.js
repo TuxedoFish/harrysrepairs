@@ -24,15 +24,9 @@ const DeviceOverview = () => {
     
     const ref = React.useRef();
     useEffect(() => {
-
-        console.log("Ref Updated:")
-
         if(ref.current) {
-            console.log(ref.current.clientHeight)
             setHeight(ref.current.clientHeight)
-
             window.setInterval(() => {
-                console.log(`UPDATE: ${ref.current.clientHeight}`)
                 setHeight(ref.current.clientHeight)
             }, 100)
         }
@@ -46,7 +40,6 @@ const DeviceOverview = () => {
     }
 
     if (error) {
-        console.log(`Error at DeviceOverview loading graphql data: ${error}`)
         return <p>{`Error :( ${error}`}</p>
     }
 

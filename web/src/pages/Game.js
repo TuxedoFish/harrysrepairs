@@ -95,7 +95,6 @@ export default class Game extends React.Component {
                             size = 400;
                             maxTimer = 3;
                             
-                            console.log("Started");
                             computeFrame();
 
                             setInterval(logic, 100);
@@ -108,7 +107,6 @@ export default class Game extends React.Component {
                                 isPlaying = true;
                                 timeElapsed = 0;
                                 score = 0;
-                                console.log("Am i playing now? " + isPlaying);
                                 left = 100;
                                 size = 400;
                                 maxTimer = 3;
@@ -120,7 +118,6 @@ export default class Game extends React.Component {
                                 instruction_text.innerHTML = "Make sure your camera is setup!";
                                 button.innerHTML = 'Play';
                                 isPlaying = false;
-                                console.log("Am i playing now? " + isPlaying);
                                 state_text.innerHTML = "Your score was: " + score;
                                 left = 100;
                                 size = 400;
@@ -238,7 +235,6 @@ export default class Game extends React.Component {
                               setTimeout(computeFrame, 0);
                         }
                         function onReady() {
-                            console.log("Loading...");
                             bodyPix.load(bodyPixConfig).then((m) => {
                                 model = m;
                                 init();

@@ -4,7 +4,6 @@ import React from "react"
 import * as S from './Container.styles'
 
 const Container = (props) => {
-console.log(props)
     return (
 
         <S.Container {...props}>
