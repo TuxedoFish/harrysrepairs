@@ -25,9 +25,9 @@ const DeviceOverview = () => {
     const ref = React.useRef();
     useEffect(() => {
         if(ref.current) {
-            setHeight(ref.current.clientHeight)
+            setHeight(ref.current?.clientHeight)
             window.setInterval(() => {
-                setHeight(ref.current.clientHeight)
+                setHeight(ref.current?.clientHeight)
             }, 100)
         }
         

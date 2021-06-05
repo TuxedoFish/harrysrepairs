@@ -49,9 +49,6 @@ const App = () => {
                 <Route path="/game" component={Game} />
                 <Route path="/device/:deviceName" component={Device} />
                 <Route path="/portfolio" component={Portfolio} />
-                {/* <Route path="/phone/:index">
-                    <PhonePage />
-                </Route> */}
             </Switch>
         </div>
       </Router>
