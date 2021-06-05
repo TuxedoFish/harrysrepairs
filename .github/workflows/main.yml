@@ -20,7 +20,6 @@ jobs:
         run: |
           echo 'REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}}' >> web/tmp.txt
           echo 'NODE_ENV: ${{secrets.STAGING_NODE_ENV}}' >> web/tmp.txt
-          mv web/tmp.txt web/.env
 
       - name: Deploy to Heroku (staging)
         uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
@@ -31,3 +30,7 @@ jobs:
         env:
           HD_REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}}
           HD_NODE_ENV: ${{secrets.STAGING_NODE_ENV}}
+      
+      - name: Remove temporary file
+        run: |
+          rm web/tmp.txt

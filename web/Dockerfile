@@ -14,6 +14,9 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
+# Move the temporary text file to .env ->
+RUN mv /usr/src/app/tmp.txt /usr/src/app/.env
+
 # Run the webpack build
 RUN npm run build
 
