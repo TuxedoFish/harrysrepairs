@@ -1,12 +1,12 @@
-name: Deploy (Staging)
+name: Deploy (Production)
 
 on:
-  push:
-    branches:
-      - master
-
+  release:
+    types:
+      - created
+      
 env:
-  HEROKU_APP_NAME: "harrysrepairs-staging"
+  HEROKU_APP_NAME: "harrysrepairs"
   HEROKU_EMAIL: "harryliversedge@gmail.com"
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      - name: Deploy to Heroku (staging)
+      - name: Deploy to Heroku (production)
         uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
@@ -27,6 +27,8 @@ jobs:
           docker_build_args: |
             NODE_ENV
             REACT_APP_BACKEND_URL
+            GOOGLE_ANALYTICS_ID
         env:
-          REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}}
-          NODE_ENV: ${{secrets.STAGING_NODE_ENV}}
+          REACT_APP_BACKEND_URL: ${{secrets.PROD_BACKEND_URL}}
+          NODE_ENV: ${{secrets.PROD_NODE_ENV}}
+          GOOGLE_ANALYTICS_ID: ${{secrets.PROD_GOOGLE_ANALYTICS_ID}}
