@@ -13,6 +13,8 @@ WORKDIR /usr/src/app
 
 # Required port variables
 ENV PORT 8000
+ENV NODE_ENV production
+ENV GOOGLE_ANALYTICS_ID G-7M5PX92V69
 ENV REACT_APP_BACKEND_URL="https://harrysrepairs-staging-strapi.herokuapp.com"
 
 # Copy package and package-lock files to root level
