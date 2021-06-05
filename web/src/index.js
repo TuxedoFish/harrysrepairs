@@ -15,7 +15,15 @@ import './css/skeleton.css'
 import './css/normalize.css'
 import './css/custom.scss'
 
-const strapiURI =  `${process.env.REACT_APP_BACKEND_URL}/graphql`
+// Google Analytics
+import ReactGA from 'react-ga';
+if(process.env.NODE_ENV === "production") {
+  ReactGA.initialize(process.env.GOOGLE_ANALYTICS_ID); // add your tracking id here.
+  ReactGA.pageview(window.location.pathname + window.location.search);
+}
+
+// Strapi CMS
+const strapiURI = `${process.env.REACT_APP_BACKEND_URL}/graphql`;
 const client = new ApolloClient({
   uri: strapiURI,
   cache: new InMemoryCache()
