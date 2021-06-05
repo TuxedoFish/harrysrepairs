@@ -3,7 +3,7 @@ name: Deploy (Staging)
 on:
   push:
     branches:
-      - test/workflow-ci-testing
+      - master
 
 env:
   HEROKU_APP_NAME: "harrysrepairs-staging"
@@ -13,12 +13,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Inject environment variables
+        run: |
+          echo 'REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}}' >> web/tmp.txt
+          echo 'NODE_ENV: ${{secrets.STAGING_NODE_ENV}}' >> web/tmp.txt
+
       - name: Deploy to Heroku (staging)
         uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: $HEROKU_APP_NAME #Must be unique in Heroku
           heroku_email: $HEROKU_EMAIL
+          docker_build_args: |
+            NODE_ENV
+            REACT_APP_BACKEND_URL
         env:
           REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}}
           NODE_ENV: ${{secrets.STAGING_NODE_ENV}}
+      
+      - name: Remove temporary file
+        run: |
+          rm web/tmp.txt
