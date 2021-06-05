@@ -24,7 +24,7 @@ jobs:
           heroku_email: $HEROKU_EMAIL
           usedocker: true
           appdir: web
-          dontuseforce: 1
+          dontuseforce: false
           docker_build_args: |
             NODE_ENV
             REACT_APP_BACKEND_URL
