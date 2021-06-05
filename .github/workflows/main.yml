@@ -8,6 +8,8 @@ on:
 env:
   HEROKU_APP_NAME: "harrysrepairs-staging"
   HEROKU_EMAIL: "harryliversedge@gmail.com"
+  REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}}
+  NODE_ENV: ${{secrets.STAGING_NODE_ENV}}
 
 jobs:
   build:
