@@ -13,14 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # - name: Git checkout
-      #   uses: actions/checkout@v2
-
-      # - name: Inject environment variables
-      #   run: |
-      #     echo 'REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}}' >> web/tmp.txt
-      #     echo 'NODE_ENV: ${{secrets.STAGING_NODE_ENV}}' >> web/tmp.txt
-
       - name: Deploy to Heroku (staging)
         uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
         with:
@@ -29,11 +21,4 @@ jobs:
           heroku_email: $HEROKU_EMAIL
         docker_build_args: |
           REACT_APP_BACKEND_URL
-          NODE_ENV
-        # env:
-        #   HD_REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}}
-        #   HD_NODE_ENV: ${{secrets.STAGING_NODE_ENV}}
-      
-      # - name: Remove temporary file
-      #   run: |
-      #     rm web/tmp.txt
+          NODE_ENV 
