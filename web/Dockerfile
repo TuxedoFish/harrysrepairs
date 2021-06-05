@@ -5,11 +5,13 @@ FROM node:12-alpine
 ARG REACT_APP_BACKEND_URL=TEST
 ARG NODE_ENV=TEST
 ARG GOOGLE_ANALYTICS_ID=TEST
+ARG PORT=8000
 
 # Set args to environment variables
 ENV REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL
 ENV NODE_ENV=$NODE_ENV
 ENV GOOGLE_ANALYTICS_ID=$GOOGLE_ANALYTICS_ID
+ENV PORT=$PORT
 
 # For development we need to have nodemon installed
 RUN npm install -g nodemon
