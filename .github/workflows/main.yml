@@ -13,8 +13,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Inject environment variables
+        run: |
+          echo REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}} >> web/.env
+          echo NODE_ENV: ${{secrets.STAGING_NODE_ENV}} >> web/.env
+
+      - name: Deploy to Heroku (staging)
+        uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: $HEROKU_APP_NAME #Must be unique in Heroku
