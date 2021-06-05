@@ -18,8 +18,9 @@ jobs:
 
       - name: Inject environment variables
         run: |
-          echo REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}} >> web/.env
-          echo NODE_ENV: ${{secrets.STAGING_NODE_ENV}} >> web/.env
+          echo 'REACT_APP_BACKEND_URL: ${{secrets.STAGING_BACKEND_URL}}' >> web/tmp.txt
+          echo 'NODE_ENV: ${{secrets.STAGING_NODE_ENV}}' >> web/tmp.txt
+          mv web/tmp.txt .env
 
       - name: Deploy to Heroku (staging)
         uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
