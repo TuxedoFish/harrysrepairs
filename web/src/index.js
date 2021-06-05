@@ -18,8 +18,10 @@ import './css/custom.scss'
 // Google Analytics
 import ReactGA from 'react-ga';
 if(process.env.NODE_ENV === "production") {
+  console.log("Initializing google analytics...")
   ReactGA.initialize(process.env.GOOGLE_ANALYTICS_ID); // add your tracking id here.
   ReactGA.pageview(window.location.pathname + window.location.search);
+  console.log("Finished.")
 }
 
 // Strapi CMS
