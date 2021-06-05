@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Heroku (staging)
-        uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
+        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: $HEROKU_APP_NAME #Must be unique in Heroku
           heroku_email: $HEROKU_EMAIL
-        docker_build_args: |
-          REACT_APP_BACKEND_URL
-          NODE_ENV 
+          docker_build_args: |
+            REACT_APP_BACKEND_URL
+            NODE_ENV 
