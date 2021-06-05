@@ -1,6 +1,6 @@
 build:
   config:
-    REACT_APP_BACKEND_URL: ${REACT_APP_BACKEND_URL}
+    REACT_APP_BACKEND_URL: https://harrysrepairs-staging-strapi.herokuapp.com
     NODE_ENV: ${NODE_ENV}
     GOOGLE_ANALYTICS_ID: ${GOOGLE_ANALYTICS_ID}
   docker:
