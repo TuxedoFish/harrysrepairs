@@ -2,10 +2,9 @@
 FROM node:12-alpine
 
 # Build args with suitable defaults
-ARG REACT_APP_BACKEND_URL=TEST
-ARG NODE_ENV=TEST
-ARG GOOGLE_ANALYTICS_ID=TEST
-ARG PORT=8000
+ARG REACT_APP_BACKEND_URL=https://not_provided
+ARG NODE_ENV=development
+ARG GOOGLE_ANALYTICS_ID=not_provided
 
 # Set args to environment variables
 ENV REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL
