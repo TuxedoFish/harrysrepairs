@@ -3,7 +3,7 @@ name: Deploy (Staging)
 on:
   push:
     branches:
-      - test/workflow-ci-testing
+      - NOT_A_BRANCH
 
 env:
   HEROKU_APP_NAME: "harrysrepairs-staging"

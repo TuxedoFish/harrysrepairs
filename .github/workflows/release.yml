@@ -1,24 +1,35 @@
 name: Deploy (Production)
 
 on:
-  release:
-    types:
-      - created
-
+  push:
+    branches:
+      - test/workflow-ci-testing
+      
 env:
   HEROKU_APP_NAME: "harrysrepairs"
   HEROKU_EMAIL: "harryliversedge@gmail.com"
-  REACT_APP_BACKEND_URL: ${{secrets.PROD_BACKEND_URL}}
-  NODE_ENV: ${{secrets.PROD_NODE_ENV}}
-  GOOGLE_ANALYTICS_ID: ${{secrets.PROD_GOOGLE_ANALYTICS_ID}}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Deploy to Heroku (production)
+        uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: $HEROKU_APP_NAME #Must be unique in Heroku
           heroku_email: $HEROKU_EMAIL
+          usedocker: true
+          appdir: web
+          dontuseforce: 1
+          docker_build_args: |
+            NODE_ENV
+            REACT_APP_BACKEND_URL
+            GOOGLE_ANALYTICS_ID
+        env:
+          REACT_APP_BACKEND_URL: ${{secrets.PROD_BACKEND_URL}}
+          NODE_ENV: ${{secrets.PROD_NODE_ENV}}
+          GOOGLE_ANALYTICS_ID: ${{secrets.PROD_GOOGLE_ANALYTICS_ID}}
