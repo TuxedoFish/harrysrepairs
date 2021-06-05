@@ -13,7 +13,7 @@ var sslRedirect = require('heroku-ssl-redirect');
 app.use(favicon(__dirname + '/dist/favicon.ico'));
 
 // enable ssl redirect
-app.use(sslRedirect())
+// app.use(sslRedirect())
 
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'dist')));
