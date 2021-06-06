@@ -26,6 +26,7 @@ RUN npm install
 COPY . /usr/src/app
 
 # Run the webpack build
+RUN npm install --only=dev
 RUN npm run build
 
 # Expose the port so it can be accessed
