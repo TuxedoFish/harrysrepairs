@@ -1,7 +1,13 @@
 version: "3.3"
 services:
   web:
+    environment:
+      - PORT=8000
     build:
       context: web/
+      args:
+        - REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL
+        - NODE_ENV=development
+        
     ports: 
       - 8000:8000
