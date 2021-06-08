@@ -25,11 +25,18 @@ import { FacebookProvider } from 'react-facebook';
 import 'semantic-ui-css/semantic.min.css'
 
 // Ensures always goes to top of page on load
-const ScrollToTop = () => {
+const OnPageChange = () => {
   const { pathname } = useLocation()
   
   useEffect(() => {
+    // Scroll to top
     window.scrollTo(0, 0)
+
+    // Trigger google analytics event
+    window.gtag("config", process.env.GOOGLE_ANALYTICS_ID, {
+      page_title: pathname,
+      page_path: pathname
+    });
   }, [pathname])
 
   return null
@@ -39,7 +46,7 @@ const App = () => {
   return (
     <FacebookProvider appId="140005087951381">
       <Router>
-        <ScrollToTop />
+        <OnPageChange />
         <div>
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}

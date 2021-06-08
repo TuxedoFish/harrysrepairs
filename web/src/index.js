@@ -16,12 +16,17 @@ import './css/normalize.css'
 import './css/custom.scss'
 
 // Google Analytics
-import ReactGA from 'react-ga';
 if(process.env.NODE_ENV === "production") {
-  console.log("Initializing google analytics...")
-  ReactGA.initialize(process.env.GOOGLE_ANALYTICS_ID); // add your tracking id here.
-  ReactGA.pageview(window.location.pathname + window.location.search);
-  console.log("Finished.")
+  const script = document.createElement("script")
+  script.async = true;
+  script.text = process.env.GOOGLE_ANALYTICS_ID
+  document.body.appendChild(script)
+
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', process.env.GOOGLE_ANALYTICS_ID)
 }
 
 // Strapi CMS
