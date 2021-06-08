@@ -19,7 +19,7 @@ import './css/custom.scss'
 if(process.env.NODE_ENV === "production") {
   const script = document.createElement("script")
   script.async = true;
-  script.text = process.env.GOOGLE_ANALYTICS_ID
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`
   document.body.appendChild(script)
 
   window.dataLayer = window.dataLayer || []
