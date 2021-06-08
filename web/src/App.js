@@ -32,11 +32,13 @@ const OnPageChange = () => {
     // Scroll to top
     window.scrollTo(0, 0)
 
-    // Trigger google analytics event
-    window.gtag("config", process.env.GOOGLE_ANALYTICS_ID, {
-      page_title: pathname,
-      page_path: pathname
-    });
+    // Trigger google analytics event in production
+    if(process.env.NODE_ENV==="production") {
+      window.gtag("config", process.env.GOOGLE_ANALYTICS_ID, {
+        page_title: pathname,
+        page_path: pathname
+      });
+    }
   }, [pathname])
 
   return null
