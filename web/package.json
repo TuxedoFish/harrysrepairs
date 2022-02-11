@@ -19,7 +19,7 @@
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
     "heroku-ssl-redirect": "0.0.4",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-facebook": "^8.1.4",
