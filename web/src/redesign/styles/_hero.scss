@@ -9,7 +9,7 @@
 /* cursor-reactive point field (HeroField) — replaces the old static grid backdrop */
 .hl .hero-field {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  z-index: 0; pointer-events: none; display: block;
+  z-index: 1; pointer-events: none; display: block;
 }
 .hl .hero-inner { position: relative; z-index: 2; max-width: var(--maxw); margin: 0 auto; }
 

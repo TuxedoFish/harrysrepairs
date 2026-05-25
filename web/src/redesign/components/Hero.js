@@ -16,8 +16,8 @@ const Hero = () => (
       <h1 className="hero-name">Harry Liversedge</h1>
 
       <p className="hero-value">
-        Software engineer specialising in <b>low-latency trading systems</b>, execution
-        algorithms, market-making infrastructure, and the quant research behind them.
+        Quant developer building <b>crypto execution algorithms</b>. Off the clock, I run
+        a live trading operation to keep my research and infrastructure sharp.
       </p>
 
       <div className="hero-cta">
@@ -33,8 +33,7 @@ const Hero = () => (
       </div>
 
       <div className="hero-meta">
-        <div><span>FOCUS</span><b>C++ · Python · Java</b></div>
-        <div><span>DOMAIN</span><b>Crypto market microstructure</b></div>
+        <div><span>LANGUAGES</span><b>Go · Java · Python</b></div>
         <div><span>BASED</span><b>London, UK</b></div>
       </div>
     </div>
