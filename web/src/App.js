@@ -10,8 +10,8 @@ import {
   Redirect,
 } from "react-router-dom";
 
-// Pages
-import { Portfolio } from './pages'
+// Pages — new single-page portfolio (redesign)
+import Portfolio from './redesign/pages/Portfolio'
 
 // Legacy repairs site — frozen point-in-time copy, served from its own
 // isolated module so the portfolio redesign can't regress it.

@@ -14,6 +14,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import './css/skeleton.css'
 import './css/normalize.css'
 import './css/custom.scss'
+import './redesign/styles/redesign.scss'
 
 // Google Analytics
 if(process.env.NODE_ENV === "production") {

@@ -1,0 +1,59 @@
+/* ============================================================
+   Redesign design tokens — ported from the designer mockup (§01).
+   Scoped to the `.hl` portfolio wrapper so the dark theme + fonts
+   never leak into the frozen legacy repairs site.
+   ============================================================ */
+.hl {
+  /* Colour — refined dark, single signal-cyan accent */
+  --page:       #05060a;
+  --bg:         #0a0c10;
+  --surface:    #12151c;
+  --surface-2:  #181c25;
+  --border:     #232834;
+  --border-2:   #2e3543;
+  --text:       #e8ebf0;
+  --text-2:     #9aa3b2;
+  --text-3:     #5c6573;
+  --accent:     #4cc2ff;
+  --accent-dim: #2a4d63;
+  --accent-ink: #04141d;
+
+  /* Type families */
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body:    "Inter", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", "SFMono-Regular", ui-monospace, monospace;
+
+  /* Type scale — 1.25 major third, tightened for UI */
+  --t-display: 4.2rem;
+  --t-h1:      2.6rem;
+  --t-h2:      1.9rem;
+  --t-h3:      1.35rem;
+  --t-body:    1rem;
+  --t-small:   0.875rem;
+  --t-meta:    0.78rem;
+
+  /* Spacing — 8px base */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px; --s-10: 128px;
+
+  --radius:   10px;
+  --radius-s: 6px;
+  --maxw:     1120px;
+
+  /* Base — applies only inside the wrapper */
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scoped reset — don't touch the global/legacy box model */
+.hl *,
+.hl *::before,
+.hl *::after { box-sizing: border-box; }
+
+.hl h1, .hl h2, .hl h3, .hl h4, .hl p { margin: 0; }

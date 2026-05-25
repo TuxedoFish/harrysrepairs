@@ -1,0 +1,35 @@
+/* ============================================================
+   Shared component styles (mockup §"shared component styles").
+   All scoped under `.hl`. Reference the tokens via CSS custom
+   properties inherited from the wrapper.
+   ============================================================ */
+
+/* Buttons */
+.hl .btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-body); font-size: var(--t-small); font-weight: 500;
+  padding: 10px 18px; border-radius: var(--radius-s); cursor: pointer;
+  border: 1px solid transparent; text-decoration: none; transition: all .15s ease;
+  letter-spacing: -0.01em;
+}
+.hl .btn-primary { background: var(--accent); color: var(--accent-ink); }
+.hl .btn-primary:hover { background: #6fd0ff; transform: translateY(-1px); box-shadow: 0 4px 18px -6px var(--accent); }
+.hl .btn-ghost { background: transparent; color: var(--text); border-color: var(--border-2); }
+.hl .btn-ghost:hover { border-color: var(--accent-dim); background: var(--surface-2); color: var(--accent); }
+
+.hl .btn-link {
+  font-family: var(--font-mono); font-size: var(--t-meta); color: var(--text-2);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 0; transition: color .15s ease; cursor: pointer;
+  background: none; border: none;
+}
+.hl .btn-link:hover { color: var(--accent); }
+.hl .btn-link svg { width: 13px; height: 13px; }
+
+/* Tags */
+.hl .tag-row { display: flex; flex-wrap: wrap; gap: 7px; }
+.hl .tag {
+  font-family: var(--font-mono); font-size: var(--t-meta); color: var(--text-2);
+  padding: 3px 9px; border: 1px solid var(--border); border-radius: 5px;
+  background: var(--surface); letter-spacing: 0.01em;
+}

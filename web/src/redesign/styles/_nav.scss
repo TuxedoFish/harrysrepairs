@@ -1,0 +1,36 @@
+/* Nav — mockup §02. Scoped under .hl. Mobile collapses to a hamburger
+   that toggles a dropdown (the static mockup only showed the icon). */
+.hl .nav {
+  position: relative;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 40px; border-bottom: 1px solid var(--border);
+}
+.hl .nav-brand { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; letter-spacing: -0.02em; }
+.hl .nav-brand b { color: var(--accent); }
+
+.hl .nav-links { display: flex; gap: 28px; }
+.hl .nav-links a { color: var(--text-2); text-decoration: none; font-size: var(--t-small); transition: color .15s; }
+.hl .nav-links a:hover { color: var(--text); }
+
+/* hamburger — hidden on desktop */
+.hl .nav-hamb {
+  display: none; flex-direction: column; justify-content: space-between;
+  width: 22px; height: 14px; padding: 0;
+  background: none; border: none; cursor: pointer;
+}
+.hl .nav-hamb span { height: 2px; background: var(--text-2); border-radius: 2px; }
+
+@media (max-width: 768px) {
+  .hl .nav { padding: 16px 22px; }
+  .hl .nav-hamb { display: flex; }
+  .hl .nav-links {
+    display: none;
+    position: absolute; top: 100%; right: 22px; left: 22px; z-index: 50;
+    flex-direction: column; gap: 0;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-s); overflow: hidden;
+  }
+  .hl .nav-links.is-open { display: flex; }
+  .hl .nav-links a { padding: 14px 18px; border-bottom: 1px solid var(--border); }
+  .hl .nav-links a:last-child { border-bottom: none; }
+}
