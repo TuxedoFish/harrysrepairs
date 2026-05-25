@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
+
+      - name: Install Heroku CLI
+        run: curl https://cli-assets.heroku.com/install.sh | sh
         
       - name: Deploy to Heroku (production)
         uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
