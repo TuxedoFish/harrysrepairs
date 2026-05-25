@@ -29,7 +29,7 @@ export default class Phone extends React.Component {
             <>
             <div class="navbar">
                 <div class="container">
-                    <h4 class="navbar-title">Harry's Repairs</h4>
+                    <h4 class="navbar-title">Harry Liversedge</h4>
                 </div>
             </div>
 

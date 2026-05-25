@@ -28,11 +28,11 @@ const Portfolio = () => {
 
         <Container hero>
           <Text as="h2" align="center">Harry Liversedge</Text>
-          <Button as="a" href="mailto:harry@harrysrepairs.co.uk" style={{width: '150px'}} align="center">Email Me</Button>
+          <Button as="a" href="mailto:harryliversedge@gmail.com" style={{width: '150px'}} align="center">Email Me</Button>
         </Container>
 
         { !loading ? (
-          data.portfolios.map( (app, index) => (
+          (data?.portfolios || []).map( (app, index) => (
             <PortfolioLarge
               index={index} 
               title={app.title}

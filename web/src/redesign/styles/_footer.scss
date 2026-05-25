@@ -1,0 +1,38 @@
+/* Footer — mockup §05. Three-column → single column on mobile. Scoped under .hl. */
+.hl .footer { border-top: 1px solid var(--border); background: var(--surface); }
+.hl .footer-inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 56px 40px 32px;
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px;
+}
+.hl .footer h4 {
+  font-family: var(--font-mono); font-size: var(--t-meta); letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-3); margin-bottom: 16px;
+}
+.hl .footer p { color: var(--text-2); font-size: var(--t-small); max-width: 280px; }
+.hl .footer-brand { margin-bottom: 12px; }
+.hl .footer-logo { height: 24px; width: auto; display: block; }
+
+.hl .footer-soc { display: flex; flex-direction: column; gap: 12px; }
+.hl .footer-soc a {
+  display: inline-flex; align-items: center; gap: 10px; color: var(--text-2);
+  text-decoration: none; font-size: var(--t-small); transition: color .15s;
+}
+.hl .footer-soc a:hover { color: var(--accent); }
+.hl .footer-soc svg { width: 16px; height: 16px; }
+
+.hl .footer-contact a {
+  color: var(--text); text-decoration: none; font-family: var(--font-mono);
+  font-size: var(--t-small); border-bottom: 1px solid var(--accent-dim); padding-bottom: 2px;
+}
+.hl .footer-contact a:hover { color: var(--accent); }
+
+.hl .footer-bottom {
+  max-width: var(--maxw); margin: 0 auto; padding: 20px 40px;
+  border-top: 1px solid var(--border); display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: var(--t-meta); color: var(--text-3);
+}
+
+@media (max-width: 768px) {
+  .hl .footer-inner { grid-template-columns: 1fr; gap: 36px; padding: 40px 22px 28px; }
+  .hl .footer-bottom { flex-direction: column; gap: 8px; padding: 18px 22px; }
+}

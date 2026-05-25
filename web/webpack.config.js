@@ -14,7 +14,14 @@ const GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID || 'N/A';
 
 module.exports = {
     context: __dirname,
-    
+
+    // Bind mounts on a Windows host don't forward inotify events to the Linux
+    // container, so --watch must poll to detect changes.
+    watchOptions: {
+        poll: 1000,
+        ignored: /node_modules/,
+    },
+
     entry: {
         index: './src/index.js',
     },
@@ -24,16 +31,17 @@ module.exports = {
         filename: `[name].js`,
     },
     plugins : [
-        new HtmlWebpackPlugin({
-            favicon: "./src/images/favicon.ico",
-        }),
+        // Single HtmlWebpackPlugin: template + favicon together. Two separate
+        // instances both emitting index.html produced a corrupted merged file
+        // (wrong "Webpack App" title, broken <head>).
         new HtmlWebpackPlugin({
             hash: true,
-            title: "Harry's Repairs",
+            title: "Harry Liversedge",
             myPageHeader: 'Home Page',
             template: './templates/index.html',
             chunks: ['index'],
-            filename: './index.html' // relative to root of the application
+            filename: 'index.html', // relative to root of the application
+            favicon: './src/images/favicon.ico'
         }),
         new webpack.DefinePlugin({
             'process.env': {

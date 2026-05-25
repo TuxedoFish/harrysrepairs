@@ -7,16 +7,16 @@ import {
   useLocation,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 
-// Pages
-import {
-  Home,
-  Terms,
-  Game,
-  Portfolio,
-  Device
-} from './pages'
+// Pages — new single-page portfolio (redesign)
+import Portfolio from './redesign/pages/Portfolio'
+
+// Legacy repairs site — frozen point-in-time copy, served from its own
+// isolated module so the portfolio redesign can't regress it.
+import Home from './legacy/pages/Home'
+import Device from './legacy/pages/Device'
 
 // Facebook Provider
 import { FacebookProvider } from 'react-facebook';
@@ -53,11 +53,13 @@ const App = () => {
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
             <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/terms" component={Terms} />
-                <Route path="/game" component={Game} />
+                {/* Portfolio is now front and center on the landing route. */}
+                <Route exact path="/" component={Portfolio} />
+                {/* The repair site lives here, off the main nav, linked from the portfolio. */}
+                <Route path="/repairs" component={Home} />
                 <Route path="/device/:deviceName" component={Device} />
-                <Route path="/portfolio" component={Portfolio} />
+                {/* Keep old /portfolio links working. */}
+                <Redirect from="/portfolio" to="/" />
             </Switch>
         </div>
       </Router>

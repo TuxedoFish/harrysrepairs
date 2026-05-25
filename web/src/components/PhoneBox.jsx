@@ -1,6 +1,5 @@
 // React Imports
 import React from 'react';
-import { Link } from "react-router-dom"
 
 // Carousel
 import { Carousel } from "react-responsive-carousel"
@@ -205,7 +204,7 @@ export default class PhoneBox extends React.Component {
                                             onSuccess={(details, data) => {
                                                 alert("Transaction completed by " + details.payer.name.given_name 
                                                 + ". Please check your emails for a confirmation email and get in touch with me " +
-                                                "at harry@harrysrepairs.co.uk if you have any questions.");
+                                                "at harryliversedge@gmail.com if you have any questions.");
                                         
                                                 // OPTIONAL: Call your server to save the transaction
                                                 return fetch("/paypal-transaction-complete", {
@@ -222,10 +221,7 @@ export default class PhoneBox extends React.Component {
                                         />
                                     </div>
                                     <p className="purchase-info">
-                                        By clicking purchase you agree to our terms and conditions:
-                                    </p>
-                                    <p className="purchase-info">
-                                        <Link to="/terms">Terms and Conditions</Link>
+                                        By clicking purchase you agree to our terms and conditions.
                                     </p>
                                 </>
                         </div>

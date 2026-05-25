@@ -1,0 +1,40 @@
+.device-pricing {
+
+    text-align: center;
+    min-width: 200px !important;
+    padding-bottom: 2rem !important;
+    box-shadow: 0 0 0 -2px #d4d4d5, 0 5px 0 0 #2185d0, 0 0px 3px 0 #d4d4d5 !important;
+    -webkit-box-shadow: 0 0 0 -2px #d4d4d5, 0 5px 0 0 #2185d0, 0 0px 3px 0 #d4d4d5 !important;
+    -moz-box-shadow: 0 0 0 -2px #d4d4d5, 0 5px 0 0 #2185d0, 0 0px 3px 0 #d4d4d5 !important;
+
+    .image {
+        padding: 2rem 0 !important;
+        margin-bottom: 2rem;
+
+        img {
+            width: 100px !important;
+            margin: auto !important;
+        }
+    }
+    .content {
+        border: none !important;
+
+        .header, .description {
+            font-size: 2.2rem !important;
+        }
+    }
+}
+
+.repair-price-text {
+    // font-weight: bold !important;
+    // color: #2EB2FF !important;
+}
+
+/* Mobile views */
+@media (max-width: 750px) {
+    .device-pricing { 
+        min-width: 100% !important;
+        margin: auto !important;
+        margin-bottom: 3.5rem !important;
+    }
+}

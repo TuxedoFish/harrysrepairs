@@ -1,0 +1,9 @@
+/* Redesign stylesheet entry. Everything here is scoped under `.hl`,
+   so importing it globally is safe — it never affects the legacy pages. */
+@import 'tokens';
+@import 'components';
+@import 'nav';
+@import 'hero';
+@import 'projects';
+@import 'about';
+@import 'footer';
