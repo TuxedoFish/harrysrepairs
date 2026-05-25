@@ -4,13 +4,15 @@ import React from 'react'
 
 import Nav from '../components/Nav'
 import Hero from '../components/Hero'
+import Projects from '../components/Projects'
+import Footer from '../components/Footer'
 
 const Portfolio = () => (
   <div className="hl">
     <Nav />
     <Hero />
-    {/* Phase 3: <Projects /> (Strapi-driven card grid, anchor id="work") */}
-    {/* Phase 4: <Footer /> */}
+    <Projects />
+    <Footer />
   </div>
 )
 

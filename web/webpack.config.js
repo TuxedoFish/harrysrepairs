@@ -31,16 +31,17 @@ module.exports = {
         filename: `[name].js`,
     },
     plugins : [
-        new HtmlWebpackPlugin({
-            favicon: "./src/images/favicon.ico",
-        }),
+        // Single HtmlWebpackPlugin: template + favicon together. Two separate
+        // instances both emitting index.html produced a corrupted merged file
+        // (wrong "Webpack App" title, broken <head>).
         new HtmlWebpackPlugin({
             hash: true,
             title: "Harry Liversedge",
             myPageHeader: 'Home Page',
             template: './templates/index.html',
             chunks: ['index'],
-            filename: './index.html' // relative to root of the application
+            filename: 'index.html', // relative to root of the application
+            favicon: './src/images/favicon.ico'
         }),
         new webpack.DefinePlugin({
             'process.env': {

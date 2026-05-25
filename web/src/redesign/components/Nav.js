@@ -1,10 +1,11 @@
 // Portfolio nav — mockup §02. Work + Contact only (About/Writing dropped).
 // Single-page anchors; mobile collapses to a hamburger-toggled dropdown.
 import React, { useState } from 'react'
+import logo from '../assets/liversedge-primary.svg'
 
 const LINKS = [
   { label: 'Work', href: '#work' },
-  { label: 'Contact', href: 'mailto:harryliversedge@gmail.com' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 const Nav = () => {
@@ -12,7 +13,9 @@ const Nav = () => {
 
   return (
     <nav className="nav">
-      <div className="nav-brand">Harry Liversedge<b>.</b></div>
+      <div className="nav-brand">
+        <img className="nav-logo" src={logo} alt="Harry Liversedge" />
+      </div>
 
       <button
         className="nav-hamb"

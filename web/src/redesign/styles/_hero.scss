@@ -1,7 +1,9 @@
 /* Hero — mockup §02. Typographic hero on a CSS grid backdrop with an accent
    glow (no photo). Scoped under .hl. */
 .hl .hero {
-  position: relative; padding: 96px 40px 104px; overflow: hidden;
+  /* height:auto overrides the legacy global `.hero { height: 190px }` in
+     custom.scss — without it, overflow:hidden clips everything past 190px. */
+  position: relative; height: auto; padding: 96px 40px 104px; overflow: hidden;
   border-bottom: 1px solid var(--border);
 }
 /* geometric grid backdrop */
@@ -29,7 +31,7 @@
 }
 .hl .hero-name .accent { color: var(--accent); }
 .hl .hero-value {
-  font-size: 1.3rem; color: var(--text-2); max-width: 600px; line-height: 1.45;
+  font-size: 21px; color: var(--text-2); max-width: 600px; line-height: 1.45;
   margin-bottom: 36px; letter-spacing: -0.01em;
 }
 .hl .hero-value b { color: var(--text); font-weight: 500; }
@@ -43,8 +45,8 @@
 
 @media (max-width: 768px) {
   .hl .hero { padding: 48px 22px 56px; }
-  .hl .hero-name { font-size: 2.7rem; }
-  .hl .hero-value { font-size: 1.05rem; }
+  .hl .hero-name { font-size: 43px; }
+  .hl .hero-value { font-size: 17px; }
   .hl .hero-cta { flex-direction: column; align-items: stretch; }
   .hl .hero-cta .btn { justify-content: center; }
   .hl .hero-meta { gap: 24px; margin-top: 36px; }

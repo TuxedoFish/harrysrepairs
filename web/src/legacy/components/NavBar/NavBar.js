@@ -79,7 +79,7 @@ class NavBar extends React.Component {
                 </Menu.Item>
                 <Menu.Item className="title-menu">
                     <Header as="h2" textAlign="left" className="website-title">
-                        Harry Liversedge
+                        Harry's Repairs
                     </Header>
                 </Menu.Item>
                 <Menu.Menu position='right'>
@@ -97,7 +97,7 @@ class NavBar extends React.Component {
                 </Menu.Item>
                 <Menu.Item className="title-menu">
                     <Header as="h2" textAlign="left" className="website-title">
-                        Harry Liversedge
+                        Harry's Repairs
                     </Header>
                 </Menu.Item>
                 <Menu.Menu position='right'>
