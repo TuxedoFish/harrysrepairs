@@ -23,18 +23,33 @@
 .hl .card-title { font-family: var(--font-display); font-size: var(--t-h3); font-weight: 600; letter-spacing: -0.02em; }
 .hl .card-idx { font-family: var(--font-mono); font-size: var(--t-meta); color: var(--text-3); }
 .hl .card-desc {
-  color: var(--text-2); font-size: var(--t-small); margin-bottom: 20px; flex: 1;
+  color: var(--text-2); font-size: var(--t-small); margin-bottom: 14px;
   line-height: 1.55;
-  /* Clamp long CMS descriptions so cards stay uniform and the grid keeps its
-     rhythm — the design wants a terse 3-4 line blurb, not a wall of text. */
+  /* Clamp long CMS descriptions by default so cards stay uniform and the grid
+     keeps its rhythm; the "See more" toggle removes the clamp on demand. */
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.hl .card-desc.is-expanded {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+.hl .card-more {
+  align-self: flex-start;
+  margin: 0 0 18px; padding: 0;
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-mono); font-size: var(--t-meta); letter-spacing: 0.04em;
+  color: var(--accent);
+}
+.hl .card-more:hover { text-decoration: underline; }
 .hl .card .tag-row { margin-bottom: 18px; }
-.hl .card-links { display: flex; gap: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+/* margin-top:auto pins the links to the card bottom now that the description is
+   no longer the flex-grow element. */
+.hl .card-links { margin-top: auto; display: flex; gap: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
 
 @media (max-width: 768px) {
   .hl .pad { padding: 48px 22px; }
