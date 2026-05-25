@@ -1,0 +1,102 @@
+.fb-post {
+    
+    width: 100% !important;
+
+    span {
+        width: 100% !important;
+        width: 200px;
+        border-radius: 15px !important;
+        overflow: hidden !important;
+
+        iframe {
+            width: 100% !important;
+        }
+    }
+}
+
+.review-column-container {
+    width: 100% !important;
+}
+
+.review-row {
+    display: flex;
+    align-items: center;
+}
+
+/* Video Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.video-section {
+    padding: 5rem 0;
+    text-align: left;
+
+    iframe {
+        width: 100%;
+    }
+}
+
+// Align the reviews vertically
+.review-column {
+    position: relative;
+}
+
+.video-text {
+    max-width: 450px !important;
+
+    p {
+        text-align: justify !important;
+    }
+}
+
+.review-heading {
+    margin-bottom: 4rem;
+}
+
+/* Tablet Views */
+@media (max-width: 768px) {
+
+    .review-column {
+        height: unset;
+        width: 100% !important;
+        margin: auto !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    .review-row {
+        display: unset;
+    }
+
+    .video-container {
+        height: 300px;
+        width: 100% !important;
+    }
+
+    .video-section {
+        iframe {
+            height: 100% !important;
+        }
+    }
+
+    .video-text {
+        text-align: center;
+        width: 100% !important;
+        max-width: unset !important;
+        margin-left: unset;
+
+        h2 {
+            margin: 2.5rem;
+        }
+    }
+}
+/* Mobile views */
+@media (max-width: 480px) {
+    .review-column {
+        width: 100%;
+    }
+    .review-column-container {
+        width: 95% !important;
+        margin: auto !important;
+    }
+    .video-container {
+        height: 200px;
+    }
+}

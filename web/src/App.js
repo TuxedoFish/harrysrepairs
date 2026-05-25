@@ -11,12 +11,12 @@ import {
 } from "react-router-dom";
 
 // Pages
-import {
-  Home,
-  Game,
-  Portfolio,
-  Device
-} from './pages'
+import { Portfolio } from './pages'
+
+// Legacy repairs site — frozen point-in-time copy, served from its own
+// isolated module so the portfolio redesign can't regress it.
+import Home from './legacy/pages/Home'
+import Device from './legacy/pages/Device'
 
 // Facebook Provider
 import { FacebookProvider } from 'react-facebook';
@@ -57,7 +57,6 @@ const App = () => {
                 <Route exact path="/" component={Portfolio} />
                 {/* The repair site lives here, off the main nav, linked from the portfolio. */}
                 <Route path="/repairs" component={Home} />
-                <Route path="/game" component={Game} />
                 <Route path="/device/:deviceName" component={Device} />
                 {/* Keep old /portfolio links working. */}
                 <Redirect from="/portfolio" to="/" />

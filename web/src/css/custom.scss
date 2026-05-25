@@ -433,23 +433,6 @@ html {
     text-align: left;
 }
 
-/** BODYPIX GAME **/
-.game-camera {
-    margin: 50px auto;
-    width: 640px;
-}
-
-// Render the game's text blocks on white so they stay readable over the
-// dark parallax background.
-.game-camera h2,
-#game-click-to-play {
-    display: inline-block;
-    background-color: #fff;
-    color: $color-text-dark-1;
-    padding: 10px 20px;
-    border-radius: 8px;
-}
-
 /* Portfolio
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
