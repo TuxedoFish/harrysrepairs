@@ -14,7 +14,14 @@ const GOOGLE_ANALYTICS_ID = process.env.GOOGLE_ANALYTICS_ID || 'N/A';
 
 module.exports = {
     context: __dirname,
-    
+
+    // Bind mounts on a Windows host don't forward inotify events to the Linux
+    // container, so --watch must poll to detect changes.
+    watchOptions: {
+        poll: 1000,
+        ignored: /node_modules/,
+    },
+
     entry: {
         index: './src/index.js',
     },

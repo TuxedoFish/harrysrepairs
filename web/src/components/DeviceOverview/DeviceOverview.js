@@ -53,7 +53,7 @@ const DeviceOverview = () => {
             <div ref={ref}>
                 <Card.Group itemsPerRow={ITEMS_PER_ROW} className="device-card-holder">
 
-                    {data.devices.slice(0, isViewingMore ? data.devices.length : ITEMS_PER_ROW)
+                    {(data?.devices || []).slice(0, isViewingMore ? (data?.devices || []).length : ITEMS_PER_ROW)
                         .map( ({name, type, image, id, urlName}) => (
                             <DeviceCard name={name} image={image} type={type} id={id} urlName={urlName} />
                         ))

@@ -32,7 +32,9 @@ const Device = (props) => {
       return <p>{`Error :( ${error}`}</p>
     }
 
-    return ( 
+    const device = data?.devices?.[0]
+
+    return (
       <>
         <NavBar/>
 
@@ -40,31 +42,31 @@ const Device = (props) => {
 
           {loading ? (
             <Loader inverted />
-          ) : (
+          ) : device && (
             <>
               <Column size="four" style={{width: 'fit-content'}}>
-                <Image 
-                  src={getURLFromObject(data.devices[0].image)} 
-                  width="200px" 
-                  wrapped 
-                  ui={false} 
+                <Image
+                  src={getURLFromObject(device.image)}
+                  width="200px"
+                  wrapped
+                  ui={false}
                 />
               </Column>
 
               <Column size="six" style={{marginLeft: "0"}}>
-                <Text as="h2" align="center">{data.devices[0].name}</Text>
-                <Text as="p" align="justify">{data.devices[0].description}</Text>
+                <Text as="h2" align="center">{device.name}</Text>
+                <Text as="p" align="justify">{device.description}</Text>
               </Column>
             </>
           )}
 
         </Container>
         
-        { !loading && (
+        { !loading && device && (
           <Container inverted>
             <Text as="h2" align="center" inverted>Repair Offerings</Text>
             <Card.Group itemsPerRow={4} className="device-pricing-card-group">
-              {data.devices[0].pricings.map( ({name, amount, image}) => (
+              {(device.pricings || []).map( ({name, amount, image}) => (
                 <DevicePricing name={name} amount={amount} image={image} />
               ))}
             </Card.Group>

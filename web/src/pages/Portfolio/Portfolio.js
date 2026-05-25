@@ -32,7 +32,7 @@ const Portfolio = () => {
         </Container>
 
         { !loading ? (
-          data.portfolios.map( (app, index) => (
+          (data?.portfolios || []).map( (app, index) => (
             <PortfolioLarge
               index={index} 
               title={app.title}

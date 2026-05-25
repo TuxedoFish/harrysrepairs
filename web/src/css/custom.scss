@@ -460,7 +460,13 @@ html {
 
 .portfolio-image {
     width: 100%;
+    height: auto;
     max-width: 500px;
+    max-height: 450px;
+    // width:100% is a fixed width, so max-height would otherwise squash tall
+    // images. object-fit lets the image keep its real aspect ratio inside the
+    // bounded box.
+    object-fit: contain;
 }
 
 .portfolio-content-right {
