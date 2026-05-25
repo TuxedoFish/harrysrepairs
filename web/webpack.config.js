@@ -36,7 +36,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             hash: true,
-            title: "Harry's Repairs",
+            title: "Harry Liversedge",
             myPageHeader: 'Home Page',
             template: './templates/index.html',
             chunks: ['index'],

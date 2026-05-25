@@ -7,12 +7,12 @@ import {
   useLocation,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 
 // Pages
 import {
   Home,
-  Terms,
   Game,
   Portfolio,
   Device
@@ -53,11 +53,14 @@ const App = () => {
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
             <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/terms" component={Terms} />
+                {/* Portfolio is now front and center on the landing route. */}
+                <Route exact path="/" component={Portfolio} />
+                {/* The repair site lives here, off the main nav, linked from the portfolio. */}
+                <Route path="/repairs" component={Home} />
                 <Route path="/game" component={Game} />
                 <Route path="/device/:deviceName" component={Device} />
-                <Route path="/portfolio" component={Portfolio} />
+                {/* Keep old /portfolio links working. */}
+                <Redirect from="/portfolio" to="/" />
             </Switch>
         </div>
       </Router>

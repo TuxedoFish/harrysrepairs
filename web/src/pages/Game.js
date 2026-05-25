@@ -253,11 +253,7 @@ export default class Game extends React.Component {
                     </script>
                 </Helmet>
             
-                <div className="navbar">
-                    <div className="container">
-                        <h4 className="navbar-title">Harry's Repairs</h4>
-                    </div>
-                </div>
+                <NavBar />
 
                 <div className="section parallax">
                     <div className="container landing-container">

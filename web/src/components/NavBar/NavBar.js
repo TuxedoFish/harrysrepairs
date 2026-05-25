@@ -16,17 +16,13 @@ import {
 
 const menuItems = [
     {
-        name: 'home',
+        name: 'portfolio',
         link: '/',
         text: 'Home',
-        iconName: 'home'
-    }, 
-    {
-        name: 'portfolio',
-        link: '/portfolio',
-        text: 'Portfolio',
         iconName: 'grid layout'
     }
+    // The repair site is intentionally kept off the main nav. It's reachable
+    // at /repairs and linked from within the portfolio.
 ]
 
 class NavBar extends React.Component {
@@ -83,7 +79,7 @@ class NavBar extends React.Component {
                 </Menu.Item>
                 <Menu.Item className="title-menu">
                     <Header as="h2" textAlign="left" className="website-title">
-                        Harry's Repairs
+                        Harry Liversedge
                     </Header>
                 </Menu.Item>
                 <Menu.Menu position='right'>
@@ -101,7 +97,7 @@ class NavBar extends React.Component {
                 </Menu.Item>
                 <Menu.Item className="title-menu">
                     <Header as="h2" textAlign="left" className="website-title">
-                        Harry's Repairs
+                        Harry Liversedge
                     </Header>
                 </Menu.Item>
                 <Menu.Menu position='right'>
