@@ -1,6 +1,7 @@
 // Hero — mockup §02. Quant positioning copy. Uses the design-system Button.
 import React from 'react'
 import Button from './Button'
+import HeroField from './HeroField'
 
 const ArrowIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -10,11 +11,12 @@ const ArrowIcon = () => (
 
 const Hero = () => (
   <header className="hero">
+    <HeroField />
     <div className="hero-inner">
       <h1 className="hero-name">Harry Liversedge</h1>
 
       <p className="hero-value">
-        Software engineer specialising in <b>low-latency trading systems</b> — execution
+        Software engineer specialising in <b>low-latency trading systems</b>, execution
         algorithms, market-making infrastructure, and the quant research behind them.
       </p>
 
